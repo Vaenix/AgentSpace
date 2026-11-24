@@ -1,0 +1,3624 @@
+{
+  "designation": "exploratory_same_host_repeatability",
+  "protocol_commit": "fd4d3afbfa8e05bc42993b2bd3d29f57bd59a4d8",
+  "protocol_sha256": "fcb057e785e99dbc492c1a7488e5edece671068083787564ed4081062e580f79",
+  "archived_replies_sha256": "b87936a0fd0d2b0d5d1f75f93f2d31dd81ad7fbc942fe2491d12ed21adc86aaa",
+  "swapped_results_commit": "cb2b9ab601d6dacc148ca60640939f895fb06acf",
+  "swapped_ledger_sha256": {
+    "replies.jsonl": "44f4f5dc529e7343a414eaa2ef46b8b809599104c672f5ca64db267768893aea",
+    "attempts.jsonl": "97286c9b7f0b91fb9f347a26ab9ad47fcab6452d51fb97065ecb68a1e63c532a"
+  },
+  "repeat_replies_sha256": "f1c577544d81ff025dfbf3a494d98a1382d8c80a58ada0a1af942f2c1fe93243",
+  "repeat_attempts_sha256": "72dfe0f7e139f9c8704fd905daf8227db2e7d856420cda085cc10213bae76a3f",
+  "parser_source_sha256": "4ebbd521d030f6cfdf9f4b4bead886bd53d076ffb6893cc542202680219fc027",
+  "runner_event_counts_across_all_conditions": {
+    "frozen_technical_missing": 6,
+    "reused": 44,
+    "started": 22,
+    "generated": 22,
+    "failed": 0
+  },
+  "exact_raw_agreement": {
+    "numerator": 22,
+    "denominator": 22,
+    "planned_questions": 24,
+    "proportion": 1.0
+  },
+  "input_token_agreement": {
+    "numerator": 22,
+    "denominator": 22,
+    "planned_questions": 24,
+    "proportion": 1.0
+  },
+  "missing": [
+    {
+      "qid": "P11_104-7-smoke-1",
+      "video_id": "P11_104",
+      "condition": "original",
+      "first_raw": null,
+      "repeat_raw": null,
+      "first_input_tokens": null,
+      "repeat_input_tokens": null,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        },
+        "strict": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        }
+      },
+      "exact_raw_match": null,
+      "input_tokens_match": null,
+      "first_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      },
+      "repeat_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      }
+    },
+    {
+      "qid": "P11_104-7-smoke-2",
+      "video_id": "P11_104",
+      "condition": "original",
+      "first_raw": null,
+      "repeat_raw": null,
+      "first_input_tokens": null,
+      "repeat_input_tokens": null,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        },
+        "strict": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        }
+      },
+      "exact_raw_match": null,
+      "input_tokens_match": null,
+      "first_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      },
+      "repeat_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      }
+    }
+  ],
+  "mismatches": [],
+  "rules": {
+    "matched_seconds": {
+      "agreement": {
+        "status": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        },
+        "answer_id": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        },
+        "physical_window": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        },
+        "all_three": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        }
+      },
+      "frame_swap_with_repeat_baseline": {
+        "replies_by_condition": {
+          "original": {
+            "planned": 24,
+            "received": 22,
+            "abstained": 7,
+            "abstained_per_received": 0.3181818181818182,
+            "statuses": {
+              "technical_missing": 2,
+              "format_error": 0,
+              "code_seconds_conflict": 0,
+              "invalid_field": 0,
+              "both_abstained": 4,
+              "answer_abstained": 3,
+              "event_abstained": 0,
+              "complete": 15
+            }
+          },
+          "frame_groups_swapped": {
+            "planned": 24,
+            "received": 22,
+            "abstained": 6,
+            "abstained_per_received": 0.2727272727272727,
+            "statuses": {
+              "technical_missing": 2,
+              "format_error": 0,
+              "code_seconds_conflict": 0,
+              "invalid_field": 0,
+              "both_abstained": 4,
+              "answer_abstained": 2,
+              "event_abstained": 0,
+              "complete": 16
+            }
+          }
+        },
+        "comparison": {
+          "planned_questions": 24,
+          "paired_returned_texts": 22,
+          "unpaired_or_missing_texts": 2,
+          "paired_completeness": {
+            "both_complete": 9,
+            "original_only_complete": 6,
+            "swapped_only_complete": 7,
+            "neither_complete": 0
+          },
+          "comparable_questions": 9,
+          "cells": {
+            "action_stable_window_stable": 1,
+            "action_stable_window_changed": 0,
+            "action_changed_window_stable": 4,
+            "action_changed_window_changed": 4
+          },
+          "changed_displayed_interval": {
+            "numerator": 4,
+            "denominator": 9,
+            "planned_questions": 24,
+            "proportion": 0.4444444444444444
+          },
+          "retained_image_group_with_stable_action": {
+            "numerator": 0,
+            "denominator": 1,
+            "planned_questions": 24,
+            "proportion": 0.0
+          }
+        },
+        "recordings": {
+          "P11_104": {
+            "planned_questions": 2,
+            "paired_returned_texts": 0,
+            "unpaired_or_missing_texts": 2,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P06_102": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 2,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P01_05": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 2,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P13_08": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 2,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P35_105": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 2,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P21_01": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 2,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 2,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 2
+            },
+            "changed_displayed_interval": {
+              "numerator": 2,
+              "denominator": 2,
+              "planned_questions": 2,
+              "proportion": 1.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P12_101": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 2,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P28_104": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 2,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 2,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 2,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 2,
+              "planned_questions": 2,
+              "proportion": 0.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P16_01": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 1,
+              "original_only_complete": 0,
+              "swapped_only_complete": 1,
+              "neither_complete": 0
+            },
+            "comparable_questions": 1,
+            "cells": {
+              "action_stable_window_stable": 1,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 1,
+              "planned_questions": 2,
+              "proportion": 0.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 1,
+              "planned_questions": 2,
+              "proportion": 0.0
+            }
+          },
+          "P07_04": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 2,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 2,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 2,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 2,
+              "planned_questions": 2,
+              "proportion": 0.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P26_119": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 2,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P09_103": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 2,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 2,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 2
+            },
+            "changed_displayed_interval": {
+              "numerator": 2,
+              "denominator": 2,
+              "planned_questions": 2,
+              "proportion": 1.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          }
+        },
+        "questions": [
+          {
+            "qid": "P11_104-7-smoke-1",
+            "pair_id": "P11_104-7",
+            "ordinal": 1,
+            "original_status": "technical_missing",
+            "intervention_status": "technical_missing",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P11_104",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null,
+            "original_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "frozen_inputs/calls.jsonl"
+            },
+            "swapped_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "planned.jsonl"
+            }
+          },
+          {
+            "qid": "P11_104-7-smoke-2",
+            "pair_id": "P11_104-7",
+            "ordinal": 2,
+            "original_status": "technical_missing",
+            "intervention_status": "technical_missing",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P11_104",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null,
+            "original_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "frozen_inputs/calls.jsonl"
+            },
+            "swapped_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "planned.jsonl"
+            }
+          },
+          {
+            "qid": "P06_102-5-smoke-1",
+            "pair_id": "P06_102-5",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "answer_abstained",
+            "comparable": false,
+            "original_action": "mix dough.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P06_102",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P06_102-5-smoke-2",
+            "pair_id": "P06_102-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "answer_abstained",
+            "comparable": false,
+            "original_action": "mix dough.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P06_102",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P01_05-4-smoke-1",
+            "pair_id": "P01_05-4",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "throw plastic into bin.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P01_05",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P01_05-4-smoke-2",
+            "pair_id": "P01_05-4",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "throw plastic into bin.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P01_05",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P13_08-2-smoke-1",
+            "pair_id": "P13_08-2",
+            "ordinal": 1,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "wash plate.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P13_08",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P13_08-2-smoke-2",
+            "pair_id": "P13_08-2",
+            "ordinal": 2,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "wash plate.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P13_08",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P35_105-5-smoke-1",
+            "pair_id": "P35_105-5",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "clean counter top.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P35_105",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P35_105-5-smoke-2",
+            "pair_id": "P35_105-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "clean counter top.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P35_105",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P21_01-7-smoke-1",
+            "pair_id": "P21_01-7",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "taking out groceries.",
+            "intervention_action": "opening the fridge.",
+            "original_window": 1,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": true,
+            "cell": "action_changed_window_changed",
+            "video_id": "P21_01",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P21_01-7-smoke-2",
+            "pair_id": "P21_01-7",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "taking out groceries.",
+            "intervention_action": "opening the fridge.",
+            "original_window": 1,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": true,
+            "cell": "action_changed_window_changed",
+            "video_id": "P21_01",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P12_101-5-smoke-1",
+            "pair_id": "P12_101-5",
+            "ordinal": 1,
+            "original_status": "answer_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "open fridge.",
+            "original_window": 1,
+            "intervention_window": 2,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P12_101",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P12_101-5-smoke-2",
+            "pair_id": "P12_101-5",
+            "ordinal": 2,
+            "original_status": "answer_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "open fridge.",
+            "original_window": 1,
+            "intervention_window": 2,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P12_101",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P28_104-7-smoke-1",
+            "pair_id": "P28_104-7",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "open lid.",
+            "intervention_action": "adjust temperature.",
+            "original_window": 1,
+            "intervention_window": 1,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P28_104",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P28_104-7-smoke-2",
+            "pair_id": "P28_104-7",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "open lid.",
+            "intervention_action": "adjust temperature.",
+            "original_window": 1,
+            "intervention_window": 1,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P28_104",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P16_01-5-smoke-1",
+            "pair_id": "P16_01-5",
+            "ordinal": 1,
+            "original_status": "answer_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "turn on the cooker.",
+            "original_window": 1,
+            "intervention_window": 2,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P16_01",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P16_01-5-smoke-2",
+            "pair_id": "P16_01-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "turn on the cooker.",
+            "intervention_action": "turn on the cooker.",
+            "original_window": 2,
+            "intervention_window": 2,
+            "action_stable": true,
+            "physical_window_changed": false,
+            "cell": "action_stable_window_stable",
+            "video_id": "P16_01",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": false
+          },
+          {
+            "qid": "P07_04-7-smoke-1",
+            "pair_id": "P07_04-7",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "turn on stove.",
+            "intervention_action": "wash forks.",
+            "original_window": 2,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P07_04",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P07_04-7-smoke-2",
+            "pair_id": "P07_04-7",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "turn on stove.",
+            "intervention_action": "wash forks.",
+            "original_window": 2,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P07_04",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P26_119-5-smoke-1",
+            "pair_id": "P26_119-5",
+            "ordinal": 1,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "pick up washing up liquid.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P26_119",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P26_119-5-smoke-2",
+            "pair_id": "P26_119-5",
+            "ordinal": 2,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "pick up washing up liquid.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P26_119",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P09_103-5-smoke-1",
+            "pair_id": "P09_103-5",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "add condiments to chicken.",
+            "intervention_action": "turn on stove.",
+            "original_window": 2,
+            "intervention_window": 1,
+            "action_stable": false,
+            "physical_window_changed": true,
+            "cell": "action_changed_window_changed",
+            "video_id": "P09_103",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P09_103-5-smoke-2",
+            "pair_id": "P09_103-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "add condiments to chicken.",
+            "intervention_action": "turn on stove.",
+            "original_window": 2,
+            "intervention_window": 1,
+            "action_stable": false,
+            "physical_window_changed": true,
+            "cell": "action_changed_window_changed",
+            "video_id": "P09_103",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          }
+        ]
+      }
+    },
+    "strict": {
+      "agreement": {
+        "status": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        },
+        "answer_id": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        },
+        "physical_window": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        },
+        "all_three": {
+          "numerator": 22,
+          "denominator": 22,
+          "planned_questions": 24,
+          "proportion": 1.0
+        }
+      },
+      "frame_swap_with_repeat_baseline": {
+        "replies_by_condition": {
+          "original": {
+            "planned": 24,
+            "received": 22,
+            "abstained": 4,
+            "abstained_per_received": 0.18181818181818182,
+            "statuses": {
+              "technical_missing": 2,
+              "format_error": 0,
+              "code_seconds_conflict": 0,
+              "invalid_field": 7,
+              "both_abstained": 4,
+              "answer_abstained": 0,
+              "event_abstained": 0,
+              "complete": 11
+            }
+          },
+          "frame_groups_swapped": {
+            "planned": 24,
+            "received": 22,
+            "abstained": 4,
+            "abstained_per_received": 0.18181818181818182,
+            "statuses": {
+              "technical_missing": 2,
+              "format_error": 0,
+              "code_seconds_conflict": 0,
+              "invalid_field": 6,
+              "both_abstained": 4,
+              "answer_abstained": 0,
+              "event_abstained": 0,
+              "complete": 12
+            }
+          }
+        },
+        "comparison": {
+          "planned_questions": 24,
+          "paired_returned_texts": 22,
+          "unpaired_or_missing_texts": 2,
+          "paired_completeness": {
+            "both_complete": 6,
+            "original_only_complete": 5,
+            "swapped_only_complete": 6,
+            "neither_complete": 5
+          },
+          "comparable_questions": 6,
+          "cells": {
+            "action_stable_window_stable": 1,
+            "action_stable_window_changed": 0,
+            "action_changed_window_stable": 4,
+            "action_changed_window_changed": 1
+          },
+          "changed_displayed_interval": {
+            "numerator": 1,
+            "denominator": 6,
+            "planned_questions": 24,
+            "proportion": 0.16666666666666666
+          },
+          "retained_image_group_with_stable_action": {
+            "numerator": 0,
+            "denominator": 1,
+            "planned_questions": 24,
+            "proportion": 0.0
+          }
+        },
+        "recordings": {
+          "P11_104": {
+            "planned_questions": 2,
+            "paired_returned_texts": 0,
+            "unpaired_or_missing_texts": 2,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P06_102": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 2,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P01_05": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 2
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P13_08": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 2,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P35_105": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 1,
+              "swapped_only_complete": 0,
+              "neither_complete": 1
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P21_01": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 1,
+              "original_only_complete": 0,
+              "swapped_only_complete": 1,
+              "neither_complete": 0
+            },
+            "comparable_questions": 1,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 1
+            },
+            "changed_displayed_interval": {
+              "numerator": 1,
+              "denominator": 1,
+              "planned_questions": 2,
+              "proportion": 1.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P12_101": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 2,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P28_104": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 2,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 2,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 2,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 2,
+              "planned_questions": 2,
+              "proportion": 0.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P16_01": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 1,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 1
+            },
+            "comparable_questions": 1,
+            "cells": {
+              "action_stable_window_stable": 1,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 1,
+              "planned_questions": 2,
+              "proportion": 0.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 1,
+              "planned_questions": 2,
+              "proportion": 0.0
+            }
+          },
+          "P07_04": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 2,
+              "original_only_complete": 0,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 2,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 2,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 2,
+              "planned_questions": 2,
+              "proportion": 0.0
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P26_119": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 0,
+              "swapped_only_complete": 1,
+              "neither_complete": 1
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          },
+          "P09_103": {
+            "planned_questions": 2,
+            "paired_returned_texts": 2,
+            "unpaired_or_missing_texts": 0,
+            "paired_completeness": {
+              "both_complete": 0,
+              "original_only_complete": 2,
+              "swapped_only_complete": 0,
+              "neither_complete": 0
+            },
+            "comparable_questions": 0,
+            "cells": {
+              "action_stable_window_stable": 0,
+              "action_stable_window_changed": 0,
+              "action_changed_window_stable": 0,
+              "action_changed_window_changed": 0
+            },
+            "changed_displayed_interval": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            },
+            "retained_image_group_with_stable_action": {
+              "numerator": 0,
+              "denominator": 0,
+              "planned_questions": 2,
+              "proportion": null
+            }
+          }
+        },
+        "questions": [
+          {
+            "qid": "P11_104-7-smoke-1",
+            "pair_id": "P11_104-7",
+            "ordinal": 1,
+            "original_status": "technical_missing",
+            "intervention_status": "technical_missing",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P11_104",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null,
+            "original_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "frozen_inputs/calls.jsonl"
+            },
+            "swapped_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "planned.jsonl"
+            }
+          },
+          {
+            "qid": "P11_104-7-smoke-2",
+            "pair_id": "P11_104-7",
+            "ordinal": 2,
+            "original_status": "technical_missing",
+            "intervention_status": "technical_missing",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P11_104",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null,
+            "original_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "frozen_inputs/calls.jsonl"
+            },
+            "swapped_technical_missing": {
+              "stage": "frame_extraction",
+              "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+              "log_reference": "planned.jsonl"
+            }
+          },
+          {
+            "qid": "P06_102-5-smoke-1",
+            "pair_id": "P06_102-5",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "invalid_field",
+            "comparable": false,
+            "original_action": "mix dough.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P06_102",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P06_102-5-smoke-2",
+            "pair_id": "P06_102-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "invalid_field",
+            "comparable": false,
+            "original_action": "mix dough.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P06_102",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P01_05-4-smoke-1",
+            "pair_id": "P01_05-4",
+            "ordinal": 1,
+            "original_status": "invalid_field",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "throw plastic into bin.",
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P01_05",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P01_05-4-smoke-2",
+            "pair_id": "P01_05-4",
+            "ordinal": 2,
+            "original_status": "invalid_field",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "throw plastic into bin.",
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P01_05",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P13_08-2-smoke-1",
+            "pair_id": "P13_08-2",
+            "ordinal": 1,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "wash plate.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P13_08",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P13_08-2-smoke-2",
+            "pair_id": "P13_08-2",
+            "ordinal": 2,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "wash plate.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P13_08",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P35_105-5-smoke-1",
+            "pair_id": "P35_105-5",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "clean counter top.",
+            "intervention_action": null,
+            "original_window": 1,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P35_105",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P35_105-5-smoke-2",
+            "pair_id": "P35_105-5",
+            "ordinal": 2,
+            "original_status": "invalid_field",
+            "intervention_status": "both_abstained",
+            "comparable": false,
+            "original_action": "clean counter top.",
+            "intervention_action": null,
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P35_105",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P21_01-7-smoke-1",
+            "pair_id": "P21_01-7",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "taking out groceries.",
+            "intervention_action": "opening the fridge.",
+            "original_window": 1,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": true,
+            "cell": "action_changed_window_changed",
+            "video_id": "P21_01",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P21_01-7-smoke-2",
+            "pair_id": "P21_01-7",
+            "ordinal": 2,
+            "original_status": "invalid_field",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": "taking out groceries.",
+            "intervention_action": "opening the fridge.",
+            "original_window": null,
+            "intervention_window": 2,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P21_01",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P12_101-5-smoke-1",
+            "pair_id": "P12_101-5",
+            "ordinal": 1,
+            "original_status": "invalid_field",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "open fridge.",
+            "original_window": null,
+            "intervention_window": 2,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P12_101",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P12_101-5-smoke-2",
+            "pair_id": "P12_101-5",
+            "ordinal": 2,
+            "original_status": "invalid_field",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "open fridge.",
+            "original_window": null,
+            "intervention_window": 2,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P12_101",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P28_104-7-smoke-1",
+            "pair_id": "P28_104-7",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "open lid.",
+            "intervention_action": "adjust temperature.",
+            "original_window": 1,
+            "intervention_window": 1,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P28_104",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P28_104-7-smoke-2",
+            "pair_id": "P28_104-7",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "open lid.",
+            "intervention_action": "adjust temperature.",
+            "original_window": 1,
+            "intervention_window": 1,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P28_104",
+            "original_cited_image_group": 1,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P16_01-5-smoke-1",
+            "pair_id": "P16_01-5",
+            "ordinal": 1,
+            "original_status": "invalid_field",
+            "intervention_status": "invalid_field",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "turn on the cooker.",
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P16_01",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P16_01-5-smoke-2",
+            "pair_id": "P16_01-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "turn on the cooker.",
+            "intervention_action": "turn on the cooker.",
+            "original_window": 2,
+            "intervention_window": 2,
+            "action_stable": true,
+            "physical_window_changed": false,
+            "cell": "action_stable_window_stable",
+            "video_id": "P16_01",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": false
+          },
+          {
+            "qid": "P07_04-7-smoke-1",
+            "pair_id": "P07_04-7",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "turn on stove.",
+            "intervention_action": "wash forks.",
+            "original_window": 2,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P07_04",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P07_04-7-smoke-2",
+            "pair_id": "P07_04-7",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "complete",
+            "comparable": true,
+            "original_action": "turn on stove.",
+            "intervention_action": "wash forks.",
+            "original_window": 2,
+            "intervention_window": 2,
+            "action_stable": false,
+            "physical_window_changed": false,
+            "cell": "action_changed_window_stable",
+            "video_id": "P07_04",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": 1,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P26_119-5-smoke-1",
+            "pair_id": "P26_119-5",
+            "ordinal": 1,
+            "original_status": "both_abstained",
+            "intervention_status": "complete",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "pick up washing up liquid.",
+            "original_window": null,
+            "intervention_window": 1,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P26_119",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": 2,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P26_119-5-smoke-2",
+            "pair_id": "P26_119-5",
+            "ordinal": 2,
+            "original_status": "both_abstained",
+            "intervention_status": "invalid_field",
+            "comparable": false,
+            "original_action": null,
+            "intervention_action": "pick up washing up liquid.",
+            "original_window": null,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P26_119",
+            "original_cited_image_group": null,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P09_103-5-smoke-1",
+            "pair_id": "P09_103-5",
+            "ordinal": 1,
+            "original_status": "complete",
+            "intervention_status": "invalid_field",
+            "comparable": false,
+            "original_action": "add condiments to chicken.",
+            "intervention_action": "turn on stove.",
+            "original_window": 2,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P09_103",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          },
+          {
+            "qid": "P09_103-5-smoke-2",
+            "pair_id": "P09_103-5",
+            "ordinal": 2,
+            "original_status": "complete",
+            "intervention_status": "invalid_field",
+            "comparable": false,
+            "original_action": "add condiments to chicken.",
+            "intervention_action": "turn on stove.",
+            "original_window": 2,
+            "intervention_window": null,
+            "action_stable": null,
+            "physical_window_changed": null,
+            "cell": null,
+            "video_id": "P09_103",
+            "original_cited_image_group": 2,
+            "swapped_cited_image_group": null,
+            "retains_image_group_with_stable_action": null
+          }
+        ]
+      }
+    }
+  },
+  "questions": [
+    {
+      "qid": "P11_104-7-smoke-1",
+      "video_id": "P11_104",
+      "condition": "original",
+      "first_raw": null,
+      "repeat_raw": null,
+      "first_input_tokens": null,
+      "repeat_input_tokens": null,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        },
+        "strict": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        }
+      },
+      "exact_raw_match": null,
+      "input_tokens_match": null,
+      "first_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      },
+      "repeat_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      }
+    },
+    {
+      "qid": "P11_104-7-smoke-2",
+      "video_id": "P11_104",
+      "condition": "original",
+      "first_raw": null,
+      "repeat_raw": null,
+      "first_input_tokens": null,
+      "repeat_input_tokens": null,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        },
+        "strict": {
+          "first": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "repeat": {
+            "status": "technical_missing",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": null
+          },
+          "equal": null
+        }
+      },
+      "exact_raw_match": null,
+      "input_tokens_match": null,
+      "first_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      },
+      "repeat_technical_missing": {
+        "stage": "frame_extraction",
+        "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+        "log_reference": "frozen_inputs/calls.jsonl"
+      }
+    },
+    {
+      "qid": "P06_102-5-smoke-1",
+      "video_id": "P06_102",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E01\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E01\"\n}\n```",
+      "first_input_tokens": 1838,
+      "repeat_input_tokens": 1838,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P06_102-5-smoke-2",
+      "video_id": "P06_102",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E01\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E01\"\n}\n```",
+      "first_input_tokens": 1838,
+      "repeat_input_tokens": 1838,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "632b6bd85ec8da09",
+            "physical_window": 1,
+            "action": "mix dough.",
+            "interval_s": [
+              260.097,
+              274.679
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P01_05-4-smoke-1",
+      "video_id": "P01_05",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 197.901–199.088s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 197.901–199.088s\"\n}\n```",
+      "first_input_tokens": 1845,
+      "repeat_input_tokens": 1845,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": 1,
+            "action": "throw plastic into bin.",
+            "interval_s": [
+              197.901,
+              199.088
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": 1,
+            "action": "throw plastic into bin.",
+            "interval_s": [
+              197.901,
+              199.088
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": null,
+            "action": "throw plastic into bin.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": null,
+            "action": "throw plastic into bin.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P01_05-4-smoke-2",
+      "video_id": "P01_05",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 197.901–199.088s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 197.901–199.088s\"\n}\n```",
+      "first_input_tokens": 1845,
+      "repeat_input_tokens": 1845,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": 1,
+            "action": "throw plastic into bin.",
+            "interval_s": [
+              197.901,
+              199.088
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": 1,
+            "action": "throw plastic into bin.",
+            "interval_s": [
+              197.901,
+              199.088
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": null,
+            "action": "throw plastic into bin.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": "1682d5aa02b5faa3",
+            "physical_window": null,
+            "action": "throw plastic into bin.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P13_08-2-smoke-1",
+      "video_id": "P13_08",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "first_input_tokens": 1842,
+      "repeat_input_tokens": 1842,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P13_08-2-smoke-2",
+      "video_id": "P13_08",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "first_input_tokens": 1842,
+      "repeat_input_tokens": 1842,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P35_105-5-smoke-1",
+      "video_id": "P35_105",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "first_input_tokens": 1840,
+      "repeat_input_tokens": 1840,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": 1,
+            "action": "clean counter top.",
+            "interval_s": [
+              121.005,
+              122.967
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": 1,
+            "action": "clean counter top.",
+            "interval_s": [
+              121.005,
+              122.967
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": 1,
+            "action": "clean counter top.",
+            "interval_s": [
+              121.005,
+              122.967
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": 1,
+            "action": "clean counter top.",
+            "interval_s": [
+              121.005,
+              122.967
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P35_105-5-smoke-2",
+      "video_id": "P35_105",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 121.005–122.967s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 121.005–122.967s\"\n}\n```",
+      "first_input_tokens": 1840,
+      "repeat_input_tokens": 1840,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": 1,
+            "action": "clean counter top.",
+            "interval_s": [
+              121.005,
+              122.967
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": 1,
+            "action": "clean counter top.",
+            "interval_s": [
+              121.005,
+              122.967
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": null,
+            "action": "clean counter top.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": "6710d6007c26686d",
+            "physical_window": null,
+            "action": "clean counter top.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P21_01-7-smoke-1",
+      "video_id": "P21_01",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "first_input_tokens": 1830,
+      "repeat_input_tokens": 1830,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": 1,
+            "action": "taking out groceries.",
+            "interval_s": [
+              1.315,
+              2.648
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": 1,
+            "action": "taking out groceries.",
+            "interval_s": [
+              1.315,
+              2.648
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": 1,
+            "action": "taking out groceries.",
+            "interval_s": [
+              1.315,
+              2.648
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": 1,
+            "action": "taking out groceries.",
+            "interval_s": [
+              1.315,
+              2.648
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P21_01-7-smoke-2",
+      "video_id": "P21_01",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 1.315–2.648s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 1.315–2.648s\"\n}\n```",
+      "first_input_tokens": 1830,
+      "repeat_input_tokens": 1830,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": 1,
+            "action": "taking out groceries.",
+            "interval_s": [
+              1.315,
+              2.648
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": 1,
+            "action": "taking out groceries.",
+            "interval_s": [
+              1.315,
+              2.648
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": null,
+            "action": "taking out groceries.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": "1087b25f4cdc497f",
+            "physical_window": null,
+            "action": "taking out groceries.",
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P12_101-5-smoke-1",
+      "video_id": "P12_101",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 5.381–17.07s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 5.381–17.07s\"\n}\n```",
+      "first_input_tokens": 1830,
+      "repeat_input_tokens": 1830,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "answer_abstained",
+            "answer_id": null,
+            "physical_window": 1,
+            "action": null,
+            "interval_s": [
+              5.381,
+              17.07
+            ],
+            "result_format": "partially_abstained"
+          },
+          "repeat": {
+            "status": "answer_abstained",
+            "answer_id": null,
+            "physical_window": 1,
+            "action": null,
+            "interval_s": [
+              5.381,
+              17.07
+            ],
+            "result_format": "partially_abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P12_101-5-smoke-2",
+      "video_id": "P12_101",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 5.381–17.07s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 5.381–17.07s\"\n}\n```",
+      "first_input_tokens": 1830,
+      "repeat_input_tokens": 1830,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "answer_abstained",
+            "answer_id": null,
+            "physical_window": 1,
+            "action": null,
+            "interval_s": [
+              5.381,
+              17.07
+            ],
+            "result_format": "partially_abstained"
+          },
+          "repeat": {
+            "status": "answer_abstained",
+            "answer_id": null,
+            "physical_window": 1,
+            "action": null,
+            "interval_s": [
+              5.381,
+              17.07
+            ],
+            "result_format": "partially_abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P28_104-7-smoke-1",
+      "video_id": "P28_104",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "first_input_tokens": 1838,
+      "repeat_input_tokens": 1838,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P28_104-7-smoke-2",
+      "video_id": "P28_104",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+      "first_input_tokens": 1838,
+      "repeat_input_tokens": 1838,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "7b78e0e29d65693b",
+            "physical_window": 1,
+            "action": "open lid.",
+            "interval_s": [
+              392.133,
+              393.608
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P16_01-5-smoke-1",
+      "video_id": "P16_01",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 4.846–15.086s\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 4.846–15.086s\"\n}\n```",
+      "first_input_tokens": 1824,
+      "repeat_input_tokens": 1824,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "answer_abstained",
+            "answer_id": null,
+            "physical_window": 1,
+            "action": null,
+            "interval_s": [
+              4.846,
+              15.086
+            ],
+            "result_format": "partially_abstained"
+          },
+          "repeat": {
+            "status": "answer_abstained",
+            "answer_id": null,
+            "physical_window": 1,
+            "action": null,
+            "interval_s": [
+              4.846,
+              15.086
+            ],
+            "result_format": "partially_abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "invalid_field",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "repeat": {
+            "status": "invalid_field",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "invalid_value"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P16_01-5-smoke-2",
+      "video_id": "P16_01",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "first_input_tokens": 1824,
+      "repeat_input_tokens": 1824,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "e66ade612c271872",
+            "physical_window": 2,
+            "action": "turn on the cooker.",
+            "interval_s": [
+              27.477,
+              33.19
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "e66ade612c271872",
+            "physical_window": 2,
+            "action": "turn on the cooker.",
+            "interval_s": [
+              27.477,
+              33.19
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "e66ade612c271872",
+            "physical_window": 2,
+            "action": "turn on the cooker.",
+            "interval_s": [
+              27.477,
+              33.19
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "e66ade612c271872",
+            "physical_window": 2,
+            "action": "turn on the cooker.",
+            "interval_s": [
+              27.477,
+              33.19
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P07_04-7-smoke-1",
+      "video_id": "P07_04",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+      "first_input_tokens": 1828,
+      "repeat_input_tokens": 1828,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P07_04-7-smoke-2",
+      "video_id": "P07_04",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+      "first_input_tokens": 1828,
+      "repeat_input_tokens": 1828,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "c24fe4048aaa204b",
+            "physical_window": 2,
+            "action": "turn on stove.",
+            "interval_s": [
+              109.714,
+              111.36699999999999
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P26_119-5-smoke-1",
+      "video_id": "P26_119",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "first_input_tokens": 1839,
+      "repeat_input_tokens": 1839,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P26_119-5-smoke-2",
+      "video_id": "P26_119",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "first_input_tokens": 1839,
+      "repeat_input_tokens": 1839,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "abstained"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "both_abstained",
+            "answer_id": null,
+            "physical_window": null,
+            "action": null,
+            "interval_s": null,
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P09_103-5-smoke-1",
+      "video_id": "P09_103",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "first_input_tokens": 1822,
+      "repeat_input_tokens": 1822,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    },
+    {
+      "qid": "P09_103-5-smoke-2",
+      "video_id": "P09_103",
+      "condition": "original",
+      "first_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "repeat_raw": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "first_input_tokens": 1822,
+      "repeat_input_tokens": 1822,
+      "rules": {
+        "matched_seconds": {
+          "first": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        },
+        "strict": {
+          "first": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "repeat": {
+            "status": "complete",
+            "answer_id": "ebafdd83fa992592",
+            "physical_window": 2,
+            "action": "add condiments to chicken.",
+            "interval_s": [
+              150.665,
+              155.54
+            ],
+            "result_format": "ok"
+          },
+          "equal": {
+            "status": true,
+            "answer_id": true,
+            "physical_window": true
+          }
+        }
+      },
+      "exact_raw_match": true,
+      "input_tokens_match": true
+    }
+  ]
+}
