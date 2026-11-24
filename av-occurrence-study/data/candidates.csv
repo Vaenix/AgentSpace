@@ -1,0 +1,11 @@
+video_id,media_id,cue,hint_minute_a,source_task_a,source_qid_a,source_event_a,hint_minute_b,source_task_b,source_qid_b,source_event_b,source_url,annotation_status,review_note
+video425,aqFfjJrLkBA,微波炉完成提示音,7,mh_visual_to_audio_deception,156,4,14,mh_visual_to_audio_deception,156,6,https://www.youtube.com/watch?v=aqFfjJrLkBA,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,两段加热过程分别涉及黄容器及跳舞倒数。需查前段是否已有其他完成音，并核实响后第一动作。
+video441,dXUXfyiX2lA,警长敲钟,30,mh_temporal_splicing_fallacy,86,25,32,mh_visual_to_audio_deception,209,26,https://www.youtube.com/watch?v=dXUXfyiX2lA,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,疑有叫醒僵尸、与史蒂夫应战两段。相邻标注含多下连敲与重复回顾，须以一次完整报警声为单位。
+video530,t61Wl2HVwFo,观众掌声,7,v_visual_counting,196,3,13,v_visual_counting,196,4,https://www.youtube.com/watch?v=t61Wl2HVwFo,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,同一发布会的演讲与离场。全片音轨在 96 秒附近还有一阵高置信掌声，7/13 分钟不能直接标成第一/第二次。
+video253,7E6i3E-fsj4,球场哨声,8,v_spatial_reasoning,74,3,14,av_spatiotemporal_localization,105,5,https://www.youtube.com/watch?v=7E6i3E-fsj4,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,比赛早段突破与终场得分均有哨声描述。须检查之前哨声和响后动作是否可区分。
+video433,bepwr1-CNRU,观众掌声,6,a_environmental_sound,76,4,14,a_environmental_sound,76,7,https://www.youtube.com/watch?v=bepwr1-CNRU,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,翼门与卡车续航公布处均提到掌声；第二段动作可能与欢呼同起，须核实先后。
+video389,UeOy1WKeTRY,观众掌声,1,mh_visual_to_audio_deception,140,1,2,mh_visual_to_audio_deception,140,2,https://www.youtube.com/watch?v=UeOy1WKeTRY,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,沙发上的 James 与舞台布景变化；全片另有终场掌声，需重建实际顺序。
+video213,0kRsiSdDFYg,球场哨声,30,a_environmental_sound,23,3,36,a_environmental_sound,23,5,https://www.youtube.com/watch?v=0kRsiSdDFYg,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,户外训练与教练越位判罚，两段或只是背景哨声，须找可判定的响后动作。
+video218,1NYQf_OXDqI,泼水声,40,v_spatial_reasoning,64,21,48,v_spatial_reasoning,64,23,https://www.youtube.com/watch?v=1NYQf_OXDqI,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,标注分别提到后仰摔地、撞墙。必须确认能听到水声而非仅有撞击声，且非重复镜头。
+video243,5WIdIs3A9Ok,入水／溅水声,29,mh_visual_to_audio_deception,221,16,36,a_background_music,121,18,https://www.youtube.com/watch?v=5WIdIs3A9Ok,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,美洲豹涉水与捕猎，部分描述把同次水声跨分钟重复。须确认清晰边界与后续动作。
+video385,U9mJuUkhUzk,观众掌声,17,a_background_music,114,7,34,a_background_music,71,11,https://www.youtube.com/watch?v=U9mJuUkhUzk,自动筛选后经文本审阅；全片序号、秒级证据与答案待独立人工复核,两位嘉宾登台附近有掌声，中间亦有别次掌声，需重新确认首次和第二次及答案差异。

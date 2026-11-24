@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+av-occurrence-study/epic/annotations/
+av-occurrence-study/**/*.mp4
+av-occurrence-study/**/*.wav
+av-occurrence-study/**/*.png
+av-occurrence-study/**/*.jpg
+av-occurrence-study/**/*.safetensors
+av-occurrence-study/**/av-review-*.json

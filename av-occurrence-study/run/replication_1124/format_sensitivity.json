@@ -1,0 +1,191 @@
+{
+  "analysis": "post_hoc_code_and_matching_printed_seconds",
+  "recovered_outputs": [
+    {
+      "qid": "P37_102-7-smoke-1",
+      "condition": "segment_labels_reversed",
+      "raw_event": "E01 94.692–95.53s",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ]
+    },
+    {
+      "qid": "P37_102-7-smoke-2",
+      "condition": "segment_labels_reversed",
+      "raw_event": "E01 94.692–95.53s",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ]
+    },
+    {
+      "qid": "P03_117-2-smoke-1",
+      "condition": "original",
+      "raw_event": "E01 530.566–533.272s",
+      "interval_s": [
+        530.566,
+        533.272
+      ]
+    },
+    {
+      "qid": "P03_117-2-smoke-1",
+      "condition": "segment_labels_reversed",
+      "raw_event": "E02 530.566–533.272s",
+      "interval_s": [
+        530.566,
+        533.272
+      ]
+    },
+    {
+      "qid": "P03_117-2-smoke-2",
+      "condition": "original",
+      "raw_event": "E01 530.566–533.272s",
+      "interval_s": [
+        530.566,
+        533.272
+      ]
+    },
+    {
+      "qid": "P03_117-2-smoke-2",
+      "condition": "segment_labels_reversed",
+      "raw_event": "E02 530.566–533.272s",
+      "interval_s": [
+        530.566,
+        533.272
+      ]
+    }
+  ],
+  "metrics": {
+    "options_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 4,
+      "action_stable": 4,
+      "physical_window_changed": 2,
+      "action_stable_and_window_changed": 2
+    },
+    "segment_labels_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 4,
+      "action_stable": 4,
+      "physical_window_changed": 0,
+      "action_stable_and_window_changed": 0
+    }
+  },
+  "metrics_by_video": {
+    "P37_102": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    },
+    "P20_01": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    },
+    "P03_117": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 2,
+        "action_stable_and_window_changed": 2
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    }
+  },
+  "strict_metrics": {
+    "options_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 2,
+      "action_stable": 2,
+      "physical_window_changed": 0,
+      "action_stable_and_window_changed": 0
+    },
+    "segment_labels_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 0,
+      "action_stable": 0,
+      "physical_window_changed": 0,
+      "action_stable_and_window_changed": 0
+    }
+  },
+  "strict_metrics_by_video": {
+    "P37_102": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    },
+    "P20_01": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    },
+    "P03_117": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    }
+  }
+}

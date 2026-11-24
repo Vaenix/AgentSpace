@@ -1,0 +1,158 @@
+{
+  "vision_only": [
+    {
+      "window_id": "W154",
+      "start_s": 612,
+      "end_s": 620,
+      "clip_mean_cosine": 0.20775442942976952,
+      "audio_overlap_score": null,
+      "vision_rank": 1,
+      "audio_rank": null,
+      "audio_contribution": 0,
+      "fusion_score": 0.00819672131147541,
+      "fusion_rank": 11,
+      "selection_rank": 1,
+      "frame_times_s": [
+        613,
+        615,
+        617,
+        619
+      ]
+    },
+    {
+      "window_id": "W056",
+      "start_s": 220,
+      "end_s": 228,
+      "clip_mean_cosine": 0.2044200524687767,
+      "audio_overlap_score": null,
+      "vision_rank": 2,
+      "audio_rank": null,
+      "audio_contribution": 0,
+      "fusion_score": 0.008064516129032258,
+      "fusion_rank": 12,
+      "selection_rank": 2,
+      "frame_times_s": [
+        221,
+        223,
+        225,
+        227
+      ]
+    },
+    {
+      "window_id": "W020",
+      "start_s": 76,
+      "end_s": 84,
+      "clip_mean_cosine": 0.20231755822896957,
+      "audio_overlap_score": null,
+      "vision_rank": 3,
+      "audio_rank": null,
+      "audio_contribution": 0,
+      "fusion_score": 0.007936507936507936,
+      "fusion_rank": 13,
+      "selection_rank": 3,
+      "frame_times_s": [
+        77,
+        79,
+        81,
+        83
+      ]
+    },
+    {
+      "window_id": "W152",
+      "start_s": 604,
+      "end_s": 612,
+      "clip_mean_cosine": 0.2001633271574974,
+      "audio_overlap_score": null,
+      "vision_rank": 5,
+      "audio_rank": null,
+      "audio_contribution": 0,
+      "fusion_score": 0.007692307692307693,
+      "fusion_rank": 15,
+      "selection_rank": 4,
+      "frame_times_s": [
+        605,
+        607,
+        609,
+        611
+      ]
+    }
+  ],
+  "vision_plus_sound": [
+    {
+      "window_id": "W098",
+      "start_s": 388,
+      "end_s": 396,
+      "clip_mean_cosine": 0.19011367112398148,
+      "audio_overlap_score": 0.8462999999999999,
+      "vision_rank": 20,
+      "audio_rank": 5,
+      "audio_contribution": 0.007692307692307693,
+      "fusion_score": 0.013942307692307693,
+      "fusion_rank": 1,
+      "selection_rank": 1,
+      "frame_times_s": [
+        389,
+        391,
+        393,
+        395
+      ]
+    },
+    {
+      "window_id": "W100",
+      "start_s": 396,
+      "end_s": 404,
+      "clip_mean_cosine": 0.19125546142458916,
+      "audio_overlap_score": 0.5014,
+      "vision_rank": 17,
+      "audio_rank": 9,
+      "audio_contribution": 0.007246376811594203,
+      "fusion_score": 0.013739883305100696,
+      "fusion_rank": 3,
+      "selection_rank": 2,
+      "frame_times_s": [
+        397,
+        399,
+        401,
+        403
+      ]
+    },
+    {
+      "window_id": "W182",
+      "start_s": 724,
+      "end_s": 732,
+      "clip_mean_cosine": 0.18546561524271965,
+      "audio_overlap_score": 0.9147,
+      "vision_rank": 30,
+      "audio_rank": 2,
+      "audio_contribution": 0.008064516129032258,
+      "fusion_score": 0.013620071684587814,
+      "fusion_rank": 4,
+      "selection_rank": 3,
+      "frame_times_s": [
+        725,
+        727,
+        729,
+        731
+      ]
+    },
+    {
+      "window_id": "W027",
+      "start_s": 104,
+      "end_s": 112,
+      "clip_mean_cosine": 0.18729674816131592,
+      "audio_overlap_score": 0.31133333333333335,
+      "vision_rank": 26,
+      "audio_rank": 10,
+      "audio_contribution": 0.007142857142857143,
+      "fusion_score": 0.012956810631229235,
+      "fusion_rank": 5,
+      "selection_rank": 4,
+      "frame_times_s": [
+        105,
+        107,
+        109,
+        111
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+qid,video_id,ordinal,intervention,original_action,test_action,original_window,test_window,comparable,action_stable,physical_window_changed,action_stable_and_window_changed,original_prompt_tokens,test_prompt_tokens
+P37_102-7-smoke-1,P37_102,1,options_reversed,take knife.,take knife.,2,2,True,True,False,False,1826,1826
+P37_102-7-smoke-1,P37_102,1,segment_labels_reversed,take knife.,take knife.,2,,False,,,,1826,1826
+P37_102-7-smoke-2,P37_102,2,options_reversed,take knife.,take knife.,2,2,True,True,False,False,1826,1826
+P37_102-7-smoke-2,P37_102,2,segment_labels_reversed,take knife.,take knife.,2,,False,,,,1826,1826
+P20_01-5-smoke-1,P20_01,1,options_reversed,,,,,False,,,,1826,1826
+P20_01-5-smoke-1,P20_01,1,segment_labels_reversed,,,,,False,,,,1826,1826
+P20_01-5-smoke-2,P20_01,2,options_reversed,,,,,False,,,,1826,1826
+P20_01-5-smoke-2,P20_01,2,segment_labels_reversed,,,,,False,,,,1826,1826
+P03_117-2-smoke-1,P03_117,1,options_reversed,spread butter onto knife.,spread butter onto knife.,,2,False,,,,1847,1847
+P03_117-2-smoke-1,P03_117,1,segment_labels_reversed,spread butter onto knife.,spread butter onto knife.,,,False,,,,1847,1847
+P03_117-2-smoke-2,P03_117,2,options_reversed,spread butter onto knife.,spread butter onto knife.,,2,False,,,,1847,1847
+P03_117-2-smoke-2,P03_117,2,segment_labels_reversed,spread butter onto knife.,spread butter onto knife.,,,False,,,,1847,1847

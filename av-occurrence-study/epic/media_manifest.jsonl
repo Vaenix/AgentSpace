@@ -1,0 +1,20 @@
+{"pair_id": "P22_03-4", "ordinal": 1, "path": "review_media/P22_03-4_1.mp4", "start_s": 50.29, "end_s": 60.05, "streams": {"video": 9.8, "audio": 9.76}}
+{"pair_id": "P22_03-4", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P30_08-19", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P30_08-19", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P24_09-5", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P24_09-5", "ordinal": 2, "path": "review_media/P24_09-5_2.mp4", "start_s": 808.285, "end_s": 817.91, "streams": {"video": 9.6, "audio": 9.625}}
+{"pair_id": "P23_05-7", "ordinal": 1, "path": "review_media/P23_05-7_1.mp4", "start_s": 718.567, "end_s": 729.35, "streams": {"video": 10.8, "audio": 10.783}}
+{"pair_id": "P23_05-7", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P02_12-2", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P02_12-2", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P10_03-7", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P10_03-7", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P05_07-5", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P05_07-5", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P08_09-4", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P08_09-4", "ordinal": 2, "error": "TimeoutExpired"}
+{"pair_id": "P29_05-7", "ordinal": 1, "error": "TimeoutExpired"}
+{"pair_id": "P29_05-7", "ordinal": 2, "error": " reason.\n[in#0 @ 0x7a37024000] stream 0, contradictionary STSC and STCO\n[in#0 @ 0x7a37024000] error reading header\n[in#0 @ 0x7a36c6c000] Error opening input: Invalid data found when processing input\nError opening input file https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P29/P29_05.MP4.\nError opening input files: Invalid data found when processing input\n"}
+{"pair_id": "P22_01-4", "ordinal": 1, "error": "ValueError"}
+{"pair_id": "P22_01-4", "ordinal": 2, "error": "TimeoutExpired"}

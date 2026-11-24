@@ -1,0 +1,14 @@
+{
+  "video_duration_s": 735.768367,
+  "grid_windows": 183,
+  "unique_frames": 368,
+  "threads": 6,
+  "device": "CPU",
+  "dtype": "float32",
+  "batch_size": 4,
+  "torch": "2.7.0",
+  "transformers": "4.57.1",
+  "input_check_model_loading_query_s": 1.862,
+  "frame_decode_preprocessing_inference_s": 307.078,
+  "max_abs_frame_time_error_s": 0.016667
+}

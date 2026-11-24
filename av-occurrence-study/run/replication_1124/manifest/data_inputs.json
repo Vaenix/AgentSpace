@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "sounds": "225427ab288cc5c72c1680abb29f5ab8ccd3608c3f4cf409541d2c5cf720dd32",
+    "actions": "a3a7ef2e397bd8af12bd0496b09d61b1f2c1f3f6e1726fa86af50a27f4855e87",
+    "videos": "75fd040f6662cb407b4ca2eed4811ca94df280a1aba00b6bf8a5cd286deff382",
+    "epic_55_splits": "5acf8b924a51819b7dda91cb56b867f6fc08d367dd0e3f6c99ecdb0f8a9c45e4",
+    "errata": "5919d70ba14d352022afac3e08fb9076306cbeec772f78aeaa96e74a40aa0d65"
+  },
+  "rules_source_sha256": "d3a953c5be5c410ecd875751decbf8a81ea7a172c24c7cef3e91fe5050101fc0",
+  "excluded_participants": [
+    "P02",
+    "P05",
+    "P08",
+    "P10",
+    "P22",
+    "P23",
+    "P24",
+    "P29",
+    "P30"
+  ],
+  "selection_rule": "Same rules and greedy class/participant balancing as 11-19. Take first six after filtering. Independently attempt media validation in rank order; select first three fully decoded pairs with distinct participants, no model outputs consulted."
+}

@@ -1,0 +1,11 @@
+video_id,media_id,archive_url,offset,method,compressed,size,crc
+video425,aqFfjJrLkBA,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_04.zip?download=true,4118373228,8,328018963,328751383,1455481815
+video441,dXUXfyiX2lA,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_06.zip?download=true,2100327568,8,144194398,145368678,212310244
+video530,t61Wl2HVwFo,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_15.zip?download=true,4516195615,8,43343892,43796534,2155188429
+video253,7E6i3E-fsj4,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_03.zip?download=true,3173827808,8,217788850,218051907,2943865941
+video433,bepwr1-CNRU,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_05.zip?download=true,1131981073,8,30885396,31388781,1140315796
+video389,UeOy1WKeTRY,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_16.zip?download=true,2138700868,8,83144875,83460512,898138583
+video213,0kRsiSdDFYg,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_01.zip?download=true,2137602978,8,465403255,465957470,4245499442
+video218,1NYQf_OXDqI,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_01.zip?download=true,4098880063,8,387786332,389222279,1893150398
+video243,5WIdIs3A9Ok,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_03.zip?download=true,1042844309,8,344108078,345124687,3643334875
+video385,U9mJuUkhUzk,https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/videos_chunked_16.zip?download=true,1019105338,8,385555924,386460600,1596953006

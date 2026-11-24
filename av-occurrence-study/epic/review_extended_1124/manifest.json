@@ -1,0 +1,32 @@
+[
+  {
+    "pair_id": "P23_05-7",
+    "ordinal": 1,
+    "path": "review_extended_1124/P23_05-7_1.mp4",
+    "start_s": 718.567,
+    "end_s": 737.03,
+    "original_end_s": 729.35,
+    "annotated_action_end_s": 735.03,
+    "sha256": "2f4d6f47c23f3d6435787b1e3a6c7d4e5c03c8c9f37a430c7af0d0c647520fa4"
+  },
+  {
+    "pair_id": "P23_05-7",
+    "ordinal": 2,
+    "path": "review_extended_1124/P23_05-7_2.mp4",
+    "start_s": 954.876,
+    "end_s": 971.96,
+    "original_end_s": 965.116,
+    "annotated_action_end_s": 969.96,
+    "sha256": "de9f6d08e0a2619c51729df3469fc48f53ebdedc63a39ef46e7ca8e9555814af"
+  },
+  {
+    "pair_id": "P08_09-4",
+    "ordinal": 2,
+    "path": "review_extended_1124/P08_09-4_2.mp4",
+    "start_s": 128.737,
+    "end_s": 142.72,
+    "original_end_s": 140.134,
+    "annotated_action_end_s": 140.72,
+    "sha256": "0d294e3a68cbd9fb53e4e6d12894bd650628d0e1518be58d3afa517e8f999014"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "retrieved": "2026-11-19",
+  "annotations": [
+    {
+      "file": "sounds.csv",
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/EPIC_Sounds_validation.csv",
+      "sha256": "fff66485d8478762fd9cde1a829e6d91713a5f2f7f917e3af746cf891dd62e5a"
+    },
+    {
+      "file": "actions.csv",
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-100-annotations/master/EPIC_100_validation.csv",
+      "sha256": "35f7932ba0a1127a96cac215a98d35398946f343e3cea9ad6688ed17eee9d75d"
+    },
+    {
+      "file": "videos.csv",
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-100-annotations/master/EPIC_100_video_info.csv",
+      "sha256": "75fd040f6662cb407b4ca2eed4811ca94df280a1aba00b6bf8a5cd286deff382"
+    },
+    {
+      "file": "epic_55_splits.csv",
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-download-scripts/master/data/epic_55_splits.csv",
+      "sha256": "5acf8b924a51819b7dda91cb56b867f6fc08d367dd0e3f6c99ecdb0f8a9c45e4"
+    },
+    {
+      "file": "errata.csv",
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-download-scripts/master/data/errata.csv",
+      "sha256": "5919d70ba14d352022afac3e08fb9076306cbeec772f78aeaa96e74a40aa0d65"
+    }
+  ]
+}

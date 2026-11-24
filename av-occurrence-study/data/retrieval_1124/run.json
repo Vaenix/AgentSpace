@@ -1,0 +1,19 @@
+{
+  "input_sha256": {
+    "media_checks.csv": "54454dab13a17eb4ce28e205b9a70b943d02d9496186f5649e8a119914cd9df0",
+    "audio_leads.csv": "899accd84579bbb6769e19cc16c86eec12ab55ef245d8cda66c7040531fb97d4",
+    "summarize_audio.py": "9ea9080a5157ce6b83a2080ba7eda65b15bb596fb011a4a1537041fcbe216028"
+  },
+  "rank_sha256": "a04b36416ec9eed887c4d743c656f912a0ef12b714a0a659ba6acb9a05827603",
+  "ranking_wall_seconds": 0.000966,
+  "detector_regions": 91,
+  "videos_with_two_or_more_acoustic_candidates": 8,
+  "counts": {
+    "acoustic_top4": 29,
+    "uniform4": 40,
+    "uniform_matched": 29
+  },
+  "reference_pairs": 0,
+  "recall_at_4": null,
+  "recall_status": "未跑"
+}

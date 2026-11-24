@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>重复声画事件 · 独立复核</title>
+<style>
+  :root {
+    font: 16px/1.55 Inter, "PingFang SC", "Noto Sans SC", sans-serif;
+    color: #202b28;
+    background: #f5f7f4;
+    --ink: #202b28;
+    --muted: #52635d;
+    --line: #d9e3de;
+    --green: #175843;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; }
+  h1, h2, h3, p { margin: 0; }
+  h1 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); line-height: 1.2; letter-spacing: -.03em; }
+  h2 { font-size: 1.32rem; }
+  h3 { font-size: 1rem; }
+  a { color: var(--green); text-underline-offset: .2em; }
+  button, select, input, textarea { font: inherit; color: var(--ink); }
+  button, select, input:not([type="checkbox"]), textarea { border: 1px solid var(--line); border-radius: .48rem; background: white; }
+  button { padding: .5rem .8rem; cursor: pointer; }
+  select, input:not([type="checkbox"]), textarea { padding: .42rem .55rem; min-width: 0; width: 100%; }
+  textarea { min-height: 4.6rem; resize: vertical; }
+  :focus-visible { outline: 3px solid #42846d; outline-offset: 2px; }
+  .header { background: white; border-bottom: 1px solid var(--line); }
+  .header-inner, main { max-width: 1320px; margin: auto; padding: 1.25rem clamp(1rem, 3.6vw, 2.65rem); }
+  .header-inner, .pair-head, .clip-head, .export-controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .export-controls { justify-content: flex-start; align-items: end; }
+  .export-controls label { min-width: 6.8rem; }
+  .export-controls label:nth-child(2) { max-width: 10rem; }
+  .primary { color: #fff; background: var(--green); border-color: var(--green); font-weight: 650; }
+  .primary:hover { background: #124432; }
+  .meta { color: var(--muted); font-size: .875rem; }
+  .intro { max-width: 78ch; margin-bottom: 1rem; }
+  #save-status { margin-bottom: .75rem; min-height: 1.4em; }
+  .layout { display: grid; grid-template-columns: 12.8rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+  aside, .pair { padding: 1rem; background: white; border: 1px solid var(--line); border-radius: .85rem; }
+  aside { position: sticky; top: 1rem; }
+  .pair-head { margin-bottom: .85rem; align-items: start; }
+  #target-sound { margin-top: .25rem; font-weight: 650; }
+  .prefix { margin-bottom: .85rem; padding: .65rem .75rem; border: 1px solid var(--line); border-radius: .65rem; }
+  .prefix summary { cursor: pointer; font-weight: 650; }
+  .prefix video { display: block; width: min(100%, 36rem); margin-top: .55rem; background: #18221e; }
+  #queue-nav { display: grid; gap: .35rem; margin-top: .7rem; }
+  #queue-nav button { text-align: left; display: flex; justify-content: space-between; align-items: center; gap: .3rem; font-size: .9rem; }
+  #queue-nav button[aria-current="true"] { border-color: #6e9b88; background: #e8f3eb; font-weight: 650; }
+  .clip-grid, .pair-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .85rem; }
+  .clip { background: #f8faf8; border: 1px solid var(--line); border-radius: .65rem; overflow: hidden; }
+  .clip-head, .clip-body { padding: .75rem; }
+  .clip-head { padding-bottom: .55rem; }
+  .player { position: relative; }
+  .player video { width: 100%; display: block; background: #18221e; aspect-ratio: 16 / 9; }
+  .player audio { width: 100%; display: block; margin: .5rem auto; }
+  .player[data-mode="audio"] video { display: none; }
+  .clip-body, .field-grid, .pair-fields { display: grid; gap: .65rem; }
+  .field-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  label { display: grid; gap: .24rem; font-size: .875rem; font-weight: 550; }
+  .clip-tools { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+  .clip-tools label { display: inline-flex; gap: .25rem; align-items: center; font-weight: 500; }
+  .full { grid-column: 1 / -1; }
+  .judgment { border: 0; margin: 1rem 0 0; padding: 0; }
+  .judgment legend { padding: 0; margin-bottom: .65rem; font-weight: 700; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  footer { margin-top: 1.15rem; }
+  @media (max-width: 940px) {
+    .layout { grid-template-columns: minmax(0,1fr); }
+    aside { position: static; }
+    #queue-nav { grid-template-columns: repeat(auto-fit,minmax(8rem,1fr)); }
+  }
+  @media (max-width: 620px) {
+    .clip-grid, .pair-fields { grid-template-columns: minmax(0,1fr); }
+    .export-controls { gap: .6rem; }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>重复声画事件盲核</h1>
+      <div class="export-controls">
+        <label>复核人
+          <select id="slot"><option value="">选择复核身份</option><option value="A">复核人 A</option><option value="B">复核人 B</option></select>
+        </label>
+        <label>复核人代号
+          <input id="reviewer-id" maxlength="50" autocomplete="off" placeholder="例如 R07" disabled>
+        </label>
+        <button type="button" class="primary" id="export" disabled>下载本人的记录</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <p class="intro">请用自己的身份独立核查。先听看两个片段并写下实际发生的事，再从原片确认它们是不是同类声音真正的第一次和第二次。信息不足就选「不确定」，同一次发声被切成两段或两次之后的动作相同可选「排除」。</p>
+    <p id="save-status" class="meta" role="status"></p>
+    <div class="layout" id="review-content" hidden>
+      <aside aria-label="候选列表">
+        <h2>待核候选</h2>
+        <p class="meta" id="progress"></p>
+        <nav id="queue-nav" aria-label="切换候选题对"></nav>
+      </aside>
+      <article class="pair" aria-label="当前候选">
+        <div class="pair-head">
+          <div><h2 id="pair-title" tabindex="-1"></h2><p class="meta" id="pair-meta"></p><p id="target-sound"></p></div>
+          <a id="source" target="_blank" rel="noopener noreferrer">打开原片（需联网）</a>
+        </div>
+        <details id="prefix" class="prefix" hidden>
+          <summary>从片头连续回看（离线）</summary>
+          <video controls playsinline preload="none" aria-label="从片头连续播放"></video>
+          <p class="meta" id="prefix-status" role="status"></p>
+        </details>
+        <div id="clips" class="clip-grid"></div>
+        <fieldset class="judgment">
+          <legend>综合判断</legend>
+          <div id="pair-fields" class="pair-fields"></div>
+        </fieldset>
+      </article>
+    </div>
+    <footer class="meta">导出的 JSON 仅包含当前复核人的记录。建议纳入的候选需在两份记录对照后另行确认金标。</footer>
+    <noscript>请在支持 JavaScript 的浏览器中打开复核页。</noscript>
+  </main>
+  <template id="clip-template">
+    <section class="clip">
+      <div class="clip-head"><h3></h3><a target="_blank" rel="noopener noreferrer">在原片查看本段</a></div>
+      <div class="player">
+        <video controls playsinline preload="metadata"></video>
+        <audio hidden controls preload="none"></audio>
+      </div>
+      <div class="clip-body">
+        <p class="meta clip-status" role="status"></p>
+        <p class="meta clip-time" hidden></p>
+        <div class="clip-tools">
+          <label><input type="checkbox" data-mode="mute">静音看画面</label>
+          <label><input type="checkbox" data-mode="audio">遮住画面听声音</label>
+        </div>
+        <label>实际听到的声音 <textarea data-key="sound" placeholder="描述声音和可听边界"></textarea></label>
+        <div class="field-grid">
+          <label>发声开始（原片秒数）<input type="number" min="0" step="0.001" data-key="sound_start_s"></label>
+          <label>发声结束（原片秒数）<input type="number" min="0" step="0.001" data-key="sound_end_s"></label>
+        </div>
+        <label>发声结束后的第一个可见动作 <textarea data-key="action" placeholder="描述动作。动作不明确时写下原因"></textarea></label>
+        <div class="field-grid">
+          <label>动作开始（原片秒数）<input type="number" min="0" step="0.001" data-key="action_start_s"></label>
+          <label>动作结束（原片秒数）<input type="number" min="0" step="0.001" data-key="action_end_s"></label>
+        </div>
+      </div>
+    </section>
+  </template>
+  <script type="application/json" id="queue-data">{"revision": "35cbbebe4b9cc9285a7bfb80010d4a034aeaa4e636401e64b379a9df66f5500d", "pairs": [{"pair_id": "P22_03-4", "video_id": "P22_03", "duration_s": 1187.970767, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P22/P22_03.MP4", "clips": [{"ordinal": 1, "start_s": 50.29, "local_path": "epic/review_media/P22_03-4_1.mp4"}, {"ordinal": 2, "start_s": 374.226, "local_path": "epic/review_media/P22_03-4_2.mp4"}], "target_sound": "窸窣声"}, {"pair_id": "P30_08-19", "video_id": "P30_08", "duration_s": 1122.14, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P30/P30_08.MP4", "clips": [{"ordinal": 1, "start_s": 34.617, "local_path": "epic/review_media/P30_08-19_1.mp4"}, {"ordinal": 2, "start_s": 133.133, "local_path": "epic/review_media/P30_08-19_2.mp4"}], "target_sound": "倾倒声"}, {"pair_id": "P24_09-5", "video_id": "P24_09", "duration_s": 1968.6006170000003, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P24/P24_09.MP4", "clips": [{"ordinal": 1, "start_s": 45.32, "local_path": "epic/review_media/P24_09-5_1.mp4"}, {"ordinal": 2, "start_s": 808.285, "local_path": "epic/review_media/P24_09-5_2.mp4"}], "target_sound": "流水声"}, {"pair_id": "P23_05-7", "video_id": "P23_05", "duration_s": 1168.901717, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P23/P23_05.MP4", "clips": [{"ordinal": 1, "start_s": 718.567, "local_path": "epic/review_extended_1124/P23_05-7_1.mp4"}, {"ordinal": 2, "start_s": 954.876, "local_path": "epic/review_extended_1124/P23_05-7_2.mp4"}], "target_sound": "脚步声"}, {"pair_id": "P02_12-2", "video_id": "P02_12", "duration_s": 1315.333, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P02/P02_12.MP4", "clips": [{"ordinal": 1, "start_s": 412.341, "local_path": "epic/review_media/P02_12-2_1.mp4"}, {"ordinal": 2, "start_s": 453.566, "local_path": "epic/review_media/P02_12-2_2.mp4"}], "target_sound": "切剁声"}, {"pair_id": "P10_03-7", "video_id": "P10_03", "duration_s": 1842.442917, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P10/P10_03.MP4", "clips": [{"ordinal": 1, "start_s": 0, "local_path": "epic/review_media/P10_03-7_1.mp4"}, {"ordinal": 2, "start_s": 22.716, "local_path": "epic/review_media/P10_03-7_2.mp4"}], "target_sound": "脚步声", "prefix_path": "epic/review_prefix_1124/P10_03_prefix.mp4"}, {"pair_id": "P05_07-5", "video_id": "P05_07", "duration_s": 801.867733, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P05/P05_07.MP4", "clips": [{"ordinal": 1, "start_s": 0, "local_path": "epic/review_media/P05_07-5_1.mp4"}, {"ordinal": 2, "start_s": 99.225, "local_path": "epic/review_media/P05_07-5_2.mp4"}], "target_sound": "流水声", "prefix_path": "epic/review_prefix_1124/P05_07_prefix.mp4"}, {"pair_id": "P08_09-4", "video_id": "P08_09", "duration_s": 620.486533, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P08/P08_09.MP4", "clips": [{"ordinal": 1, "start_s": 58.529, "local_path": "epic/review_media/P08_09-4_1.mp4"}, {"ordinal": 2, "start_s": 128.737, "local_path": "epic/review_extended_1124/P08_09-4_2.mp4"}], "target_sound": "窸窣声"}, {"pair_id": "P29_05-7", "video_id": "P29_05", "duration_s": 1821.7365670000002, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P29/P29_05.MP4", "clips": [{"ordinal": 1, "start_s": 15.98, "local_path": "epic/review_media/P29_05-7_1.mp4"}, {"ordinal": 2, "start_s": 144.435, "local_path": "epic/review_media/P29_05-7_2.mp4"}], "target_sound": "脚步声"}, {"pair_id": "P22_01-4", "video_id": "P22_01", "duration_s": 1091.292517, "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P22/P22_01.MP4", "clips": [{"ordinal": 1, "start_s": 93.59, "local_path": "epic/review_media/P22_01-4_1.mp4"}, {"ordinal": 2, "start_s": 394.399, "local_path": "epic/review_media/P22_01-4_2.mp4"}], "target_sound": "窸窣声"}]}</script>
+  <script>
+    "use strict";
+
+    const {revision, pairs} = JSON.parse(document.querySelector("#queue-data").textContent);
+    const storagePrefix = "av-occurrence-review:" + revision + ":";
+    const dataset = "EPIC-SOUNDS / EPIC-KITCHENS-100";
+    const slot = document.querySelector("#slot");
+    const reviewerId = document.querySelector("#reviewer-id");
+    const nav = document.querySelector("#queue-nav");
+    const status = document.querySelector("#save-status");
+    const dispositionLabels = {"propose-include": "建议纳入", uncertain: "不确定", exclude: "排除"};
+    const yesNo = [["", "待填写"], ["yes", "是"], ["no", "否"], ["uncertain", "不确定"], ["unavailable", "素材不可用"]];
+    const judgments = [
+      ["independent", "两段是同类声音的两次独立发生？", yesNo],
+      ["first_second", "完整原片中，它们确实是该类声音的前两次？", yesNo],
+      ["actions_differ", "两次声音结束后的首个可见动作明确且不同？", yesNo],
+      ["answerable_without_audio", "静音看画面时，还能判定题目所指的那次发声及其后续动作吗？", yesNo],
+      ["answerable_without_vision", "只听声音时，还能判定题目所指的那次发声及其后续动作吗？", yesNo],
+      ["disposition", "本人的复核结论", [["", "待填写"], ...Object.entries(dispositionLabels)]]
+    ];
+    const data = Object.create(null);
+    let selected = 0;
+    let hasStorage = true;
+
+    function reviewer() {
+      const name = slot.value;
+      if (data[name]) return data[name];
+      let saved;
+      try {
+        saved = JSON.parse(localStorage.getItem(storagePrefix + name));
+      } catch {
+        hasStorage = false;
+      }
+      data[name] = saved && typeof saved === "object" ? saved : {name: "", records: {}};
+      return data[name];
+    }
+
+    function save() {
+      try {
+        localStorage.setItem(storagePrefix + slot.value, JSON.stringify(reviewer()));
+        hasStorage = true;
+      } catch {
+        hasStorage = false;
+      }
+      status.textContent = hasStorage ? "" : "浏览器当前无法保留本地进度，请在关闭页面前下载记录。";
+    }
+
+    function record(entry) {
+      const owner = reviewer();
+      owner.records[entry.pair_id] ??= {clips: {}, judgments: {}};
+      return owner.records[entry.pair_id];
+    }
+
+    function renderNav() {
+      const records = reviewer().records;
+      const completed = pairs.filter(entry => records[entry.pair_id]?.judgments.disposition).length;
+      document.querySelector("#progress").textContent = "已判断 " + completed + " / " + pairs.length + " 对";
+      nav.replaceChildren(...pairs.map((entry, index) => {
+        const button = document.createElement("button");
+        const label = document.createElement("span");
+        const state = document.createElement("span");
+        label.textContent = entry.video_id;
+        state.className = "meta";
+        state.textContent = dispositionLabels[records[entry.pair_id]?.judgments.disposition] ?? "待填";
+        button.type = "button";
+        button.setAttribute("aria-current", index === selected ? "true" : "false");
+        button.append(label, state);
+        button.addEventListener("click", () => {
+          selected = index;
+          renderPair();
+          document.querySelector("#pair-title").focus();
+        });
+        return button;
+      }));
+    }
+
+    function asTime(seconds) {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor(seconds / 60) % 60;
+      const rest = (seconds % 60).toFixed(3).padStart(6, "0");
+      return (hours ? hours + ":" : "") + String(minutes).padStart(2, "0") + ":" + rest;
+    }
+
+    function labeledControl(title, input, full = false) {
+      const label = document.createElement("label");
+      if (full) label.className = "full";
+      label.append(title, input);
+      return label;
+    }
+
+    function renderJudge(entry) {
+      const inputs = judgments.map(([key, title, options]) => {
+        const input = document.createElement("select");
+        for (const [value, text] of options) input.add(new Option(text, value));
+        input.value = record(entry).judgments[key] ?? "";
+        input.addEventListener("change", () => {
+          record(entry).judgments[key] = input.value;
+          save();
+          if (key === "disposition") renderNav();
+        });
+        return labeledControl(title, input);
+      });
+      const notes = document.createElement("textarea");
+      notes.value = record(entry).judgments.notes ?? "";
+      notes.addEventListener("input", () => {
+        record(entry).judgments.notes = notes.value;
+        save();
+      });
+      inputs.push(labeledControl("依据或疑问", notes, true));
+      document.querySelector("#pair-fields").replaceChildren(...inputs);
+    }
+
+    function renderClip(entry, clip, index) {
+      const section = document.querySelector("#clip-template").content.firstElementChild.cloneNode(true);
+      const title = "片段 " + (index === 0 ? "A" : "B");
+      section.querySelector("h3").textContent = title;
+      const source = new URL(entry.media_url);
+      source.hash = "t=" + clip.start_s;
+      section.querySelector("a").href = source.href;
+      const video = section.querySelector("video");
+      const audio = section.querySelector("audio");
+      video.setAttribute("aria-label", title + "视听播放");
+      audio.setAttribute("aria-label", title + "音频播放");
+      const message = section.querySelector(".clip-status");
+      const clipTime = section.querySelector(".clip-time");
+      const time = asTime(clip.start_s) + "（" + clip.start_s + " 秒）";
+      message.textContent = "正在读取本地片段 · 原片起点 " + time;
+      video.addEventListener("loadedmetadata", () => {
+        message.textContent = "原片起点 " + time + "。播放器时间为片段内时间。";
+      });
+      video.addEventListener("error", () => {
+        message.textContent = "本地片段不可播放。可从上方原片链接查看 " + time + " 附近。";
+        clipTime.hidden = true;
+      });
+      video.src = clip.local_path;
+      const mute = section.querySelector('[data-mode="mute"]');
+      const audioOnly = section.querySelector('[data-mode="audio"]');
+      const updateTime = () => {
+        const player = audioOnly.checked ? audio : video;
+        clipTime.hidden = player.readyState < 1;
+        clipTime.textContent = "当前原片时间 " + (clip.start_s + player.currentTime).toFixed(3) + " 秒";
+      };
+      for (const player of [video, audio]) {
+        player.addEventListener("loadedmetadata", updateTime);
+        player.addEventListener("timeupdate", updateTime);
+      }
+      mute.addEventListener("change", () => { video.muted = mute.checked; });
+      audioOnly.addEventListener("change", () => {
+        if (audioOnly.checked) {
+          video.pause();
+          if (!audio.src) audio.src = clip.local_path;
+          audio.currentTime = video.currentTime;
+        } else {
+          audio.pause();
+          video.currentTime = audio.currentTime;
+        }
+        audio.hidden = !audioOnly.checked;
+        mute.disabled = audioOnly.checked;
+        section.querySelector(".player").dataset.mode = audioOnly.checked ? "audio" : "video";
+        updateTime();
+      });
+      const id = String(clip.ordinal);
+      const detail = record(entry).clips;
+      section.querySelectorAll("[data-key]").forEach(input => {
+        const key = input.dataset.key;
+        input.max = entry.duration_s;
+        input.value = detail[id]?.[key] ?? "";
+        input.setAttribute("aria-label", title + " " + input.parentElement.firstChild.textContent.trim());
+        input.addEventListener("input", () => {
+          detail[id] ??= {};
+          detail[id][key] = input.type === "number"
+            ? (input.value === "" || !input.validity.valid ? null : input.valueAsNumber)
+            : input.value;
+          save();
+        });
+      });
+      return section;
+    }
+
+    function renderPair() {
+      const entry = pairs[selected];
+      document.querySelector("#clips").querySelectorAll("video,audio").forEach(player => player.pause());
+      document.querySelector("#pair-title").textContent = entry.video_id;
+      document.querySelector("#pair-meta").textContent = "候选 " + entry.pair_id + " · 原片 " + asTime(entry.duration_s);
+      document.querySelector("#target-sound").textContent = "待核查声音：" + entry.target_sound;
+      document.querySelector("#source").href = entry.media_url;
+      const prefix = document.querySelector("#prefix");
+      const player = prefix.querySelector("video");
+      player.pause();
+      prefix.open = false;
+      prefix.hidden = !entry.prefix_path;
+      document.querySelector("#prefix-status").textContent = "";
+      player.removeAttribute("src");
+      if (entry.prefix_path) player.src = entry.prefix_path;
+      player.load();
+      document.querySelector("#clips").replaceChildren(...entry.clips.map((clip, index) => renderClip(entry, clip, index)));
+      renderJudge(entry);
+      renderNav();
+    }
+
+    slot.addEventListener("change", () => {
+      const active = Boolean(slot.value);
+      document.querySelector("#review-content").hidden = !active;
+      document.querySelector("#export").disabled = !active;
+      reviewerId.disabled = !active;
+      reviewerId.value = active ? reviewer().name : "";
+      status.textContent = hasStorage ? "" : "浏览器当前无法保留本地进度，请在关闭页面前下载记录。";
+      if (active) {
+        selected = Math.max(0, pairs.findIndex(entry => entry.pair_id === location.hash.slice(1)));
+        renderPair();
+      } else {
+        document.querySelector("#prefix video").pause();
+        document.querySelector("#clips").replaceChildren();
+        document.querySelector("#pair-fields").replaceChildren();
+        nav.replaceChildren();
+      }
+    });
+    window.addEventListener("hashchange", () => {
+      if (!slot.value) return;
+      const index = pairs.findIndex(entry => entry.pair_id === location.hash.slice(1));
+      if (index >= 0) {
+        selected = index;
+        renderPair();
+      }
+    });
+    reviewerId.addEventListener("input", () => {
+      reviewer().name = reviewerId.value;
+      save();
+    });
+    document.querySelector("#prefix").addEventListener("toggle", event => {
+      if (!event.target.open) event.target.querySelector("video").pause();
+    });
+    document.querySelector("#prefix video").addEventListener("error", () => {
+      if (pairs[selected].prefix_path) {
+        document.querySelector("#prefix-status").textContent = "本地连续片不可播放，请打开原片。";
+      }
+    });
+    document.querySelector("#export").addEventListener("click", () => {
+      const own = reviewer();
+      if (!own.name.trim()) {
+        status.textContent = "请输入复核人代号再下载。";
+        reviewerId.focus();
+        return;
+      }
+      const records = pairs.map(entry => ({
+        pair_id: entry.pair_id,
+        video_id: entry.video_id,
+        clips: own.records[entry.pair_id]?.clips ?? {},
+        judgments: own.records[entry.pair_id]?.judgments ?? {}
+      }));
+      const result = {
+        schema_version: 1,
+        record_type: "independent_review",
+        dataset,
+        queue_revision: revision,
+        reviewer: {slot: slot.value, code: own.name.trim()},
+        exported_at: new Date().toISOString(),
+        records
+      };
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(new Blob([JSON.stringify(result, null, 2) + "\n"], {type: "application/json"}));
+      link.href = url;
+      link.download = "av-review-" + slot.value + ".json";
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      status.textContent = "已生成当前复核人的 JSON 记录。";
+    });
+
+    slot.value = "";
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "prompts_sha256": "1ad4bb3f0d20c67feb261c6ac564f48f9f73259484781135b59f8dc953c2e727",
+  "frame_sha256": {
+    "frames/P37_102-7/window-1-frame-1.png": "bbec9cdd872042dd70782152a740042b0b999a6e29aa789a8f055cec86dd1a85",
+    "frames/P37_102-7/window-1-frame-2.png": "dd27968aae6758e097cf402a4196dd3e093cf2df2200fbbf758baf966f96c621",
+    "frames/P37_102-7/window-1-frame-3.png": "4b9e6a514cbecb2dd0d3d5d0640b2bf33bc51d3d455ab5ae3e88036068cb8c5a",
+    "frames/P37_102-7/window-2-frame-1.png": "ed23c352186bf963737b9ca49e803f9dd297e514ab32b0b3b78048a05813de7a",
+    "frames/P37_102-7/window-2-frame-2.png": "8785f753768227f6d6e66b6849cfef534843f0561d5ee8cc8d704162697aea19",
+    "frames/P37_102-7/window-2-frame-3.png": "da6bdd639b9bde9566c34a16a8bb68481041759acffdbea461e4e5b3ac24195f",
+    "frames/P20_01-5/window-1-frame-1.png": "2bfc4abdf934f3f8c5c477b6ba162368d6a61ace8dc0fe783550fdc7235f4e6a",
+    "frames/P20_01-5/window-1-frame-2.png": "51aa6dded7aaeab5e6d5d2f048a3af5fb15cea537a5afbad68968605116e643c",
+    "frames/P20_01-5/window-1-frame-3.png": "88120b8458c08b410855fdf8d01bd8a1e71d55bf01e5e51bb27a2d0ae59fd8c1",
+    "frames/P20_01-5/window-2-frame-1.png": "17bc880ff7afd137705bbedcaea24982e7038ac6ce6360c8cbc307f2ab66bf49",
+    "frames/P20_01-5/window-2-frame-2.png": "f8d18f0d02b2141469c195e21fdfeb05be219c71d5554e7dad3bfb0151cb9394",
+    "frames/P20_01-5/window-2-frame-3.png": "b0e65c9648969ab1009c6e91699bd067b2035a6a49b42ba6c34962022b6ec3ad",
+    "frames/P03_117-2/window-1-frame-1.png": "48ae643883f1bdf7b7a8cca0fe0cc7152e3b54b31b264beb26f4744eff599ad9",
+    "frames/P03_117-2/window-1-frame-2.png": "65a7805f85a0fc39b42360bc5c6b2bdf189397d1720ebd8aaa319a3f68596bf5",
+    "frames/P03_117-2/window-1-frame-3.png": "03847c549712e49d45b6efec8215768ac482f7b1448a41b51a70dbad05daf9d5",
+    "frames/P03_117-2/window-2-frame-1.png": "021b373d34b437d0cfc321d70e01ed08ef54a794521770b1e47c34f0d8eb5493",
+    "frames/P03_117-2/window-2-frame-2.png": "e3688b96b9a79ea37f7c20c2505771bfb921b815e57c044f8dd2d36e1429e433",
+    "frames/P03_117-2/window-2-frame-3.png": "b658bd8dfd59db2a5fbbfb258a2ac2f9c1bb0e26628b7ac444d857d897ac352b"
+  },
+  "runner_sha256": "feae42687a50112191ea457867e1944a6818e2fb26e1296fa492c5c253faddb6",
+  "checkpoint_revision": "fdcc572e8b05ba9daeaf71be8c9e4267c826ff9b",
+  "condition_order": [
+    "original",
+    "options_reversed",
+    "segment_labels_reversed"
+  ]
+}

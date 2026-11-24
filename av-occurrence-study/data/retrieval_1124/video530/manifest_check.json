@@ -1,0 +1,30 @@
+{
+  "video_id": "video530",
+  "source_sha256": "02a6a5798c504227aa09c40f1b30f7acabb84d46b9e8e6cf706cb25b7f8eaeb3",
+  "frame_offsets_in_window_s": [
+    1.5,
+    4.5,
+    7.5
+  ],
+  "n_distinct_images": 30,
+  "image_space": "448x448 RGB PNG, letterboxed",
+  "conditions": {
+    "acoustic_top4": {
+      "windows": 3,
+      "frames": 9,
+      "status": "runner_input_validated"
+    },
+    "uniform4": {
+      "windows": 4,
+      "frames": 12,
+      "status": "runner_input_validated"
+    },
+    "uniform_matched": {
+      "windows": 3,
+      "frames": 9,
+      "status": "runner_input_validated"
+    }
+  },
+  "extract_and_validate_seconds": 3.969,
+  "qwen_generation": "未跑；此处只检验输入和提示构造"
+}

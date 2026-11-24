@@ -1,0 +1,77 @@
+{
+  "dataset": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench",
+  "revision": "3b99330137750531919616c4c37156a40473148c",
+  "files": {
+    "a_background_music.jsonl": {
+      "rows": 131,
+      "sha256": "d8085d724ac0cc8a0f2ae63917956c31da82f66d8e6293dfbfa20c317905a0ce"
+    },
+    "a_environmental_sound.jsonl": {
+      "rows": 88,
+      "sha256": "5a5e7af576566093dce69dc6fd8eb9a1c5e2c97d5f3d70211a0b315cdc0b3c46"
+    },
+    "a_speech_context.jsonl": {
+      "rows": 130,
+      "sha256": "ffdea1f5cfde262fa13a634fc11a851531e9c0d70802119d10e9cfee883a3f49"
+    },
+    "av_backward_causal_reasoning.jsonl": {
+      "rows": 89,
+      "sha256": "2502bd1076e2871cb9df870cfad8e2ca439e0e1b2b619f5abd013567e5691de9"
+    },
+    "av_cross_modality_matching.jsonl": {
+      "rows": 85,
+      "sha256": "d04dbbba9f4401b804f93bdf9814d17038b11dc58a1b03a5237e4978adbc5ab7"
+    },
+    "av_entity_tracking.jsonl": {
+      "rows": 124,
+      "sha256": "1ea8f03f17a27d7a76435aabcf8f741b20d721fdf2824c84cc84dea2564e4b55"
+    },
+    "av_forward_causal_reasoning.jsonl": {
+      "rows": 73,
+      "sha256": "20dbaa0a5f8b8fd980669a4e965b821886854cbecfbfdc3bce4876d0a3100e63"
+    },
+    "av_information_retrieval.jsonl": {
+      "rows": 140,
+      "sha256": "f1a5cd47eebac36fe6125c478c1f71424a6892f47e97b24f1816ded3c6e90ebc"
+    },
+    "av_spatiotemporal_localization.jsonl": {
+      "rows": 227,
+      "sha256": "60ce4636b51d7a8cd5bc81ddf93fb120dbf641fedff00997cab40a1e53c9717d"
+    },
+    "av_temporal_sequencing.jsonl": {
+      "rows": 97,
+      "sha256": "f088ac8800338ef517c19bca453d5191dfe22cec41e670c1061c7a8743b57014"
+    },
+    "mh_audio_to_visual_deception.jsonl": {
+      "rows": 229,
+      "sha256": "9bc7ef6b87ccb73846bc412a405757a3274383ec2f0ae0a530860f0a2a47ab2c"
+    },
+    "mh_temporal_splicing_fallacy.jsonl": {
+      "rows": 166,
+      "sha256": "effba8d6c590b669c51853440fb8390a555668df0429defc3e0c10f802b8e96c"
+    },
+    "mh_visual_to_audio_deception.jsonl": {
+      "rows": 230,
+      "sha256": "c90e6f378e0c42aa2faf99432dbc1f61e34f1cfe03f0a3b7d5fc09d27285c021"
+    },
+    "v_spatial_reasoning.jsonl": {
+      "rows": 165,
+      "sha256": "293d053401595354f18bc7b9f205d1b2161827a1d382cb8a9fd18fa3c20540c0"
+    },
+    "v_visual_counting.jsonl": {
+      "rows": 226,
+      "sha256": "245d051683b952aff7d4e8f3498c1cfe92ebb053ce3eede464d64bb34471e638"
+    },
+    "video_name_mapping.jsonl": {
+      "rows": 578,
+      "sha256": "9690729364dcf4a5f3a2d61503b4633cfa12d26e7c4601b338617f9720ec61b7"
+    }
+  },
+  "counts": {
+    "questions": 2200,
+    "unique_question_videos": 578,
+    "input_evidence_mentions": 8111,
+    "distinct_video_cue_hits": 131,
+    "distinct_hit_videos": 113
+  }
+}

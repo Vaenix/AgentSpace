@@ -1,0 +1,16 @@
+{
+  "options_reversed": {
+    "all_questions": 6,
+    "comparable_questions": 2,
+    "action_stable": 2,
+    "physical_window_changed": 0,
+    "action_stable_and_window_changed": 0
+  },
+  "segment_labels_reversed": {
+    "all_questions": 6,
+    "comparable_questions": 0,
+    "action_stable": 0,
+    "physical_window_changed": 0,
+    "action_stable_and_window_changed": 0
+  }
+}

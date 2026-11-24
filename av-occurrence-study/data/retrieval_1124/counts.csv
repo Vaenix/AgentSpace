@@ -1,0 +1,11 @@
+video_id,cue,duration_s,raw_regions,acoustic_top4,uniform4,uniform_matched,acoustic_status
+video425,微波炉完成提示音,2307.855,11,4,4,4,has_candidates
+video441,警长敲钟,1950.058,3,3,4,3,has_candidates
+video530,观众掌声,735.771,3,3,4,3,has_candidates
+video253,球场哨声,893.574,0,0,4,0,no_candidate_over_threshold
+video433,观众掌声,1080.587,1,1,4,1,has_candidates
+video389,观众掌声,615.793,18,4,4,4,has_candidates
+video213,球场哨声,2532.461,9,4,4,4,has_candidates
+video218,泼水声,3552.142,8,4,4,4,has_candidates
+video243,入水／溅水声,2664.049,2,2,4,2,has_candidates
+video385,观众掌声,2735.636,36,4,4,4,has_candidates

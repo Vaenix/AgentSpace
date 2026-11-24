@@ -1,0 +1,14 @@
+{
+  "audio_vote_rows": 25,
+  "windows_with_audio_match": 10,
+  "fusion_and_ranking_seconds": 0.001708,
+  "sha256": {
+    "rules.json": "1e515d1c3ad3782d4482b3f1f450ae5990f89f65aa10b1e16eee928258425e6e",
+    "frame_cosines.csv": "f467a1ebaff1a9f83a304912f71e402fc05f14ff9fc92adf413e74495d41dbff",
+    "audio_votes.csv": "db7a45cd2272a385eb1afd4737c077f6069392cd57326bd4915f013918fe7f74",
+    "grid_scores.csv": "1ee30218842b3514029fc39b69b35d5e9ae4a18a7d5d7110b9756199fc6b47a8",
+    "top4.json": "36a31a4afca1145c6880b27f37a56e1005a0432f0913d36158725471f3b7803f"
+  },
+  "formal_recall_at_4": null,
+  "reference_status": "未跑"
+}
