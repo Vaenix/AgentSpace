@@ -262,9 +262,13 @@ class Reversal(SyntheticCase):
                                     self.gold([pair], {pair["pair_id"]: include(("wipe table", "rinse sponge"))}))
         self.assertEqual(metric(report, "segment_labels_reversed", "localization_correct"), (2, 2))
         strict = report["scoring"]["rules"]["strict"]["conditions"]["segment_labels_reversed"]
-        self.assertEqual((strict["status"], strict["metrics"]), ("未跑", None))
-        self.assertEqual(strict["reply_statuses"]["unusable_reply"], 2)
-        self.assertEqual(report["scoring"]["rules"]["strict"]["status"], "部分完成")
+        # The strict rule rejects the event field only; the valid action is still scored.
+        self.assertEqual(strict["status"], "已评分")
+        self.assertEqual(strict["reply_statuses"]["fields"]["answer"]["valid"], 2)
+        self.assertEqual(strict["reply_statuses"]["fields"]["event"]["invalid_field"], 2)
+        for flag, expected in (("prediction_present", (2, 2)), ("abstained", (0, 2)), ("answer_correct", (2, 2)),
+                               ("localization_correct", (0, 2)), ("joint_pair_success", (0, 1))):
+            self.assertEqual(metric(report, "segment_labels_reversed", flag, rule="strict"), expected, flag)
 
 
 class Mapping(SyntheticCase):
@@ -279,6 +283,11 @@ class Mapping(SyntheticCase):
         self.assertEqual(pending["denominators"]["pairs"]["mapping_pending"], 1)
         self.assertEqual(pending["status"], "未跑")
         self.assertIsNone(pending["scoring"]["rules"]["matched_seconds"]["conditions"]["original"]["metrics"])
+
+        self.assertEqual(pending["denominators"]["questions"]["aligned"], 1)
+        self.assertEqual(pending["denominators"]["questions"]["mapping_pending"], 1)
+        self.assertEqual(pending["denominators"]["aligned_questions_in_unscored_pairs"]["mapping_pending"], 1)
+        self.assertEqual(pending["denominators"]["scored_questions"], 0)
 
         mapped = align.build_report(batch, gold, self.write_mapping(rows, {"take lid.": "金标1"}))
         self.assertEqual(mapped["pairs"][0]["status"], "aligned")
@@ -301,6 +310,11 @@ class Mapping(SyntheticCase):
         report = align.build_report(batch, gold, self.write_mapping(self.template(batch, gold), {"fill kettle.": "无对应"}))
         self.assertEqual(report["pairs"][0]["status"], "answer_not_in_original_options")
         self.assertEqual(report["denominators"]["pairs"]["answer_not_in_original_options"], 1)
+        self.assertEqual({key: report["denominators"]["questions"][key]
+                          for key in ("aligned", "answer_not_in_original_options", "mapping_pending")},
+                         {"aligned": 1, "answer_not_in_original_options": 1, "mapping_pending": 0})
+        self.assertEqual(report["denominators"]["aligned_questions_in_unscored_pairs"],
+                         {"mapping_pending": 0, "answer_not_in_original_options": 1})
         listed = report["answer_not_in_original_options"]
         self.assertEqual([(item["gold_qid"], item["gold_answer_text"]) for item in listed],
                          [(f"{pair['pair_id']}-2", "put kettle on base")])
@@ -317,6 +331,50 @@ class Mapping(SyntheticCase):
         rows[0]["金标指纹"] = "0" * 64
         with self.assertRaisesRegex(ValueError, "does not match"):
             align.build_report(batch, gold, self.write_mapping(rows, {}))
+
+    def test_blank_duplicate_or_missing_rows_are_rejected(self):
+        pair = synthetic_pair(9, ("lift jar", "open jar"))
+        batch = synthetic_batch([pair])
+        gold = self.gold([pair], {pair["pair_id"]: include(("lift glass jar", "twist jar lid"))})
+        rows = self.template(batch, gold)
+        with self.assertRaisesRegex(ValueError, "exactly once"):
+            align.build_report(batch, gold, self.write_mapping([rows[1], dict(rows[1])], {}))
+        with self.assertRaisesRegex(ValueError, "exactly once"):
+            align.build_report(batch, gold, self.write_mapping([rows[0]], {}))
+
+
+class FieldStatuses(SyntheticCase):
+    def test_each_field_keeps_its_own_status(self):
+        pair = synthetic_pair(10, ("pour water", "stir tea"))
+
+        def respond(prompt, item):
+            if prompt["condition"] == "original":
+                if prompt["ordinal"] == 1:
+                    return reply(letter_for(prompt, 1, item), "E09")  # valid action, invalid event
+                return reply("Z", code_for(prompt, 2))  # invalid action, valid event
+            if prompt["condition"] == "options_reversed":
+                return "not json" if prompt["ordinal"] == 1 else reply(None, None)
+            return None if prompt["ordinal"] == 1 else reply(letter_for(prompt, 2, item), None)
+
+        report = align.build_report(synthetic_batch([pair], respond),
+                                    self.gold([pair], {pair["pair_id"]: include(("pour water", "stir tea"))}))
+        groups = report["scoring"]["rules"]["matched_seconds"]["conditions"]
+        self.assertEqual(groups["original"]["reply_statuses"]["fields"]["answer"]["invalid_field"], 1)
+        self.assertEqual(groups["original"]["reply_statuses"]["fields"]["event"]["invalid_field"], 1)
+        for flag, expected in (("prediction_present", (2, 2)), ("abstained", (0, 2)),
+                               ("answer_correct", (1, 2)), ("localization_correct", (1, 2)),
+                               ("joint_pair_success", (0, 1))):
+            self.assertEqual(metric(report, "original", flag), expected, flag)
+        # A format error is a received reply, not an abstention or a missing prediction.
+        self.assertEqual(groups["options_reversed"]["reply_statuses"]["fields"]["answer"]["format_error"], 1)
+        self.assertEqual(groups["options_reversed"]["reply_statuses"]["fields"]["answer"]["explicit_null"], 1)
+        self.assertEqual(metric(report, "options_reversed", "prediction_present"), (2, 2))
+        self.assertEqual(metric(report, "options_reversed", "abstained"), (1, 2))
+        segment = groups["segment_labels_reversed"]["reply_statuses"]
+        self.assertEqual((segment["received_replies"], segment["technical_missing"]), (1, 1))
+        self.assertEqual(segment["fields"]["event"]["explicit_null"], 1)
+        self.assertEqual(metric(report, "segment_labels_reversed", "prediction_present"), (1, 2))
+        self.assertEqual(metric(report, "segment_labels_reversed", "answer_correct"), (1, 2))
 
 
 class Denominators(SyntheticCase):
@@ -345,8 +403,10 @@ class Denominators(SyntheticCase):
         self.assertFalse(report["gold"]["queue_is_this_batch_selection"])
         original = report["scoring"]["rules"]["matched_seconds"]["conditions"]["original"]
         self.assertEqual(original["status"], "部分完成")
-        self.assertEqual((original["reply_statuses"]["missing_prediction"], original["reply_statuses"]["abstained"]),
-                         (1, 1))
+        replies = original["reply_statuses"]
+        self.assertEqual((replies["technical_missing"], replies["received_replies"],
+                          replies["statuses"]["answer_abstained"], replies["fields"]["answer"]["explicit_null"]),
+                         (1, 1, 1, 1))
         self.assertEqual(metric(report, "original", "prediction_present"), (1, 2))
         self.assertEqual(metric(report, "original", "abstained"), (1, 2))
         self.assertEqual(metric(report, "original", "localization_correct"), (1, 2))
@@ -367,7 +427,10 @@ class RealBatchPrecheck(unittest.TestCase):
         report = align.build_report(batch)
         self.assertEqual(report["status"], "未跑")
         self.assertIsNone(report["gold"])
-        self.assertTrue(report["inputs"]["predictions_match_statistics_json"])
+        self.assertEqual(report["inputs"]["ledger"], "frozen_confirmation_1124")
+        self.assertEqual(report["result_scope"], "frozen confirmation_1124 ledger")
+        strict_labels = report["key_precheck"]["field_statuses_all_keys"]["strict"]["segment_labels_reversed"]
+        self.assertEqual((strict_labels["answer"]["valid"], strict_labels["event"]["invalid_field"]), (6, 6))
         self.assertEqual({key: report["key_precheck"][key] for key in ("videos", "questions", "prompt_keys", "prediction_keys")},
                          {"videos": 3, "questions": 6, "prompt_keys": 18, "prediction_keys": 18})
         self.assertEqual(report["denominators"]["pairs"]["no_gold"], 3)
@@ -376,6 +439,21 @@ class RealBatchPrecheck(unittest.TestCase):
             self.assertTrue(all(group["metrics"] is None for group in rule["conditions"].values()))
         committed = (HERE / "precheck.json").read_text(encoding="utf-8")
         self.assertEqual(committed, json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+
+
+class RealLedgerGuard(unittest.TestCase):
+    def test_a_changed_ledger_is_refused_unless_labelled_diagnostic(self):
+        raw = (align.BATCH / "predictions.jsonl").read_text(encoding="utf-8").splitlines()
+        first = json.loads(raw[0])
+        first["raw_response"] = "\n" + first["raw_response"]
+        with tempfile.TemporaryDirectory() as directory:
+            changed = Path(directory) / "predictions.jsonl"
+            changed.write_text("\n".join([json.dumps(first, ensure_ascii=False), *raw[1:]]) + "\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "diagnostic"):
+                align.load_frozen_batch(changed)
+            report = align.build_report(align.load_frozen_batch(changed, diagnostic=True))
+        self.assertEqual(report["inputs"]["ledger"], "diagnostic_custom_ledger")
+        self.assertTrue(report["result_scope"].startswith("diagnostic only"))
 
 
 if __name__ == "__main__":

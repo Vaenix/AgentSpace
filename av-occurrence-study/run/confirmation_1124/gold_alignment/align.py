@@ -30,7 +30,10 @@ from freeze_reviews import action_id as gold_action_id  # noqa: E402
 CONDITIONS = summarize.CONDITIONS
 RULES = summarize.RULES
 STATUSES = summarize.STATUSES
-NO_USABLE_PREDICTION = ("technical_missing", "format_error", "code_seconds_conflict", "invalid_field")
+FROZEN_PREDICTIONS_SHA256 = "3e465d57ad01f4a09ed31beb0c85711c79872cb3dfaa78c1b3431a712a2d6aa9"
+FIELD_STATUSES = ("valid", "explicit_null", "invalid_field", "code_seconds_conflict", "format_error", "technical_missing")
+FIELD_STATUS = {"ok": "valid", "null": "explicit_null", "invalid": "invalid_field", "conflict": "code_seconds_conflict"}
+UNUSABLE_ANSWER = "unusable_answer:"
 PAIR_STATUSES = (
     "no_gold", "excluded", "undecided", "mapping_pending", "answer_not_in_original_options", "aligned",
 )
@@ -141,8 +144,13 @@ def check_batch(selected, prompts, predictions):
     return options, qids, precheck
 
 
-def load_frozen_batch(predictions_file, failures_file=None):
-    """Load the real batch after the frozen-input checks used by summarize.py."""
+def load_frozen_batch(predictions_file, failures_file=None, diagnostic=False):
+    """Load the real batch after the frozen-input checks used by summarize.py.
+
+    Only the archived reply ledger (pinned SHA-256, no technical-failure file)
+    yields a confirmation_1124 result; any other ledger needs diagnostic=True
+    and is labelled as a diagnostic in the report.
+    """
     protocol, hashes_file = BATCH / "协议.md", BATCH / "manifest/input_hashes.json"
     selection_file, prompt_file = BATCH / "manifest/selected.jsonl", BATCH / "manifest/prompts.jsonl"
     fingerprints = {str(path.relative_to(BATCH)): summarize.check_frozen_file(path)
@@ -154,11 +162,21 @@ def load_frozen_batch(predictions_file, failures_file=None):
         raise ValueError("Unterminated prediction row; use the finalized run ledger")
     failure_bytes = failures_file.read_bytes() if failures_file else b""
     recorded = json.loads((BATCH / "statistics.json").read_text(encoding="utf-8"))
+    if recorded["predictions_sha256"] != FROZEN_PREDICTIONS_SHA256:
+        raise ValueError("statistics.json no longer records the archived reply ledger fingerprint")
+    frozen = sha256_bytes(raw) == FROZEN_PREDICTIONS_SHA256 and failures_file is None
+    if not frozen and not diagnostic:
+        raise ValueError(
+            "The reply ledger differs from the archived confirmation_1124 ledger "
+            f"(SHA-256 {FROZEN_PREDICTIONS_SHA256}) or adds technical failures; "
+            "pass --diagnostic-ledger to inspect it as a diagnostic, not as this batch's result"
+        )
     provenance = {
         "frozen_input_commit": summarize.FROZEN_COMMIT,
         "text_input_sha256": fingerprints,
+        "ledger": "frozen_confirmation_1124" if frozen else "diagnostic_custom_ledger",
+        "frozen_predictions_sha256": FROZEN_PREDICTIONS_SHA256,
         "predictions_sha256": sha256_bytes(raw),
-        "predictions_match_statistics_json": sha256_bytes(raw) == recorded["predictions_sha256"],
         "technical_failures_sha256": sha256_bytes(failure_bytes) if failures_file else None,
     }
     return {
@@ -168,6 +186,27 @@ def load_frozen_batch(predictions_file, failures_file=None):
         "failures": summarize.read_jsonl(failure_bytes),
         "provenance": provenance,
     }
+
+
+def field_statuses(row):
+    """Return the (answer, event) field status of one decoded key.
+
+    A received reply with a well-formed JSON object keeps each field's own
+    status, so a valid action survives an invalid or conflicting event and
+    vice versa. Format errors and technical failures affect both fields.
+    """
+    if row["status"] in ("technical_missing", "format_error"):
+        return row["status"], row["status"]
+    return FIELD_STATUS[row["answer_status"]], FIELD_STATUS[row["event_status"]]
+
+
+def field_counts(rows):
+    counts = {"answer": Counter(), "event": Counter()}
+    for row in rows:
+        answer, event = field_statuses(row)
+        counts["answer"][answer] += 1
+        counts["event"][event] += 1
+    return {field: {name: counter[name] for name in FIELD_STATUSES} for field, counter in counts.items()}
 
 
 def decode_batch(batch):
@@ -180,6 +219,10 @@ def decode_batch(batch):
     precheck["strict_rows_verified_against_inference"] = len(batch["predictions"])
     precheck["reply_statuses_all_keys"] = {
         rule: {name: sum(row["status"] == name for row in rows) for name in STATUSES} for rule, rows in decoded.items()
+    }
+    precheck["field_statuses_all_keys"] = {
+        rule: {condition: field_counts(row for row in rows if row["condition"] == condition) for condition in CONDITIONS}
+        for rule, rows in decoded.items()
     }
     indexed = {rule: {summarize.row_key(row): row for row in rows} for rule, rows in decoded.items()}
     parser_info = {
@@ -291,11 +334,19 @@ def load_mapping(path, expected_rows):
             raise ValueError("Keep the mapping table's original columns and tab separators")
         rows = list(reader)
     expected = {(row["题对"], row["原选项ID"]): row for row in expected_rows}
+    keys = [(row["题对"], row["原选项ID"]) for row in rows]
+    duplicates = sorted(key for key, count in Counter(keys).items() if count > 1)
+    if duplicates or set(keys) != set(expected):
+        raise ValueError(
+            "The mapping table must list every original option of every included pair exactly once; "
+            f"duplicated {duplicates}, missing {sorted(set(expected) - set(keys))}, "
+            f"unexpected {sorted(set(keys) - set(expected))}"
+        )
     mapping = {}
     for row in rows:
         key = (row["题对"], row["原选项ID"])
-        if key in mapping or key not in expected or None in row or None in row.values():
-            raise ValueError(f"Mapping row {key} is duplicated, malformed or not an included original option")
+        if None in row or None in row.values():
+            raise ValueError(f"Mapping row {key} is malformed")
         if any(row[name] != expected[key][name] for name in IDENTITY_COLUMNS):
             raise ValueError(f"Mapping row {key} does not match the current gold and original options")
         value = row["映射"].strip()
@@ -307,8 +358,6 @@ def load_mapping(path, expected_rows):
         if not reviewer or not reason:
             raise ValueError(f"Mapping row {key}: a human mapping needs 映射人 and 理由")
         mapping[key] = {"target": MAPPING_VALUES[value], "reviewer": reviewer, "reason": reason}
-    if set(mapping) - set(expected) or len(rows) != len(expected):
-        raise ValueError("The mapping table must list every original option of every included pair once")
     return mapping, sha256_bytes(raw)
 
 
@@ -382,28 +431,32 @@ def score_rule(records, gold, decoded, qids):
     references = [gold["references"][record["pair_id"]] for record in aligned]
     conditions = {}
     for condition in CONDITIONS:
-        predictions, statuses = {}, Counter()
+        predictions, statuses, rows = {}, Counter(), []
         for record in aligned:
             answers = {option["original_option_id"]: option for option in record["original_options"]}
             gold_rows = [gold["rows"][record["pair_id"], occurrence] for occurrence in (1, 2)]
             for question in record["questions"]:
                 row = decoded[qids[record["pair_id"], question["ordinal"]], condition]
+                rows.append(row)
                 statuses[row["status"]] += 1
-                if row["status"] in NO_USABLE_PREDICTION:
-                    continue
-                answer = None if row["answer_id"] is None else gold_answer_for(answers[row["answer_id"]], gold_rows)
-                interval = None if row["interval_s"] is None else tuple(row["interval_s"])
+                answer_field, event_field = field_statuses(row)
+                if answer_field == "technical_missing":
+                    continue  # the only case score.py sees as a missing prediction
+                if answer_field == "valid":
+                    answer = gold_answer_for(answers[row["answer_id"]], gold_rows)
+                elif answer_field == "explicit_null":
+                    answer = None  # score.py counts this as an abstention
+                else:
+                    answer = UNUSABLE_ANSWER + answer_field  # received but not a valid choice: wrong, not abstained
+                interval = tuple(row["interval_s"]) if event_field == "valid" else None
                 predictions[record["pair_id"], question["gold_qid"]] = score.Prediction(answer, interval)
-        planned = 2 * len(aligned)
-        abstained = sum(statuses[name] for name in summarize.ABSTENTIONS)
         result = score.score_group(references, predictions)
         conditions[condition] = dict(result, reply_statuses={
-            "planned_questions": planned,
+            "planned_questions": 2 * len(aligned),
+            "received_replies": len(rows) - statuses["technical_missing"],
+            "technical_missing": statuses["technical_missing"],
             "statuses": {name: statuses[name] for name in STATUSES},
-            "missing_prediction": statuses["technical_missing"],
-            "unusable_reply": sum(statuses[name] for name in NO_USABLE_PREDICTION[1:]),
-            "abstained": abstained,
-            "scored_predictions": len(predictions),
+            "fields": field_counts(rows),
         })
     if not aligned:
         status = "未跑"
@@ -425,6 +478,15 @@ def build_report(batch, gold=None, mapping_file=None):
         for question in record.get("questions", []):
             question["original_qid"] = qids[record["pair_id"], question["ordinal"]]
     counts = Counter(record["status"] for record in records)
+    question_counts, aligned_outside = Counter(), Counter()
+    for record in records:
+        if "questions" not in record:
+            question_counts[record["status"]] += 2
+            continue
+        for question in record["questions"]:
+            question_counts[question["answer_mapping"]] += 1
+            if question["answer_mapping"] == "aligned" and record["status"] != "aligned":
+                aligned_outside[record["status"]] += 1
     gold_summary = None
     if gold is not None:
         batch_pairs = {pair["pair_id"] for pair in selected}
@@ -434,8 +496,13 @@ def build_report(batch, gold=None, mapping_file=None):
             queue_is_this_batch_selection=gold["summary"]["queue_sha256"] == selection_sha,
             pairs_outside_batch=sorted(set(gold["decisions"]) - batch_pairs),
         )
+    ledger = batch.get("provenance", {}).get("ledger")
     report = {
         "batch": "confirmation_1124",
+        "result_scope": (
+            "frozen confirmation_1124 ledger" if ledger == "frozen_confirmation_1124"
+            else "diagnostic only: not a frozen confirmation_1124 result"
+        ),
         "status": "未跑" if counts["aligned"] == 0 else None,
         "inputs": dict(batch.get("provenance", {}), **parser_info),
         "key_precheck": precheck,
@@ -445,7 +512,12 @@ def build_report(batch, gold=None, mapping_file=None):
             "planned_pairs": len(records),
             "planned_questions": 2 * len(records),
             "pairs": {name: counts[name] for name in PAIR_STATUSES},
-            "questions": {name: 2 * counts[name] for name in PAIR_STATUSES},
+            "questions": {name: question_counts[name] for name in PAIR_STATUSES},
+            "scored_pairs": counts["aligned"],
+            "scored_questions": 2 * counts["aligned"],
+            "aligned_questions_in_unscored_pairs": {
+                name: aligned_outside[name] for name in ("mapping_pending", "answer_not_in_original_options")
+            },
         },
         "answer_not_in_original_options": [
             dict(question, pair_id=record["pair_id"], original_options=[
@@ -482,9 +554,13 @@ def main():
     for command in (template, align):
         command.add_argument("--predictions", type=Path, default=BATCH / "predictions.jsonl")
         command.add_argument("--technical-failures", type=Path, help="Rows with qid, condition, error and log_reference")
+        command.add_argument(
+            "--diagnostic-ledger", action="store_true",
+            help="Accept a ledger other than the archived one; the report is labelled diagnostic only",
+        )
     args = cli.parse_args()
     try:
-        batch = load_frozen_batch(args.predictions, args.technical_failures)
+        batch = load_frozen_batch(args.predictions, args.technical_failures, args.diagnostic_ledger)
         gold = load_gold_bundle(args.gold_dir) if args.gold_dir else None
         if args.command == "template":
             options, _, _ = check_batch(batch["selected"], batch["prompts"], batch["predictions"])
@@ -497,7 +573,8 @@ def main():
         with args.output.open("x", encoding="utf-8") as stream:
             stream.write(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
         pairs = report["denominators"]["pairs"]
-        print(f"{report['status']}: {pairs['aligned']} aligned of {report['denominators']['planned_pairs']} pairs. Wrote {args.output}")
+        print(f"{report['status']} ({report['result_scope']}): {pairs['aligned']} aligned of "
+              f"{report['denominators']['planned_pairs']} pairs. Wrote {args.output}")
     except (ValueError, OSError, KeyError, TypeError) as exc:
         cli.error(str(exc))
 
