@@ -40,7 +40,18 @@
 
 区间采用原视频时间，按时间排序且不重叠。图像路径可相对于清单存放。帧时间严格递增，可延伸至声音后的动作窗口。模型通过选项展示字母和事件代号作答，文件路径、内部题号、真实答案 ID 和审核状态不出现在提示中。描述字段保留声学证据，人工排查是否提前泄漏了视觉动作答案。
 
-输出每行记录条件、`pair_id`、`qid`、预测的稳定 `answer_id`、选中候选的 `interval_s`、原始回复、解析状态、帧数、提示及生成 token 数、模型位置、加载与逐题耗时，以及 MLX 记录的峰值内存。无法映射的字段写为 `null`。评价按独立盲审核的金标计算。
+输出每行记录条件、`pair_id`、`qid`、预测的稳定 `answer_id`、选中候选的 `interval_s`、原始回复、解析规则与解析状态、帧数、提示及生成 token 数、模型位置、加载与逐题耗时，以及 MLX 记录的峰值内存。无法映射的字段写为 `null`。评价按独立盲审核的金标计算。
+
+## 解析规则
+
+`--parse-rule` 须在推理前选定并写入批次记录，默认 `strict`。两种规则都只用本条提示自己的选项映射和片段代号映射还原稳定动作 ID 和原视频时间窗，代号反转条件因此按反转后的映射还原。
+
+| 规则 | `event` 可接受的写法 | `result_format` |
+| --- | --- | --- |
+| `strict`（默认，原有规则） | 单独的合法代号，如 `E01` | `ok`（含明确的 `null`）、`invalid_json`、`invalid_keys`、`invalid_value` |
+| `matched_seconds` | 单独的合法代号；或代号后接起止秒数，如 `E01 530.566–533.272s`，起止秒数须与本条提示为该代号显示的数值相等 | `ok`、`abstained`（两项均为 `null`）、`partially_abstained`（一项 `null`、另一项有效）、`code_seconds_conflict`（代号合法但秒数与该代号显示的区间不同）、`invalid_value`、`invalid_json`、`invalid_keys` |
+
+`matched_seconds` 允许连字符或短横线分隔起止秒数，`s` 后缀可省略。代号不存在、只有秒数或其他写法均记为无效字段。输出另记 `parse_rule`，以及逐字段的 `answer_status`、`event_status`（`ok`、`null`、`invalid`、`conflict`；JSON 或键名无效时为 `null`）。
 
 ## 运行
 
@@ -60,7 +71,13 @@ python3 av-occurrence-study/run/extract_frame.py review-window.mp4 2.35 frame.pn
 /tmp/av-occurrence-mlx-venv/bin/python av-occurrence-study/run/infer_mlx.py input.jsonl \
   --model /tmp/av-occurrence-qwen25-vl-7b-ready \
   --condition blind --condition visual --condition flat --condition paired \
-  --output predictions.jsonl
+  --parse-rule strict --output predictions.jsonl
+```
+
+解析规则的测试只读取仓库内的文本数据，无需视频、GPU 或模型：
+
+```sh
+python3 -m unittest discover -s av-occurrence-study/run -p 'test_*.py' -v
 ```
 
 当前设备的受限命令环境无法发现 Metal。获得本机执行授权后，实际运行检测通过，设备返回 `Device(gpu, 0)`。任何输出文件只新建一次。失败保留已经完成的逐题结果，重跑使用新的输出路径，由批次日志记录差异。

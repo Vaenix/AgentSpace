@@ -1,0 +1,448 @@
+{
+  "parse_rule": "matched_seconds",
+  "strict_recheck": {
+    "replies_rechecked": 18,
+    "mismatched_replies": 0,
+    "reproduces_summary_json": true,
+    "metrics": {
+      "options_reversed": {
+        "all_questions": 6,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 6,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    }
+  },
+  "reply_outcomes_by_condition": {
+    "original": {
+      "total": 6,
+      "abstained": 2,
+      "ok": 4
+    },
+    "options_reversed": {
+      "total": 6,
+      "abstained": 2,
+      "ok": 4
+    },
+    "segment_labels_reversed": {
+      "total": 6,
+      "abstained": 2,
+      "ok": 4
+    }
+  },
+  "metrics": {
+    "options_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 4,
+      "action_stable": 4,
+      "physical_window_changed": 2,
+      "action_stable_and_window_changed": 2
+    },
+    "segment_labels_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 4,
+      "action_stable": 4,
+      "physical_window_changed": 0,
+      "action_stable_and_window_changed": 0
+    }
+  },
+  "not_comparable_reasons": {
+    "options_reversed": {
+      "original=abstained, test=abstained": 2
+    },
+    "segment_labels_reversed": {
+      "original=abstained, test=abstained": 2
+    }
+  },
+  "metrics_by_video": {
+    "P37_102": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    },
+    "P20_01": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 0,
+        "action_stable": 0,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    },
+    "P03_117": {
+      "options_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 2,
+        "action_stable_and_window_changed": 2
+      },
+      "segment_labels_reversed": {
+        "all_questions": 2,
+        "comparable_questions": 2,
+        "action_stable": 2,
+        "physical_window_changed": 0,
+        "action_stable_and_window_changed": 0
+      }
+    }
+  },
+  "replies": [
+    {
+      "qid": "P37_102-7-smoke-1",
+      "video_id": "P37_102",
+      "ordinal": 1,
+      "condition": "original",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+      "answer_id": "7df07479a8beabb9",
+      "action": "take knife.",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P37_102-7-smoke-1",
+      "video_id": "P37_102",
+      "ordinal": 1,
+      "condition": "options_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "answer_id": "7df07479a8beabb9",
+      "action": "take knife.",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P37_102-7-smoke-1",
+      "video_id": "P37_102",
+      "ordinal": 1,
+      "condition": "segment_labels_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 94.692–95.53s\"\n}\n```",
+      "answer_id": "7df07479a8beabb9",
+      "action": "take knife.",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "invalid_value"
+    },
+    {
+      "qid": "P37_102-7-smoke-2",
+      "video_id": "P37_102",
+      "ordinal": 2,
+      "condition": "original",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+      "answer_id": "7df07479a8beabb9",
+      "action": "take knife.",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P37_102-7-smoke-2",
+      "video_id": "P37_102",
+      "ordinal": 2,
+      "condition": "options_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "answer_id": "7df07479a8beabb9",
+      "action": "take knife.",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P37_102-7-smoke-2",
+      "video_id": "P37_102",
+      "ordinal": 2,
+      "condition": "segment_labels_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 94.692–95.53s\"\n}\n```",
+      "answer_id": "7df07479a8beabb9",
+      "action": "take knife.",
+      "interval_s": [
+        94.69200000000001,
+        95.53
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "invalid_value"
+    },
+    {
+      "qid": "P20_01-5-smoke-1",
+      "video_id": "P20_01",
+      "ordinal": 1,
+      "condition": "original",
+      "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "answer_id": null,
+      "action": null,
+      "interval_s": null,
+      "physical_window": null,
+      "result_format": "abstained",
+      "answer_status": "null",
+      "event_status": "null",
+      "outcome": "abstained",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P20_01-5-smoke-1",
+      "video_id": "P20_01",
+      "ordinal": 1,
+      "condition": "options_reversed",
+      "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "answer_id": null,
+      "action": null,
+      "interval_s": null,
+      "physical_window": null,
+      "result_format": "abstained",
+      "answer_status": "null",
+      "event_status": "null",
+      "outcome": "abstained",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P20_01-5-smoke-1",
+      "video_id": "P20_01",
+      "ordinal": 1,
+      "condition": "segment_labels_reversed",
+      "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "answer_id": null,
+      "action": null,
+      "interval_s": null,
+      "physical_window": null,
+      "result_format": "abstained",
+      "answer_status": "null",
+      "event_status": "null",
+      "outcome": "abstained",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P20_01-5-smoke-2",
+      "video_id": "P20_01",
+      "ordinal": 2,
+      "condition": "original",
+      "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "answer_id": null,
+      "action": null,
+      "interval_s": null,
+      "physical_window": null,
+      "result_format": "abstained",
+      "answer_status": "null",
+      "event_status": "null",
+      "outcome": "abstained",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P20_01-5-smoke-2",
+      "video_id": "P20_01",
+      "ordinal": 2,
+      "condition": "options_reversed",
+      "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "answer_id": null,
+      "action": null,
+      "interval_s": null,
+      "physical_window": null,
+      "result_format": "abstained",
+      "answer_status": "null",
+      "event_status": "null",
+      "outcome": "abstained",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P20_01-5-smoke-2",
+      "video_id": "P20_01",
+      "ordinal": 2,
+      "condition": "segment_labels_reversed",
+      "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+      "answer_id": null,
+      "action": null,
+      "interval_s": null,
+      "physical_window": null,
+      "result_format": "abstained",
+      "answer_status": "null",
+      "event_status": "null",
+      "outcome": "abstained",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P03_117-2-smoke-1",
+      "video_id": "P03_117",
+      "ordinal": 1,
+      "condition": "original",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 530.566–533.272s\"\n}\n```",
+      "answer_id": "a23abf23546ebc75",
+      "action": "spread butter onto knife.",
+      "interval_s": [
+        530.566,
+        533.272
+      ],
+      "physical_window": 1,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "invalid_value"
+    },
+    {
+      "qid": "P03_117-2-smoke-1",
+      "video_id": "P03_117",
+      "ordinal": 1,
+      "condition": "options_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "answer_id": "a23abf23546ebc75",
+      "action": "spread butter onto knife.",
+      "interval_s": [
+        629.763,
+        636.539
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P03_117-2-smoke-1",
+      "video_id": "P03_117",
+      "ordinal": 1,
+      "condition": "segment_labels_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02 530.566–533.272s\"\n}\n```",
+      "answer_id": "a23abf23546ebc75",
+      "action": "spread butter onto knife.",
+      "interval_s": [
+        530.566,
+        533.272
+      ],
+      "physical_window": 1,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "invalid_value"
+    },
+    {
+      "qid": "P03_117-2-smoke-2",
+      "video_id": "P03_117",
+      "ordinal": 2,
+      "condition": "original",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 530.566–533.272s\"\n}\n```",
+      "answer_id": "a23abf23546ebc75",
+      "action": "spread butter onto knife.",
+      "interval_s": [
+        530.566,
+        533.272
+      ],
+      "physical_window": 1,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "invalid_value"
+    },
+    {
+      "qid": "P03_117-2-smoke-2",
+      "video_id": "P03_117",
+      "ordinal": 2,
+      "condition": "options_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+      "answer_id": "a23abf23546ebc75",
+      "action": "spread butter onto knife.",
+      "interval_s": [
+        629.763,
+        636.539
+      ],
+      "physical_window": 2,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "ok"
+    },
+    {
+      "qid": "P03_117-2-smoke-2",
+      "video_id": "P03_117",
+      "ordinal": 2,
+      "condition": "segment_labels_reversed",
+      "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02 530.566–533.272s\"\n}\n```",
+      "answer_id": "a23abf23546ebc75",
+      "action": "spread butter onto knife.",
+      "interval_s": [
+        530.566,
+        533.272
+      ],
+      "physical_window": 1,
+      "result_format": "ok",
+      "answer_status": "ok",
+      "event_status": "ok",
+      "outcome": "ok",
+      "stored_strict_result_format": "invalid_value"
+    }
+  ],
+  "inputs": {
+    "predictions": "predictions.jsonl",
+    "predictions_sha256": "d5b80c141c236c65311fcc4b29d1de7411720ace46f37637b277fe61e83194e4",
+    "prompts": "manifest/prompts.jsonl",
+    "prompts_sha256": "1ad4bb3f0d20c67feb261c6ac564f48f9f73259484781135b59f8dc953c2e727"
+  },
+  "matches_post_hoc_format_sensitivity": true
+}
