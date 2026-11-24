@@ -1,0 +1,17 @@
+analysis,intervention,scope,all_questions,comparable_questions,not_comparable_abstention,not_comparable_format,action_stable,physical_window_changed,action_stable_and_window_changed
+strict_preregistered,options_reversed,P37_102,2,2,0,0,2,0,0
+strict_preregistered,options_reversed,P20_01,2,0,2,0,0,0,0
+strict_preregistered,options_reversed,P03_117,2,0,0,2,0,0,0
+strict_preregistered,options_reversed,all,6,2,2,2,2,0,0
+strict_preregistered,segment_labels_reversed,P37_102,2,0,0,2,0,0,0
+strict_preregistered,segment_labels_reversed,P20_01,2,0,2,0,0,0,0
+strict_preregistered,segment_labels_reversed,P03_117,2,0,0,2,0,0,0
+strict_preregistered,segment_labels_reversed,all,6,0,2,4,0,0,0
+posthoc_format_sensitivity,options_reversed,P37_102,2,2,0,0,2,0,0
+posthoc_format_sensitivity,options_reversed,P20_01,2,0,2,0,0,0,0
+posthoc_format_sensitivity,options_reversed,P03_117,2,2,0,0,2,2,2
+posthoc_format_sensitivity,options_reversed,all,6,4,2,0,4,2,2
+posthoc_format_sensitivity,segment_labels_reversed,P37_102,2,2,0,0,2,0,0
+posthoc_format_sensitivity,segment_labels_reversed,P20_01,2,0,2,0,0,0,0
+posthoc_format_sensitivity,segment_labels_reversed,P03_117,2,2,0,0,2,0,0
+posthoc_format_sensitivity,segment_labels_reversed,all,6,4,2,0,4,0,0
