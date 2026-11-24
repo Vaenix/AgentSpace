@@ -1,0 +1,1361 @@
+{
+  "frozen_input_commit": "86c00449b09e2540c0d2c8f52b197055142da3e8",
+  "protocol_parser_commit": "f6919987b6fe3ecf9746f7d9a5d7ab1edb8db3c4",
+  "parser_source_commit": "87ee601846c9062ec7fc98a206b633f83b0b7d28",
+  "parser_source_sha256": "4ebbd521d030f6cfdf9f4b4bead886bd53d076ffb6893cc542202680219fc027",
+  "text_input_sha256": {
+    "协议.md": "9abcb58db038502c9cd8ff4a44fc93ca679b0b6be1e27973567143c7498d3481",
+    "manifest/input_hashes.json": "3370e09439df11f1ebbfe5b74aabf2b27508ee1720e02c7a94f1d7bd6237c9b0",
+    "manifest/selected.jsonl": "5d9a9158d5ba42b9c8c6eb9bcd04a32575cd321ca6734e6cf10ad089d2e915a5",
+    "manifest/prompts.jsonl": "93880eb78667206d8397fe64d156635d6b8196a1329006b5beb3e633f9fd28e8"
+  },
+  "predictions_sha256": "3e465d57ad01f4a09ed31beb0c85711c79872cb3dfaa78c1b3431a712a2d6aa9",
+  "technical_failures_sha256": null,
+  "strict_rows_verified_against_inference": 18,
+  "primary_rule": "matched_seconds",
+  "sensitivity_rule": "strict",
+  "rules": {
+    "matched_seconds": {
+      "all_replies": {
+        "planned": 18,
+        "received": 18,
+        "abstained": 0,
+        "abstained_per_received": 0.0,
+        "statuses": {
+          "technical_missing": 0,
+          "format_error": 0,
+          "code_seconds_conflict": 0,
+          "invalid_field": 0,
+          "both_abstained": 0,
+          "answer_abstained": 0,
+          "event_abstained": 0,
+          "complete": 18
+        }
+      },
+      "replies_by_condition": {
+        "original": {
+          "planned": 6,
+          "received": 6,
+          "abstained": 0,
+          "abstained_per_received": 0.0,
+          "statuses": {
+            "technical_missing": 0,
+            "format_error": 0,
+            "code_seconds_conflict": 0,
+            "invalid_field": 0,
+            "both_abstained": 0,
+            "answer_abstained": 0,
+            "event_abstained": 0,
+            "complete": 6
+          }
+        },
+        "options_reversed": {
+          "planned": 6,
+          "received": 6,
+          "abstained": 0,
+          "abstained_per_received": 0.0,
+          "statuses": {
+            "technical_missing": 0,
+            "format_error": 0,
+            "code_seconds_conflict": 0,
+            "invalid_field": 0,
+            "both_abstained": 0,
+            "answer_abstained": 0,
+            "event_abstained": 0,
+            "complete": 6
+          }
+        },
+        "segment_labels_reversed": {
+          "planned": 6,
+          "received": 6,
+          "abstained": 0,
+          "abstained_per_received": 0.0,
+          "statuses": {
+            "technical_missing": 0,
+            "format_error": 0,
+            "code_seconds_conflict": 0,
+            "invalid_field": 0,
+            "both_abstained": 0,
+            "answer_abstained": 0,
+            "event_abstained": 0,
+            "complete": 6
+          }
+        }
+      },
+      "comparisons": {
+        "options_reversed": {
+          "overall": {
+            "planned_questions": 6,
+            "comparable_questions": 6,
+            "non_comparable_questions": 0,
+            "action_stable": 5,
+            "physical_window_changed": 1,
+            "action_stable_and_window_changed": 0,
+            "joint_per_comparable": 0.0,
+            "joint_per_planned": 0.0,
+            "non_comparable_status_pairs": []
+          },
+          "per_video": {
+            "P27_101": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 1,
+              "physical_window_changed": 1,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P27_101-4-smoke-1",
+                  "video_id": "P27_101",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": false,
+                  "physical_window_changed": true,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P27_101-4-smoke-2",
+                  "video_id": "P27_101",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            },
+            "P04_121": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 2,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P04_121-19-smoke-1",
+                  "video_id": "P04_121",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P04_121-19-smoke-2",
+                  "video_id": "P04_121",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            },
+            "P15_02": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 2,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P15_02-15-smoke-1",
+                  "video_id": "P15_02",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P15_02-15-smoke-2",
+                  "video_id": "P15_02",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            }
+          },
+          "cross_video": {
+            "planned_videos": 3,
+            "counts": {
+              "event_observed": 0,
+              "comparable_no_event": 3,
+              "no_comparable_question": 0
+            },
+            "comparable_questions_by_video": {
+              "P27_101": 2,
+              "P04_121": 2,
+              "P15_02": 2
+            }
+          }
+        },
+        "segment_labels_reversed": {
+          "overall": {
+            "planned_questions": 6,
+            "comparable_questions": 6,
+            "non_comparable_questions": 0,
+            "action_stable": 5,
+            "physical_window_changed": 1,
+            "action_stable_and_window_changed": 0,
+            "joint_per_comparable": 0.0,
+            "joint_per_planned": 0.0,
+            "non_comparable_status_pairs": []
+          },
+          "per_video": {
+            "P27_101": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 1,
+              "physical_window_changed": 1,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P27_101-4-smoke-1",
+                  "video_id": "P27_101",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": false,
+                  "physical_window_changed": true,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P27_101-4-smoke-2",
+                  "video_id": "P27_101",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            },
+            "P04_121": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 2,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P04_121-19-smoke-1",
+                  "video_id": "P04_121",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P04_121-19-smoke-2",
+                  "video_id": "P04_121",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            },
+            "P15_02": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 2,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P15_02-15-smoke-1",
+                  "video_id": "P15_02",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P15_02-15-smoke-2",
+                  "video_id": "P15_02",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            }
+          },
+          "cross_video": {
+            "planned_videos": 3,
+            "counts": {
+              "event_observed": 0,
+              "comparable_no_event": 3,
+              "no_comparable_question": 0
+            },
+            "comparable_questions_by_video": {
+              "P27_101": 2,
+              "P04_121": 2,
+              "P15_02": 2
+            }
+          }
+        }
+      },
+      "replies": [
+        {
+          "qid": "P27_101-4-smoke-1",
+          "condition": "original",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 1,
+          "answer_id": "a81ce5c76b10ed2a",
+          "interval_s": [
+            758.585,
+            759.345
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 2,
+          "action": "pick up glass."
+        },
+        {
+          "qid": "P27_101-4-smoke-1",
+          "condition": "options_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 1,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-1",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 1,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-2",
+          "condition": "original",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 2,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-2",
+          "condition": "options_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 2,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-2",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 2,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P04_121-19-smoke-1",
+          "condition": "original",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 1,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-1",
+          "condition": "options_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 1,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-1",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 1,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-2",
+          "condition": "original",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 2,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-2",
+          "condition": "options_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 2,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-2",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 2,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P15_02-15-smoke-1",
+          "condition": "original",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 1,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-1",
+          "condition": "options_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 1,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-1",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 1,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-2",
+          "condition": "original",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 2,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-2",
+          "condition": "options_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 2,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-2",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 2,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        }
+      ]
+    },
+    "strict": {
+      "all_replies": {
+        "planned": 18,
+        "received": 18,
+        "abstained": 0,
+        "abstained_per_received": 0.0,
+        "statuses": {
+          "technical_missing": 0,
+          "format_error": 0,
+          "code_seconds_conflict": 0,
+          "invalid_field": 6,
+          "both_abstained": 0,
+          "answer_abstained": 0,
+          "event_abstained": 0,
+          "complete": 12
+        }
+      },
+      "replies_by_condition": {
+        "original": {
+          "planned": 6,
+          "received": 6,
+          "abstained": 0,
+          "abstained_per_received": 0.0,
+          "statuses": {
+            "technical_missing": 0,
+            "format_error": 0,
+            "code_seconds_conflict": 0,
+            "invalid_field": 0,
+            "both_abstained": 0,
+            "answer_abstained": 0,
+            "event_abstained": 0,
+            "complete": 6
+          }
+        },
+        "options_reversed": {
+          "planned": 6,
+          "received": 6,
+          "abstained": 0,
+          "abstained_per_received": 0.0,
+          "statuses": {
+            "technical_missing": 0,
+            "format_error": 0,
+            "code_seconds_conflict": 0,
+            "invalid_field": 0,
+            "both_abstained": 0,
+            "answer_abstained": 0,
+            "event_abstained": 0,
+            "complete": 6
+          }
+        },
+        "segment_labels_reversed": {
+          "planned": 6,
+          "received": 6,
+          "abstained": 0,
+          "abstained_per_received": 0.0,
+          "statuses": {
+            "technical_missing": 0,
+            "format_error": 0,
+            "code_seconds_conflict": 0,
+            "invalid_field": 6,
+            "both_abstained": 0,
+            "answer_abstained": 0,
+            "event_abstained": 0,
+            "complete": 0
+          }
+        }
+      },
+      "comparisons": {
+        "options_reversed": {
+          "overall": {
+            "planned_questions": 6,
+            "comparable_questions": 6,
+            "non_comparable_questions": 0,
+            "action_stable": 5,
+            "physical_window_changed": 1,
+            "action_stable_and_window_changed": 0,
+            "joint_per_comparable": 0.0,
+            "joint_per_planned": 0.0,
+            "non_comparable_status_pairs": []
+          },
+          "per_video": {
+            "P27_101": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 1,
+              "physical_window_changed": 1,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P27_101-4-smoke-1",
+                  "video_id": "P27_101",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": false,
+                  "physical_window_changed": true,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P27_101-4-smoke-2",
+                  "video_id": "P27_101",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            },
+            "P04_121": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 2,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P04_121-19-smoke-1",
+                  "video_id": "P04_121",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P04_121-19-smoke-2",
+                  "video_id": "P04_121",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            },
+            "P15_02": {
+              "planned_questions": 2,
+              "comparable_questions": 2,
+              "non_comparable_questions": 0,
+              "action_stable": 2,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": 0.0,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [],
+              "video_class": "comparable_no_event",
+              "questions": [
+                {
+                  "qid": "P15_02-15-smoke-1",
+                  "video_id": "P15_02",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                },
+                {
+                  "qid": "P15_02-15-smoke-2",
+                  "video_id": "P15_02",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "complete",
+                  "comparable": true,
+                  "action_stable": true,
+                  "physical_window_changed": false,
+                  "action_stable_and_window_changed": false
+                }
+              ]
+            }
+          },
+          "cross_video": {
+            "planned_videos": 3,
+            "counts": {
+              "event_observed": 0,
+              "comparable_no_event": 3,
+              "no_comparable_question": 0
+            },
+            "comparable_questions_by_video": {
+              "P27_101": 2,
+              "P04_121": 2,
+              "P15_02": 2
+            }
+          }
+        },
+        "segment_labels_reversed": {
+          "overall": {
+            "planned_questions": 6,
+            "comparable_questions": 0,
+            "non_comparable_questions": 6,
+            "action_stable": 0,
+            "physical_window_changed": 0,
+            "action_stable_and_window_changed": 0,
+            "joint_per_comparable": null,
+            "joint_per_planned": 0.0,
+            "non_comparable_status_pairs": [
+              {
+                "original_status": "complete",
+                "intervention_status": "invalid_field",
+                "count": 6
+              }
+            ]
+          },
+          "per_video": {
+            "P27_101": {
+              "planned_questions": 2,
+              "comparable_questions": 0,
+              "non_comparable_questions": 2,
+              "action_stable": 0,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": null,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [
+                {
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "count": 2
+                }
+              ],
+              "video_class": "no_comparable_question",
+              "questions": [
+                {
+                  "qid": "P27_101-4-smoke-1",
+                  "video_id": "P27_101",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "comparable": false,
+                  "action_stable": null,
+                  "physical_window_changed": null,
+                  "action_stable_and_window_changed": null
+                },
+                {
+                  "qid": "P27_101-4-smoke-2",
+                  "video_id": "P27_101",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "comparable": false,
+                  "action_stable": null,
+                  "physical_window_changed": null,
+                  "action_stable_and_window_changed": null
+                }
+              ]
+            },
+            "P04_121": {
+              "planned_questions": 2,
+              "comparable_questions": 0,
+              "non_comparable_questions": 2,
+              "action_stable": 0,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": null,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [
+                {
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "count": 2
+                }
+              ],
+              "video_class": "no_comparable_question",
+              "questions": [
+                {
+                  "qid": "P04_121-19-smoke-1",
+                  "video_id": "P04_121",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "comparable": false,
+                  "action_stable": null,
+                  "physical_window_changed": null,
+                  "action_stable_and_window_changed": null
+                },
+                {
+                  "qid": "P04_121-19-smoke-2",
+                  "video_id": "P04_121",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "comparable": false,
+                  "action_stable": null,
+                  "physical_window_changed": null,
+                  "action_stable_and_window_changed": null
+                }
+              ]
+            },
+            "P15_02": {
+              "planned_questions": 2,
+              "comparable_questions": 0,
+              "non_comparable_questions": 2,
+              "action_stable": 0,
+              "physical_window_changed": 0,
+              "action_stable_and_window_changed": 0,
+              "joint_per_comparable": null,
+              "joint_per_planned": 0.0,
+              "non_comparable_status_pairs": [
+                {
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "count": 2
+                }
+              ],
+              "video_class": "no_comparable_question",
+              "questions": [
+                {
+                  "qid": "P15_02-15-smoke-1",
+                  "video_id": "P15_02",
+                  "ordinal": 1,
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "comparable": false,
+                  "action_stable": null,
+                  "physical_window_changed": null,
+                  "action_stable_and_window_changed": null
+                },
+                {
+                  "qid": "P15_02-15-smoke-2",
+                  "video_id": "P15_02",
+                  "ordinal": 2,
+                  "original_status": "complete",
+                  "intervention_status": "invalid_field",
+                  "comparable": false,
+                  "action_stable": null,
+                  "physical_window_changed": null,
+                  "action_stable_and_window_changed": null
+                }
+              ]
+            }
+          },
+          "cross_video": {
+            "planned_videos": 3,
+            "counts": {
+              "event_observed": 0,
+              "comparable_no_event": 0,
+              "no_comparable_question": 3
+            },
+            "comparable_questions_by_video": {
+              "P27_101": 0,
+              "P04_121": 0,
+              "P15_02": 0
+            }
+          }
+        }
+      },
+      "replies": [
+        {
+          "qid": "P27_101-4-smoke-1",
+          "condition": "original",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 1,
+          "answer_id": "a81ce5c76b10ed2a",
+          "interval_s": [
+            758.585,
+            759.345
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 2,
+          "action": "pick up glass."
+        },
+        {
+          "qid": "P27_101-4-smoke-1",
+          "condition": "options_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 1,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-1",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 1,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": null,
+          "result_format": "invalid_value",
+          "answer_status": "ok",
+          "event_status": "invalid",
+          "status": "invalid_field",
+          "physical_window": null,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-2",
+          "condition": "original",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 2,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-2",
+          "condition": "options_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 2,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": [
+            134.772,
+            135.516
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P27_101-4-smoke-2",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P27_101-4",
+          "video_id": "P27_101",
+          "ordinal": 2,
+          "answer_id": "0798e51474f3e958",
+          "interval_s": null,
+          "result_format": "invalid_value",
+          "answer_status": "ok",
+          "event_status": "invalid",
+          "status": "invalid_field",
+          "physical_window": null,
+          "action": "put down knife."
+        },
+        {
+          "qid": "P04_121-19-smoke-1",
+          "condition": "original",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 1,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-1",
+          "condition": "options_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 1,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-1",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 1,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": null,
+          "result_format": "invalid_value",
+          "answer_status": "ok",
+          "event_status": "invalid",
+          "status": "invalid_field",
+          "physical_window": null,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-2",
+          "condition": "original",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 2,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-2",
+          "condition": "options_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 2,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": [
+            491.484,
+            492.308
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P04_121-19-smoke-2",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P04_121-19",
+          "video_id": "P04_121",
+          "ordinal": 2,
+          "answer_id": "2825389bd594bdec",
+          "interval_s": null,
+          "result_format": "invalid_value",
+          "answer_status": "ok",
+          "event_status": "invalid",
+          "status": "invalid_field",
+          "physical_window": null,
+          "action": "adjust tap."
+        },
+        {
+          "qid": "P15_02-15-smoke-1",
+          "condition": "original",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 1,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-1",
+          "condition": "options_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 1,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-1",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 1,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": null,
+          "result_format": "invalid_value",
+          "answer_status": "ok",
+          "event_status": "invalid",
+          "status": "invalid_field",
+          "physical_window": null,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-2",
+          "condition": "original",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 2,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-2",
+          "condition": "options_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 2,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": [
+            221.548,
+            228.111
+          ],
+          "result_format": "ok",
+          "answer_status": "ok",
+          "event_status": "ok",
+          "status": "complete",
+          "physical_window": 1,
+          "action": "cut onion."
+        },
+        {
+          "qid": "P15_02-15-smoke-2",
+          "condition": "segment_labels_reversed",
+          "pair_id": "P15_02-15",
+          "video_id": "P15_02",
+          "ordinal": 2,
+          "answer_id": "97f8d524e7997dd9",
+          "interval_s": null,
+          "result_format": "invalid_value",
+          "answer_status": "ok",
+          "event_status": "invalid",
+          "status": "invalid_field",
+          "physical_window": null,
+          "action": "cut onion."
+        }
+      ]
+    }
+  }
+}
