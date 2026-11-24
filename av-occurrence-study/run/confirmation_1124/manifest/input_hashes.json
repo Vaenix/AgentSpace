@@ -1,0 +1,30 @@
+{
+  "prompts_sha256": "93880eb78667206d8397fe64d156635d6b8196a1329006b5beb3e633f9fd28e8",
+  "frame_sha256": {
+    "frames/P27_101-4/window-1-frame-1.png": "8970ac62dbb0a9fdadd0a5c2ab4477fd8e98e43be3c82c3ae43b05e76a4b5917",
+    "frames/P27_101-4/window-1-frame-2.png": "4b7b97fdeb2d73b5c164e79c3433d02bff3d55693392ac6dbbe82e569fcfcc1d",
+    "frames/P27_101-4/window-1-frame-3.png": "a089f6e4c6067f1559e8690ce45e99fdfb70ee51607815fa5cd1adaa70339590",
+    "frames/P27_101-4/window-2-frame-1.png": "9116e34adb3bdcff35e11c0af68effcfa19d9029a38936378544cdcd73483075",
+    "frames/P27_101-4/window-2-frame-2.png": "b81fa82e960892bab6d588e199a33d63bfbf38c114d70b702c6cc7ccb9331b17",
+    "frames/P27_101-4/window-2-frame-3.png": "269e821d197156a2d7eaafe522a7537415823b7a9c9ea816064a21f99a14a076",
+    "frames/P04_121-19/window-1-frame-1.png": "b6c5aea2d19e75a87fc108aedbf733ed8b24ff7857a13b80e7d886707fda71cb",
+    "frames/P04_121-19/window-1-frame-2.png": "d4d95c43ed7802a05f0c2e18a11fd8abd23fd01fdbfbf15c73f5f074cfb19b6e",
+    "frames/P04_121-19/window-1-frame-3.png": "b56d9fc1d74a3cd6d6b67b2f8468536e7c626ccf01b917c6fd2e28caee743751",
+    "frames/P04_121-19/window-2-frame-1.png": "2a2a9f264094a379f111c325471f315ca74181d4e7d023f51f94e00e16143c28",
+    "frames/P04_121-19/window-2-frame-2.png": "358475cf3560c412732d166ffe2f2e81b7d3d09f0aafd827efa9ca940af8d268",
+    "frames/P04_121-19/window-2-frame-3.png": "6a22f10f61794bc0053f22e2852da821b4cd42b4553472afe5cb3f034eb9190d",
+    "frames/P15_02-15/window-1-frame-1.png": "a8d7d82d712f34dbc247ab5b7b050b57f54ac9a8415eb50ef58bdfa6b91fef8d",
+    "frames/P15_02-15/window-1-frame-2.png": "5099643f71faf69072ca16074b51b24eadb5aadc3c5e490281f00290240eb531",
+    "frames/P15_02-15/window-1-frame-3.png": "51e872c4c0474f846ec229ca4cb8dc1a7162351644a57ad2fdb19e2858e7c788",
+    "frames/P15_02-15/window-2-frame-1.png": "f295a5ab3fc0f110174cce983770b6fe3a96af6436f7d05fcefddcb2f9ada427",
+    "frames/P15_02-15/window-2-frame-2.png": "a11aeb1101d96781491594053fdf4774e767701d12b5a85c6405af2d7f95db2a",
+    "frames/P15_02-15/window-2-frame-3.png": "7546f1df0f5b3886cbb06f6e8580315e94093509876f4d4bdcd5150e96a35e73"
+  },
+  "runner_sha256": "feae42687a50112191ea457867e1944a6818e2fb26e1296fa492c5c253faddb6",
+  "checkpoint_revision": "fdcc572e8b05ba9daeaf71be8c9e4267c826ff9b",
+  "condition_order": [
+    "original",
+    "options_reversed",
+    "segment_labels_reversed"
+  ]
+}

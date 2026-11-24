@@ -1,0 +1,167 @@
+{
+  "selection_rule": "Retain ranks 4–6 of the frozen train shortlist in order after verifying video and participant disjointness; no replacements.",
+  "candidate_decisions": [
+    {
+      "candidate_rank": 1,
+      "pair_id": "P37_102-7",
+      "video_id": "P37_102",
+      "participant_id": "P37",
+      "decision": "exclude_used_video"
+    },
+    {
+      "candidate_rank": 2,
+      "pair_id": "P20_01-5",
+      "video_id": "P20_01",
+      "participant_id": "P20",
+      "decision": "exclude_used_video"
+    },
+    {
+      "candidate_rank": 3,
+      "pair_id": "P03_117-2",
+      "video_id": "P03_117",
+      "participant_id": "P03",
+      "decision": "exclude_used_video"
+    },
+    {
+      "candidate_rank": 4,
+      "pair_id": "P27_101-4",
+      "video_id": "P27_101",
+      "participant_id": "P27",
+      "decision": "select"
+    },
+    {
+      "candidate_rank": 5,
+      "pair_id": "P04_121-19",
+      "video_id": "P04_121",
+      "participant_id": "P04",
+      "decision": "select"
+    },
+    {
+      "candidate_rank": 6,
+      "pair_id": "P15_02-15",
+      "video_id": "P15_02",
+      "participant_id": "P15",
+      "decision": "select"
+    }
+  ],
+  "exclusion_sources": {
+    "epic/review_queue.jsonl": {
+      "rows": 10,
+      "sha256": "35cbbebe4b9cc9285a7bfb80010d4a034aeaa4e636401e64b379a9df66f5500d",
+      "videos": [
+        "P02_12",
+        "P05_07",
+        "P08_09",
+        "P10_03",
+        "P22_01",
+        "P22_03",
+        "P23_05",
+        "P24_09",
+        "P29_05",
+        "P30_08"
+      ],
+      "participants": [
+        "P02",
+        "P05",
+        "P08",
+        "P10",
+        "P22",
+        "P23",
+        "P24",
+        "P29",
+        "P30"
+      ]
+    },
+    "run/replication_1124/manifest/selected.jsonl": {
+      "rows": 3,
+      "sha256": "0d55975787a41241012bf670e24823237f06d9050475ba24dcea139ec9a1aad8",
+      "videos": [
+        "P03_117",
+        "P20_01",
+        "P37_102"
+      ],
+      "participants": [
+        "P03",
+        "P20",
+        "P37"
+      ]
+    },
+    "run/epic_smoke_predictions.jsonl": {
+      "rows": 6,
+      "sha256": "e31bae613130eebd461e58537b62e0d6c92ffb04d687b3c571db97042950b432",
+      "videos": [
+        "P22_03"
+      ],
+      "participants": [
+        "P22"
+      ]
+    },
+    "run/epic_smoke_reversed_options.jsonl": {
+      "rows": 4,
+      "sha256": "c17ac6833b7b6e32d4b9c66f3998b1a18223c751eb3cfc790f072c1975cfac4d",
+      "videos": [
+        "P22_03"
+      ],
+      "participants": [
+        "P22"
+      ]
+    },
+    "run/replication_1124/predictions.jsonl": {
+      "rows": 18,
+      "sha256": "d5b80c141c236c65311fcc4b29d1de7411720ace46f37637b277fe61e83194e4",
+      "videos": [
+        "P03_117",
+        "P20_01",
+        "P37_102"
+      ],
+      "participants": [
+        "P03",
+        "P20",
+        "P37"
+      ]
+    }
+  },
+  "source_sha256": {
+    "run/replication_1124/manifest/ranked_train_candidates.jsonl": "15c1c09674bb20d2a92e5625a544cde7225655f1b8e3509b0896f51f71e7eab1",
+    "run/replication_1124/manifest/data_inputs.json": "e7617339c071977405680ff74196f0cb400a1cd9cb12375e3338b02cf4c05b58",
+    "run/replication_1124/manifest/available.jsonl": "18c98fcbbd948a35863bb4645e23ad480909f676e56a2902d47eb4ec5c246f05",
+    "epic/clip_bounds.py": "eb85a4033237842fd38f59864ad1f2a26e63343cb4c73f8fa0ff1b2e8d9a2a81",
+    "run/infer_mlx.py": "dae9164bbeed463596b9e8f5bcf003fc2975c2a44ea5a9c790c3f71e9aef780a",
+    "run/extract_frame.py": "3804f8d81a9c04653621be50bf10e64f047331983d0deb32548c5f0e0e275576",
+    "run/prepare_epic_smoke.py": "e11ed41d5f8be19b7a8b1cad31988d14c5bd31b4eb23169b2d7233f25dd8381f",
+    "run/replication_1124/replicate.py": "feae42687a50112191ea457867e1944a6818e2fb26e1296fa492c5c253faddb6",
+    "run/confirmation_1124/prepare_inputs.py": "51b26c345faf524feaa5a62ccde6e0ebb6b5424c00c316e799713f412984810f"
+  },
+  "manifest_sha256": {
+    "input_hashes.json": "3370e09439df11f1ebbfe5b74aabf2b27508ee1720e02c7a94f1d7bd6237c9b0",
+    "media.jsonl": "f1d032a2483b9bb78d72a59405598a4f3126068494496c87d9b8ba0e43255d4b",
+    "prompts.jsonl": "93880eb78667206d8397fe64d156635d6b8196a1329006b5beb3e633f9fd28e8",
+    "selected.jsonl": "5d9a9158d5ba42b9c8c6eb9bcd04a32575cd321ca6734e6cf10ad089d2e915a5"
+  },
+  "frame_manifest_sha256": {
+    "frames/P04_121-19/smoke-input.jsonl": "026022040aa6207e78bbe385f3ff7e550f49ee7b7d8ac719682c2254b012225a",
+    "frames/P15_02-15/smoke-input.jsonl": "01e8d070d92c09a753670bf28b5af5bf643f5643ba5f145981838716bec60095",
+    "frames/P27_101-4/smoke-input.jsonl": "9e4a35e90ac8f154d10bffc2e78b6f3e4b2a7f067714b9fd74349dd8b5c365e7"
+  },
+  "checkpoint": {
+    "revision": "fdcc572e8b05ba9daeaf71be8c9e4267c826ff9b",
+    "expected_shard_sha256": {
+      "model-00001-of-00002.safetensors": "f80072ac0e82a2ace0740eab995f6f9ae2623adb55e6906e21c2f8edca537803",
+      "model-00002-of-00002.safetensors": "016bd9d3596e9b824f5a527875e5830414552c950eee794e98efb44c1cd8dc6a"
+    }
+  },
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 64
+  },
+  "offline_preflight": {
+    "audio_video_windows_decoded": 6,
+    "extracted_frames": 18,
+    "videos": 3,
+    "questions": 6,
+    "prompts": 18,
+    "condition_isolation": "validated by replication_1124/replicate.py freeze",
+    "python": "3.12.0",
+    "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers"
+  }
+}
