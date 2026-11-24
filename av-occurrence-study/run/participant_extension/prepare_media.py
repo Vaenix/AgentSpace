@@ -47,6 +47,8 @@ FRAME_ROLES = ("sound_midpoint", "action_25pct", "action_75pct")
 FALLBACK_ROLES = ("window_20pct", "window_50pct", "window_80pct")
 FALLBACK_NOTE = re.compile(r"Using evenly spaced frames for (\S+) occurrence (\d+)")
 OUTPUTS = ("windows.jsonl", "summary.json")
+# FFmpeg log prefixes such as "[mov,mp4,m4a,3gp,3g2,mj2 @ 0x74c7054000]" carry a per-process address.
+VOLATILE_ADDRESS = re.compile(r" @ 0x[0-9a-fA-F]+(?=\])")
 
 
 def sha_file(path):
@@ -56,6 +58,13 @@ def sha_file(path):
 
 def jsonl(path):
     return [json.loads(line) for line in Path(path).read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def stable_text(text, *paths):
+    """Drop local paths and per-process addresses so failure reasons replay byte for byte."""
+    for path in paths:
+        text = text.replace(str(path), Path(path).name)
+    return VOLATILE_ADDRESS.sub("", text)
 
 
 def dump_jsonl(items):
@@ -123,7 +132,7 @@ def probe(clip):
         "-of", "json", str(clip),
     ])
     if result.returncode:
-        detail = result.stderr.replace(str(clip), clip.name).strip()[-300:]
+        detail = stable_text(result.stderr, clip).strip()[-300:]
         raise ValueError(f"ffprobe exited with status {result.returncode}: {detail}")
     info = json.loads(result.stdout)
     streams = {}
@@ -138,7 +147,7 @@ def probe(clip):
         streams.setdefault(kind, entry)
     decode = run(["ffmpeg", "-nostdin", "-v", "error", "-xerror", "-i", str(clip),
                   "-map", "0:v:0", "-map", "0:a:0", "-f", "null", "-"])
-    errors = decode.stderr.replace(str(clip), clip.name).strip()
+    errors = stable_text(decode.stderr, clip).strip()
     if "audio" in streams:
         # A decodable but silent track would pass the checks above; record its level.
         levels = run(["ffmpeg", "-nostdin", "-hide_banner", "-i", str(clip), "-map", "0:a:0",
@@ -278,7 +287,8 @@ def extract_frames(row, clips, work):
                                        "so the point passes the window check but has no frame at or after it; "
                                        "prepare_epic_smoke.py stops here and writes no question input")
                         else:
-                            failure = f"extract_frame.py failed for {role} at clip {relative} s: {result.stderr.strip()[-300:]}"
+                            detail = stable_text(result.stderr, clip["file"], work).strip()[-300:]
+                            failure = f"extract_frame.py failed for {role} at clip {relative} s: {detail}"
                         frame.update(status="failed", failure_reason=failure)
                     else:
                         frame.update(status="not_reached")
@@ -358,6 +368,7 @@ def prepare(queue, selected, work):
                                           audio_s=audio["duration_s"], clip_start_time=clip_start_time)
             else:
                 reason = reasons.get(path.stem) or source_error or "clip missing without a logged reason"
+                reason = stable_text(reason, work)
                 record.update(status=f"{failure_stage(reason)}_failed", failure_reason=reason)
             pair_records.append(record)
         if len(clips) == 2:

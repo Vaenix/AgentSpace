@@ -71,7 +71,7 @@ python3.12 av-occurrence-study/run/participant_extension/prepare_media.py \
 
 只验证首个视频时加 `--pairs P11_104-7`，其余窗记为 `not_attempted`。此时清单与本目录不同，不要加 `--check`。
 
-工作目录中已有裁片但无法探测（例如空文件或截断文件）时，入口不会重新下载。该窗记为 `decode_failed`，写明 ffprobe 的原因、字节数和 SHA-256，同对另一窗与其余名额照常记录。要重取该窗，先把坏文件移出 `review_media/`。离线回归测试用一个空裁片加一个合成的有效裁片覆盖这种情况，需要 FFmpeg，不需要联网：
+工作目录中已有裁片但无法探测（例如空文件或截断文件）时，入口不会重新下载。该窗记为 `decode_failed`，写明 ffprobe 的原因、字节数和 SHA-256，同对另一窗与其余名额照常记录。要重取该窗，先把坏文件移出 `review_media/`。写入清单的失败原因会去掉本机路径，也会去掉 FFmpeg 日志前缀中每个进程不同的地址（如 `[mov,mp4,m4a,3gp,3g2,mj2 @ 0x…]` 中的 ` @ 0x…`），退出码、文件名和诊断文字照常保留，因此同一输入重放时清单逐字节相同。离线回归测试用一个空裁片加一个合成的有效裁片覆盖这种情况：先检查失败记录，再连续运行两次入口，第二次用 `--check` 比较第一次的清单。测试需要 FFmpeg，不需要联网：
 
 ```sh
 python3.12 -m unittest discover -s av-occurrence-study/run/participant_extension -p 'test_*.py' -v
@@ -82,6 +82,6 @@ python3.12 -m unittest discover -s av-occurrence-study/run/participant_extension
 - 全部 12 对按队列顺序运行一次，24 窗全部完成。
 - 用同一工作目录再运行一次并加 `--check`，两份清单逐字节一致。重新提取的 71 帧也与第一次相同。
 - 在全新工作目录中，从官方地址重新下载 P11_104-7。两个裁片的 SHA-256 和 5 帧的 SHA-256 与全量运行相同，这两行清单也逐项一致。
-- 复现评审所述情形：在新工作目录放入有效的 `P11_104-7_2.mp4` 和空的 `P11_104-7_1.mp4`，运行 `--pairs P11_104-7`。修复前 ffprobe 抛出异常，整个任务退出且不写清单。修复后第 1 窗记为 `decode_failed`，第 2 窗记为 `decoded`，两份清单正常写出。修复后再次全量运行，`windows.jsonl` 与修复前逐字节一致；`summary.json` 只有本入口自身的 SHA-256 不同。
+- 复现评审所述情形：在新工作目录放入有效的 `P11_104-7_2.mp4` 和空的 `P11_104-7_1.mp4`，运行 `--pairs P11_104-7`。修复前 ffprobe 抛出异常，整个任务退出且不写清单。修复后第 1 窗记为 `decode_failed`，第 2 窗记为 `decoded`，两份清单正常写出。修复后连续运行两次，第二次 `--check` 第一次，两份清单一致。修复后再次全量运行，`windows.jsonl` 与修复前逐字节一致；`summary.json` 只有本入口自身的 SHA-256 不同。
 
 裁片和帧经 x264 编码，SHA-256 依赖 FFmpeg 版本和机器。换环境后 `--check` 可能只在哈希字段上不同，这时应比较状态、时长和坐标。
