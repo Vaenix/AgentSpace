@@ -1,0 +1,1813 @@
+{
+  "design": "exploratory control designed after the intact-image results of 3df02a8 had been read",
+  "protocol_commit": "4e87d1e0016161e1c0c09c1faaeddcc9d48e2e66",
+  "protocol_plan_commit": "a7df2e2c4e5c8ac8b0ca820f1e0e8d59c5550206",
+  "intact_results_commit": "3df02a8e1b84d876ebdf8b54b9826d803860fcf1",
+  "input_sha256": {
+    "protocol": {
+      "protocol.md": "cf6fa05a06a6e3a024cea4af990ada910dbe87cc56c5743f8f5d4850df6752fd",
+      "planned.csv": "5e3de7c2c63962cd3533c8605cc1a6a4913fb634c34cd51af0cf488d252dffd2",
+      "gray.png": "beae1a76505cf5bc29fbf1e519ddb554ff8624763cb9a8763d4c56c9a54215b2"
+    },
+    "extension_frozen_inputs": {
+      "frozen_inputs/calls.jsonl": "d8efdc41e7d8c835c09e4c320829d83679d0fef825577b8c6305532a4d4c9ace",
+      "frozen_inputs/prompts.jsonl": "6dd56b0eadaaf1f792d2c639a3a35226b2f6b900b5aa65e052d6c4baea158d8c",
+      "frozen_inputs/input_hashes.json": "7c6e048df5ceac1f4b716d050fb9f914e44b347224fce2123524c07c82b64e47",
+      "frozen_inputs/provenance.json": "6df5554c22812c7a48cc2bb29affdbe9a31fd8976c8f4ff36bcf1609796955dd",
+      "frozen_inputs/selected.jsonl": "2ee5dc07a64fedb35f5c1984ccc090c494991ff175cba3fc2d58d0e70a472cde",
+      "inputs/planned_calls.csv": "a69bf82c89961a310096750d2b78f47efb27e1d0042ad9d6ce1d0e15f6202139"
+    },
+    "intact_replies": "b87936a0fd0d2b0d5d1f75f93f2d31dd81ad7fbc942fe2491d12ed21adc86aaa",
+    "intact_attempts": "0bd2342c5ae8b04f41e46193b61c010d3c6b286eb3a4a730a23836235bff422b"
+  },
+  "gray_image": {
+    "width": 448,
+    "height": 448,
+    "mode": "RGB",
+    "bit_depth": 8,
+    "pixel": [
+      128,
+      128,
+      128
+    ],
+    "pixels_checked": 200704
+  },
+  "parser_source_commit": "87ee601846c9062ec7fc98a206b633f83b0b7d28",
+  "parser_source_sha256": "4ebbd521d030f6cfdf9f4b4bead886bd53d076ffb6893cc542202680219fc027",
+  "primary_rule": "matched_seconds",
+  "gray_replies_sha256": "250128e15eeed7a92360d68b2e03082dba9e305fb3f7c9b2cd1504e85b2f08fb",
+  "gray_attempts_sha256": "ffa8877e2a4a6d97148a97047befc052ea87c6e6775f0aef413e5802cb3a71a0",
+  "gray_replies_received": 22,
+  "strict_rows_verified_against_inference": 22,
+  "recordings": [
+    "P11_104-7",
+    "P06_102-5",
+    "P01_05-4",
+    "P13_08-2",
+    "P35_105-5",
+    "P21_01-7",
+    "P12_101-5",
+    "P28_104-7",
+    "P16_01-5",
+    "P07_04-7",
+    "P26_119-5",
+    "P09_103-5"
+  ],
+  "conditions": {
+    "intact": {
+      "planned": 24,
+      "received": 22,
+      "complete": 15,
+      "complete_per_received": 0.6818181818181818,
+      "complete_per_planned": 0.625,
+      "both_abstained": 4,
+      "partial_abstention": {
+        "answer_only_abstained": 3,
+        "event_only_abstained": 0
+      },
+      "invalid": {
+        "format_error": 0,
+        "code_seconds_conflict": 0,
+        "invalid_field": 0,
+        "total": 0
+      },
+      "technical_missing": {
+        "total": 2,
+        "frozen_frame_extraction": 2,
+        "generation": 0
+      },
+      "statuses": {
+        "technical_missing": 2,
+        "format_error": 0,
+        "code_seconds_conflict": 0,
+        "invalid_field": 0,
+        "both_abstained": 4,
+        "answer_abstained": 3,
+        "event_abstained": 0,
+        "complete": 15
+      }
+    },
+    "gray": {
+      "planned": 24,
+      "received": 22,
+      "complete": 1,
+      "complete_per_received": 0.045454545454545456,
+      "complete_per_planned": 0.041666666666666664,
+      "both_abstained": 21,
+      "partial_abstention": {
+        "answer_only_abstained": 0,
+        "event_only_abstained": 0
+      },
+      "invalid": {
+        "format_error": 0,
+        "code_seconds_conflict": 0,
+        "invalid_field": 0,
+        "total": 0
+      },
+      "technical_missing": {
+        "total": 2,
+        "frozen_frame_extraction": 2,
+        "generation": 0
+      },
+      "statuses": {
+        "technical_missing": 2,
+        "format_error": 0,
+        "code_seconds_conflict": 0,
+        "invalid_field": 0,
+        "both_abstained": 21,
+        "answer_abstained": 0,
+        "event_abstained": 0,
+        "complete": 1
+      }
+    }
+  },
+  "prompt_tokens": {
+    "checked": 22,
+    "matched": 22,
+    "protocol_deviations": [],
+    "keys": [
+      {
+        "qid": "P06_102-5-smoke-1",
+        "intact_prompt_tokens": 1838,
+        "gray_prompt_tokens": 1838,
+        "match": true
+      },
+      {
+        "qid": "P06_102-5-smoke-2",
+        "intact_prompt_tokens": 1838,
+        "gray_prompt_tokens": 1838,
+        "match": true
+      },
+      {
+        "qid": "P01_05-4-smoke-1",
+        "intact_prompt_tokens": 1845,
+        "gray_prompt_tokens": 1845,
+        "match": true
+      },
+      {
+        "qid": "P01_05-4-smoke-2",
+        "intact_prompt_tokens": 1845,
+        "gray_prompt_tokens": 1845,
+        "match": true
+      },
+      {
+        "qid": "P13_08-2-smoke-1",
+        "intact_prompt_tokens": 1842,
+        "gray_prompt_tokens": 1842,
+        "match": true
+      },
+      {
+        "qid": "P13_08-2-smoke-2",
+        "intact_prompt_tokens": 1842,
+        "gray_prompt_tokens": 1842,
+        "match": true
+      },
+      {
+        "qid": "P35_105-5-smoke-1",
+        "intact_prompt_tokens": 1840,
+        "gray_prompt_tokens": 1840,
+        "match": true
+      },
+      {
+        "qid": "P35_105-5-smoke-2",
+        "intact_prompt_tokens": 1840,
+        "gray_prompt_tokens": 1840,
+        "match": true
+      },
+      {
+        "qid": "P21_01-7-smoke-1",
+        "intact_prompt_tokens": 1830,
+        "gray_prompt_tokens": 1830,
+        "match": true
+      },
+      {
+        "qid": "P21_01-7-smoke-2",
+        "intact_prompt_tokens": 1830,
+        "gray_prompt_tokens": 1830,
+        "match": true
+      },
+      {
+        "qid": "P12_101-5-smoke-1",
+        "intact_prompt_tokens": 1830,
+        "gray_prompt_tokens": 1830,
+        "match": true
+      },
+      {
+        "qid": "P12_101-5-smoke-2",
+        "intact_prompt_tokens": 1830,
+        "gray_prompt_tokens": 1830,
+        "match": true
+      },
+      {
+        "qid": "P28_104-7-smoke-1",
+        "intact_prompt_tokens": 1838,
+        "gray_prompt_tokens": 1838,
+        "match": true
+      },
+      {
+        "qid": "P28_104-7-smoke-2",
+        "intact_prompt_tokens": 1838,
+        "gray_prompt_tokens": 1838,
+        "match": true
+      },
+      {
+        "qid": "P16_01-5-smoke-1",
+        "intact_prompt_tokens": 1824,
+        "gray_prompt_tokens": 1824,
+        "match": true
+      },
+      {
+        "qid": "P16_01-5-smoke-2",
+        "intact_prompt_tokens": 1824,
+        "gray_prompt_tokens": 1824,
+        "match": true
+      },
+      {
+        "qid": "P07_04-7-smoke-1",
+        "intact_prompt_tokens": 1828,
+        "gray_prompt_tokens": 1828,
+        "match": true
+      },
+      {
+        "qid": "P07_04-7-smoke-2",
+        "intact_prompt_tokens": 1828,
+        "gray_prompt_tokens": 1828,
+        "match": true
+      },
+      {
+        "qid": "P26_119-5-smoke-1",
+        "intact_prompt_tokens": 1839,
+        "gray_prompt_tokens": 1839,
+        "match": true
+      },
+      {
+        "qid": "P26_119-5-smoke-2",
+        "intact_prompt_tokens": 1839,
+        "gray_prompt_tokens": 1839,
+        "match": true
+      },
+      {
+        "qid": "P09_103-5-smoke-1",
+        "intact_prompt_tokens": 1822,
+        "gray_prompt_tokens": 1822,
+        "match": true
+      },
+      {
+        "qid": "P09_103-5-smoke-2",
+        "intact_prompt_tokens": 1822,
+        "gray_prompt_tokens": 1822,
+        "match": true
+      }
+    ]
+  },
+  "paired": {
+    "planned_keys": 24,
+    "paired_keys": 22,
+    "unpaired_keys": [
+      {
+        "qid": "P11_104-7-smoke-1",
+        "intact_status": "technical_missing",
+        "gray_status": "technical_missing"
+      },
+      {
+        "qid": "P11_104-7-smoke-2",
+        "intact_status": "technical_missing",
+        "gray_status": "technical_missing"
+      }
+    ],
+    "cells": {
+      "intact_complete_gray_complete": 0,
+      "intact_complete_gray_incomplete": 15,
+      "intact_incomplete_gray_complete": 1,
+      "both_incomplete": 6
+    },
+    "intact_complete": 15,
+    "gray_complete": 1,
+    "intact_complete_proportion": 0.6818181818181818,
+    "gray_complete_proportion": 0.045454545454545456,
+    "difference_gray_minus_intact": -0.6363636363636364,
+    "difference_numerator": -14,
+    "status_pairs": [
+      {
+        "intact_status": "answer_abstained",
+        "gray_status": "both_abstained",
+        "count": 3
+      },
+      {
+        "intact_status": "both_abstained",
+        "gray_status": "both_abstained",
+        "count": 3
+      },
+      {
+        "intact_status": "both_abstained",
+        "gray_status": "complete",
+        "count": 1
+      },
+      {
+        "intact_status": "complete",
+        "gray_status": "both_abstained",
+        "count": 15
+      }
+    ]
+  },
+  "secondary": {
+    "both_complete": 0,
+    "planned_keys": 24,
+    "cells": {
+      "action_retained_window_retained": 0,
+      "action_retained_window_changed": 0,
+      "action_changed_window_retained": 0,
+      "action_changed_window_changed": 0
+    }
+  },
+  "per_recording": {
+    "planned_recordings": 12,
+    "recordings_with_paired_reply": 11,
+    "groups": {
+      "at_least_one_loss": 8,
+      "at_least_one_gain": 1,
+      "loss_and_gain": 0,
+      "neither_change": 2,
+      "no_paired_reply": 1
+    },
+    "recordings": {
+      "P11_104-7": {
+        "paired_questions": 0,
+        "losses": 0,
+        "gains": 0,
+        "at_least_one_loss": false,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": true,
+        "questions": [
+          {
+            "run_order": 1,
+            "pair_id": "P11_104-7",
+            "qid": "P11_104-7-smoke-1",
+            "ordinal": 1,
+            "paired": false,
+            "intact_status": "technical_missing",
+            "gray_status": "technical_missing",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": null,
+            "gray_window": null,
+            "completeness": null,
+            "paired_cell": null,
+            "secondary_cell": null
+          },
+          {
+            "run_order": 4,
+            "pair_id": "P11_104-7",
+            "qid": "P11_104-7-smoke-2",
+            "ordinal": 2,
+            "paired": false,
+            "intact_status": "technical_missing",
+            "gray_status": "technical_missing",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": null,
+            "gray_window": null,
+            "completeness": null,
+            "paired_cell": null,
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P06_102-5": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 7,
+            "pair_id": "P06_102-5",
+            "qid": "P06_102-5-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "mix dough.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 10,
+            "pair_id": "P06_102-5",
+            "qid": "P06_102-5-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "mix dough.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P01_05-4": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 13,
+            "pair_id": "P01_05-4",
+            "qid": "P01_05-4-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "throw plastic into bin.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 16,
+            "pair_id": "P01_05-4",
+            "qid": "P01_05-4-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "throw plastic into bin.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P13_08-2": {
+        "paired_questions": 2,
+        "losses": 0,
+        "gains": 1,
+        "at_least_one_loss": false,
+        "at_least_one_gain": true,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 19,
+            "pair_id": "P13_08-2",
+            "qid": "P13_08-2-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "both_abstained",
+            "gray_status": "complete",
+            "intact_action": null,
+            "gray_action": "pick up onion.",
+            "intact_window": null,
+            "gray_window": 2,
+            "completeness": "gain",
+            "paired_cell": "intact_incomplete_gray_complete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 22,
+            "pair_id": "P13_08-2",
+            "qid": "P13_08-2-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "both_abstained",
+            "gray_status": "both_abstained",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": null,
+            "gray_window": null,
+            "completeness": "retained_incomplete",
+            "paired_cell": "both_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P35_105-5": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 25,
+            "pair_id": "P35_105-5",
+            "qid": "P35_105-5-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "clean counter top.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 28,
+            "pair_id": "P35_105-5",
+            "qid": "P35_105-5-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "clean counter top.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P21_01-7": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 31,
+            "pair_id": "P21_01-7",
+            "qid": "P21_01-7-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "taking out groceries.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 34,
+            "pair_id": "P21_01-7",
+            "qid": "P21_01-7-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "taking out groceries.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P12_101-5": {
+        "paired_questions": 2,
+        "losses": 0,
+        "gains": 0,
+        "at_least_one_loss": false,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": true,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 37,
+            "pair_id": "P12_101-5",
+            "qid": "P12_101-5-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "answer_abstained",
+            "gray_status": "both_abstained",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "retained_incomplete",
+            "paired_cell": "both_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 40,
+            "pair_id": "P12_101-5",
+            "qid": "P12_101-5-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "answer_abstained",
+            "gray_status": "both_abstained",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "retained_incomplete",
+            "paired_cell": "both_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P28_104-7": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 43,
+            "pair_id": "P28_104-7",
+            "qid": "P28_104-7-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "open lid.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 46,
+            "pair_id": "P28_104-7",
+            "qid": "P28_104-7-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "open lid.",
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P16_01-5": {
+        "paired_questions": 2,
+        "losses": 1,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 49,
+            "pair_id": "P16_01-5",
+            "qid": "P16_01-5-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "answer_abstained",
+            "gray_status": "both_abstained",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": 1,
+            "gray_window": null,
+            "completeness": "retained_incomplete",
+            "paired_cell": "both_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 52,
+            "pair_id": "P16_01-5",
+            "qid": "P16_01-5-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "turn on the cooker.",
+            "gray_action": null,
+            "intact_window": 2,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P07_04-7": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 55,
+            "pair_id": "P07_04-7",
+            "qid": "P07_04-7-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "turn on stove.",
+            "gray_action": null,
+            "intact_window": 2,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 58,
+            "pair_id": "P07_04-7",
+            "qid": "P07_04-7-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "turn on stove.",
+            "gray_action": null,
+            "intact_window": 2,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P26_119-5": {
+        "paired_questions": 2,
+        "losses": 0,
+        "gains": 0,
+        "at_least_one_loss": false,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": true,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 61,
+            "pair_id": "P26_119-5",
+            "qid": "P26_119-5-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "both_abstained",
+            "gray_status": "both_abstained",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": null,
+            "gray_window": null,
+            "completeness": "retained_incomplete",
+            "paired_cell": "both_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 64,
+            "pair_id": "P26_119-5",
+            "qid": "P26_119-5-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "both_abstained",
+            "gray_status": "both_abstained",
+            "intact_action": null,
+            "gray_action": null,
+            "intact_window": null,
+            "gray_window": null,
+            "completeness": "retained_incomplete",
+            "paired_cell": "both_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      },
+      "P09_103-5": {
+        "paired_questions": 2,
+        "losses": 2,
+        "gains": 0,
+        "at_least_one_loss": true,
+        "at_least_one_gain": false,
+        "loss_and_gain": false,
+        "neither_change": false,
+        "no_paired_reply": false,
+        "questions": [
+          {
+            "run_order": 67,
+            "pair_id": "P09_103-5",
+            "qid": "P09_103-5-smoke-1",
+            "ordinal": 1,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "add condiments to chicken.",
+            "gray_action": null,
+            "intact_window": 2,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          },
+          {
+            "run_order": 70,
+            "pair_id": "P09_103-5",
+            "qid": "P09_103-5-smoke-2",
+            "ordinal": 2,
+            "paired": true,
+            "intact_status": "complete",
+            "gray_status": "both_abstained",
+            "intact_action": "add condiments to chicken.",
+            "gray_action": null,
+            "intact_window": 2,
+            "gray_window": null,
+            "completeness": "loss",
+            "paired_cell": "intact_complete_gray_incomplete",
+            "secondary_cell": null
+          }
+        ]
+      }
+    }
+  },
+  "technical_missing": [
+    {
+      "image_condition": "intact",
+      "run_order": 1,
+      "qid": "P11_104-7-smoke-1",
+      "stage": "frame_extraction",
+      "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+      "log_reference": "frozen_inputs/calls.jsonl"
+    },
+    {
+      "image_condition": "intact",
+      "run_order": 4,
+      "qid": "P11_104-7-smoke-2",
+      "stage": "frame_extraction",
+      "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+      "log_reference": "frozen_inputs/calls.jsonl"
+    },
+    {
+      "image_condition": "gray",
+      "run_order": 1,
+      "qid": "P11_104-7-smoke-1",
+      "stage": "frame_extraction",
+      "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+      "log_reference": "frozen_inputs/calls.jsonl"
+    },
+    {
+      "image_condition": "gray",
+      "run_order": 4,
+      "qid": "P11_104-7-smoke-2",
+      "stage": "frame_extraction",
+      "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+      "log_reference": "frozen_inputs/calls.jsonl"
+    }
+  ],
+  "replies": {
+    "intact": [
+      {
+        "run_order": 1,
+        "pair_id": "P11_104-7",
+        "video_id": "P11_104",
+        "qid": "P11_104-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "status": "technical_missing",
+        "technical_missing": {
+          "stage": "frame_extraction",
+          "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+          "log_reference": "frozen_inputs/calls.jsonl"
+        },
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 4,
+        "pair_id": "P11_104-7",
+        "video_id": "P11_104",
+        "qid": "P11_104-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "status": "technical_missing",
+        "technical_missing": {
+          "stage": "frame_extraction",
+          "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+          "log_reference": "frozen_inputs/calls.jsonl"
+        },
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 7,
+        "pair_id": "P06_102-5",
+        "video_id": "P06_102",
+        "qid": "P06_102-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "632b6bd85ec8da09",
+        "interval_s": [
+          260.097,
+          274.679
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "mix dough.",
+        "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E01\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 10,
+        "pair_id": "P06_102-5",
+        "video_id": "P06_102",
+        "qid": "P06_102-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "632b6bd85ec8da09",
+        "interval_s": [
+          260.097,
+          274.679
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "mix dough.",
+        "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E01\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 13,
+        "pair_id": "P01_05-4",
+        "video_id": "P01_05",
+        "qid": "P01_05-4-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "1682d5aa02b5faa3",
+        "interval_s": [
+          197.901,
+          199.088
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "throw plastic into bin.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 197.901–199.088s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 16,
+        "pair_id": "P01_05-4",
+        "video_id": "P01_05",
+        "qid": "P01_05-4-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "1682d5aa02b5faa3",
+        "interval_s": [
+          197.901,
+          199.088
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "throw plastic into bin.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 197.901–199.088s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 19,
+        "pair_id": "P13_08-2",
+        "video_id": "P13_08",
+        "qid": "P13_08-2-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 22,
+        "pair_id": "P13_08-2",
+        "video_id": "P13_08",
+        "qid": "P13_08-2-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 25,
+        "pair_id": "P35_105-5",
+        "video_id": "P35_105",
+        "qid": "P35_105-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "6710d6007c26686d",
+        "interval_s": [
+          121.005,
+          122.967
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "clean counter top.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 28,
+        "pair_id": "P35_105-5",
+        "video_id": "P35_105",
+        "qid": "P35_105-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "6710d6007c26686d",
+        "interval_s": [
+          121.005,
+          122.967
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "clean counter top.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 121.005–122.967s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 31,
+        "pair_id": "P21_01-7",
+        "video_id": "P21_01",
+        "qid": "P21_01-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "1087b25f4cdc497f",
+        "interval_s": [
+          1.315,
+          2.648
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "taking out groceries.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 34,
+        "pair_id": "P21_01-7",
+        "video_id": "P21_01",
+        "qid": "P21_01-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "1087b25f4cdc497f",
+        "interval_s": [
+          1.315,
+          2.648
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "taking out groceries.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01 1.315–2.648s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 37,
+        "pair_id": "P12_101-5",
+        "video_id": "P12_101",
+        "qid": "P12_101-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": [
+          5.381,
+          17.07
+        ],
+        "result_format": "partially_abstained",
+        "answer_status": "null",
+        "event_status": "ok",
+        "status": "answer_abstained",
+        "physical_window": 1,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 5.381–17.07s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 40,
+        "pair_id": "P12_101-5",
+        "video_id": "P12_101",
+        "qid": "P12_101-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": [
+          5.381,
+          17.07
+        ],
+        "result_format": "partially_abstained",
+        "answer_status": "null",
+        "event_status": "ok",
+        "status": "answer_abstained",
+        "physical_window": 1,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 5.381–17.07s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 43,
+        "pair_id": "P28_104-7",
+        "video_id": "P28_104",
+        "qid": "P28_104-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "7b78e0e29d65693b",
+        "interval_s": [
+          392.133,
+          393.608
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "open lid.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 46,
+        "pair_id": "P28_104-7",
+        "video_id": "P28_104",
+        "qid": "P28_104-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "7b78e0e29d65693b",
+        "interval_s": [
+          392.133,
+          393.608
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 1,
+        "action": "open lid.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E01\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 49,
+        "pair_id": "P16_01-5",
+        "video_id": "P16_01",
+        "qid": "P16_01-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": [
+          4.846,
+          15.086
+        ],
+        "result_format": "partially_abstained",
+        "answer_status": "null",
+        "event_status": "ok",
+        "status": "answer_abstained",
+        "physical_window": 1,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": \"E01 4.846–15.086s\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 52,
+        "pair_id": "P16_01-5",
+        "video_id": "P16_01",
+        "qid": "P16_01-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "e66ade612c271872",
+        "interval_s": [
+          27.477,
+          33.19
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 2,
+        "action": "turn on the cooker.",
+        "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 55,
+        "pair_id": "P07_04-7",
+        "video_id": "P07_04",
+        "qid": "P07_04-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "c24fe4048aaa204b",
+        "interval_s": [
+          109.714,
+          111.36699999999999
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 2,
+        "action": "turn on stove.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 58,
+        "pair_id": "P07_04-7",
+        "video_id": "P07_04",
+        "qid": "P07_04-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "c24fe4048aaa204b",
+        "interval_s": [
+          109.714,
+          111.36699999999999
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 2,
+        "action": "turn on stove.",
+        "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"event\": \"E02\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 61,
+        "pair_id": "P26_119-5",
+        "video_id": "P26_119",
+        "qid": "P26_119-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 64,
+        "pair_id": "P26_119-5",
+        "video_id": "P26_119",
+        "qid": "P26_119-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 67,
+        "pair_id": "P09_103-5",
+        "video_id": "P09_103",
+        "qid": "P09_103-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "ebafdd83fa992592",
+        "interval_s": [
+          150.665,
+          155.54
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 2,
+        "action": "add condiments to chicken.",
+        "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+        "image_condition": "intact"
+      },
+      {
+        "run_order": 70,
+        "pair_id": "P09_103-5",
+        "video_id": "P09_103",
+        "qid": "P09_103-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": "ebafdd83fa992592",
+        "interval_s": [
+          150.665,
+          155.54
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 2,
+        "action": "add condiments to chicken.",
+        "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+        "image_condition": "intact"
+      }
+    ],
+    "gray": [
+      {
+        "run_order": 1,
+        "pair_id": "P11_104-7",
+        "video_id": "P11_104",
+        "qid": "P11_104-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "status": "technical_missing",
+        "technical_missing": {
+          "stage": "frame_extraction",
+          "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+          "log_reference": "frozen_inputs/calls.jsonl"
+        },
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 4,
+        "pair_id": "P11_104-7",
+        "video_id": "P11_104",
+        "qid": "P11_104-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "status": "technical_missing",
+        "technical_missing": {
+          "stage": "frame_extraction",
+          "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+          "log_reference": "frozen_inputs/calls.jsonl"
+        },
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 7,
+        "pair_id": "P06_102-5",
+        "video_id": "P06_102",
+        "qid": "P06_102-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 10,
+        "pair_id": "P06_102-5",
+        "video_id": "P06_102",
+        "qid": "P06_102-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 13,
+        "pair_id": "P01_05-4",
+        "video_id": "P01_05",
+        "qid": "P01_05-4-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 16,
+        "pair_id": "P01_05-4",
+        "video_id": "P01_05",
+        "qid": "P01_05-4-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 19,
+        "pair_id": "P13_08-2",
+        "video_id": "P13_08",
+        "qid": "P13_08-2-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": "95ac2b70d66d5792",
+        "interval_s": [
+          149.772,
+          150.772
+        ],
+        "result_format": "ok",
+        "answer_status": "ok",
+        "event_status": "ok",
+        "status": "complete",
+        "physical_window": 2,
+        "action": "pick up onion.",
+        "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"event\": \"E02\"\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 22,
+        "pair_id": "P13_08-2",
+        "video_id": "P13_08",
+        "qid": "P13_08-2-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 25,
+        "pair_id": "P35_105-5",
+        "video_id": "P35_105",
+        "qid": "P35_105-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 28,
+        "pair_id": "P35_105-5",
+        "video_id": "P35_105",
+        "qid": "P35_105-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 31,
+        "pair_id": "P21_01-7",
+        "video_id": "P21_01",
+        "qid": "P21_01-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 34,
+        "pair_id": "P21_01-7",
+        "video_id": "P21_01",
+        "qid": "P21_01-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 37,
+        "pair_id": "P12_101-5",
+        "video_id": "P12_101",
+        "qid": "P12_101-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 40,
+        "pair_id": "P12_101-5",
+        "video_id": "P12_101",
+        "qid": "P12_101-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 43,
+        "pair_id": "P28_104-7",
+        "video_id": "P28_104",
+        "qid": "P28_104-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 46,
+        "pair_id": "P28_104-7",
+        "video_id": "P28_104",
+        "qid": "P28_104-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 49,
+        "pair_id": "P16_01-5",
+        "video_id": "P16_01",
+        "qid": "P16_01-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 52,
+        "pair_id": "P16_01-5",
+        "video_id": "P16_01",
+        "qid": "P16_01-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 55,
+        "pair_id": "P07_04-7",
+        "video_id": "P07_04",
+        "qid": "P07_04-7-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 58,
+        "pair_id": "P07_04-7",
+        "video_id": "P07_04",
+        "qid": "P07_04-7-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 61,
+        "pair_id": "P26_119-5",
+        "video_id": "P26_119",
+        "qid": "P26_119-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 64,
+        "pair_id": "P26_119-5",
+        "video_id": "P26_119",
+        "qid": "P26_119-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 67,
+        "pair_id": "P09_103-5",
+        "video_id": "P09_103",
+        "qid": "P09_103-5-smoke-1",
+        "ordinal": 1,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      },
+      {
+        "run_order": 70,
+        "pair_id": "P09_103-5",
+        "video_id": "P09_103",
+        "qid": "P09_103-5-smoke-2",
+        "ordinal": 2,
+        "condition": "original",
+        "answer_id": null,
+        "interval_s": null,
+        "result_format": "abstained",
+        "answer_status": "null",
+        "event_status": "null",
+        "status": "both_abstained",
+        "physical_window": null,
+        "action": null,
+        "raw_response": "```json\n{\n  \"answer\": null,\n  \"event\": null\n}\n```",
+        "image_condition": "gray"
+      }
+    ]
+  }
+}
