@@ -113,12 +113,19 @@ def substitution_reason(outside, clip_start, clip_duration):
 
 
 def probe(clip):
-    """Measure stream durations and fully decode both tracks with errors treated as fatal."""
-    info = json.loads(subprocess.check_output([
+    """Measure stream durations and fully decode both tracks with errors treated as fatal.
+
+    Raises ValueError when the file cannot be probed, e.g. an empty or truncated clip.
+    """
+    result = run([
         "ffprobe", "-v", "error", "-show_entries",
         "format=start_time,duration:stream=index,codec_type,codec_name,duration,nb_frames,sample_rate,width,height,avg_frame_rate",
         "-of", "json", str(clip),
-    ], text=True))
+    ])
+    if result.returncode:
+        detail = result.stderr.replace(str(clip), clip.name).strip()[-300:]
+        raise ValueError(f"ffprobe exited with status {result.returncode}: {detail}")
+    info = json.loads(result.stdout)
     streams = {}
     for stream in info["streams"]:
         kind = stream["codec_type"]
@@ -131,7 +138,7 @@ def probe(clip):
         streams.setdefault(kind, entry)
     decode = run(["ffmpeg", "-nostdin", "-v", "error", "-xerror", "-i", str(clip),
                   "-map", "0:v:0", "-map", "0:a:0", "-f", "null", "-"])
-    errors = decode.stderr.strip()
+    errors = decode.stderr.replace(str(clip), clip.name).strip()
     if "audio" in streams:
         # A decodable but silent track would pass the checks above; record its level.
         levels = run(["ffmpeg", "-nostdin", "-hide_banner", "-i", str(clip), "-map", "0:a:0",
@@ -327,7 +334,14 @@ def prepare(queue, selected, work):
             if not attempted:
                 record.update(status="not_attempted")
             elif path.is_file():
-                streams, clip_start_time, clean_decode, errors = probe(path)
+                try:
+                    streams, clip_start_time, clean_decode, errors = probe(path)
+                except (ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
+                    # An existing clip that cannot be probed fails only this window.
+                    record.update(status="decode_failed", bytes=path.stat().st_size, sha256=sha_file(path),
+                                  failure_reason=f"existing clip could not be probed: {exc}")
+                    pair_records.append(record)
+                    continue
                 video, audio = streams.get("video"), streams.get("audio")
                 lengths_ok = video and audio and all(
                     abs(track["duration_s"] - (stop - start)) <= DURATION_TOLERANCE_S for track in (video, audio))

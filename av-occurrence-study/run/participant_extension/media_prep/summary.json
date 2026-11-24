@@ -19,7 +19,7 @@
     "epic/clip_bounds.py": "eb85a4033237842fd38f59864ad1f2a26e63343cb4c73f8fa0ff1b2e8d9a2a81",
     "run/prepare_epic_smoke.py": "e11ed41d5f8be19b7a8b1cad31988d14c5bd31b4eb23169b2d7233f25dd8381f",
     "run/extract_frame.py": "3804f8d81a9c04653621be50bf10e64f047331983d0deb32548c5f0e0e275576",
-    "run/participant_extension/prepare_media.py": "ea9168dfb0107a3942e8bc73c5d5f9a90e57f35452b8a9f5b7fb2dda4ab80ce8"
+    "run/participant_extension/prepare_media.py": "f90ad2d38a4def11fb1f6255b47e69b3c985da4dd5bc60f1856853c771df601c"
   },
   "tools": {
     "python": "3.12.0",
