@@ -1,0 +1,17 @@
+arm,variant,slot,status,window_id,start_s,end_s,score,method_rank,event_ids,event_overlap_s,has_detection_overlap
+vision_only,original,1,selected,W154,612,620,0.20775442942976952,1,,,no
+vision_only,original,2,selected,W056,220,228,0.2044200524687767,2,,,no
+vision_only,original,3,selected,W020,76,84,0.20231755822896957,3,,,no
+vision_only,original,4,selected,W152,604,612,0.2001633271574974,5,,,no
+vision_only,event_dedup,1,selected,W154,612,620,0.20775442942976952,1,,,no
+vision_only,event_dedup,2,selected,W056,220,228,0.2044200524687767,2,,,no
+vision_only,event_dedup,3,selected,W020,76,84,0.20231755822896957,3,,,no
+vision_only,event_dedup,4,selected,W152,604,612,0.2001633271574974,5,,,no
+vision_plus_sound,original,1,selected,W098,388,396,0.013942307692307693,1,E2,E2:7.5,yes
+vision_plus_sound,original,2,selected,W100,396,404,0.013739883305100696,3,E2,E2:3,yes
+vision_plus_sound,original,3,selected,W182,724,732,0.013620071684587814,4,E3,E3:3,yes
+vision_plus_sound,original,4,selected,W027,104,112,0.012956810631229235,5,E1,E1:1,yes
+vision_plus_sound,event_dedup,1,selected,W098,388,396,0.013942307692307693,1,E2,E2:7.5,yes
+vision_plus_sound,event_dedup,2,selected,W182,724,732,0.013620071684587814,4,E3,E3:3,yes
+vision_plus_sound,event_dedup,3,selected,W027,104,112,0.012956810631229235,5,E1,E1:1,yes
+vision_plus_sound,event_dedup,4,selected,W154,612,620,0.00819672131147541,11,,,no

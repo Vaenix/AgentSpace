@@ -1,0 +1,6 @@
+case,rule_checked,windows,expected_original,observed_original,expected_event_dedup,observed_event_dedup,event_dedup_shortfall,event_dedup_windows_without_detection,pass
+adjacent_windows_same_event,two touching windows both overlap E1; dedup keeps the higher one and fills with the next distinct window,A:8-16:0.9|B:16-24:0.8|C:48-56:0.7|D:80-88:0.6|F:100-108:0.5,A|B|C|D,A|B|C|D,A|C|D|F,A|C|D|F,0,2,yes
+window_without_detection,windows that overlap no event are never removed by the event rule and are counted separately,A:0-8:0.9|B:30-38:0.8|C:60-68:0.7|D:90-98:0.6,A|B|C|D,A|B|C|D,A|B|C|D,A|B|C|D,0,4,yes
+fewer_than_four_candidates,"only three candidates survive dedup; the fourth slot is reported as shortfall, not refilled",A:8-16:0.9|B:16-24:0.8|C:48-56:0.7|D:92-100:0.6,A|B|C|D,A|B|C|D,A|C|D,A|C|D,1,1,yes
+equal_scores,"equal scores are ordered by earlier start, so the earlier of two windows on E1 is kept",B:16-24:0.8|A:8-16:0.8|C:48-56:0.7|D:80-88:0.6|F:100-108:0.5,A|B|C|D,A|B|C|D,A|C|D|F,A|C|D|F,0,2,yes
+window_spanning_new_and_hit_event,a window touching an already hit event is skipped even if it also reaches a new one,A:8-16:0.9|B:18-52:0.8|C:60-68:0.7|D:80-88:0.6|F:100-108:0.5,A|B|C|D,A|B|C|D,A|C|D|F,A|C|D|F,0,3,yes

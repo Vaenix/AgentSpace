@@ -1,0 +1,13 @@
+arm,variant,event_id,detector_start_s,detector_end_s,peak_label,peak_confidence,windows_hitting,window_ids
+vision_only,original,E1,96.0,105.0,applause,0.934,0,
+vision_only,original,E2,388.5,399.0,applause,0.8463,0,
+vision_only,original,E3,729.0,733.5,applause,0.9147,0,
+vision_only,event_dedup,E1,96.0,105.0,applause,0.934,0,
+vision_only,event_dedup,E2,388.5,399.0,applause,0.8463,0,
+vision_only,event_dedup,E3,729.0,733.5,applause,0.9147,0,
+vision_plus_sound,original,E1,96.0,105.0,applause,0.934,1,W027
+vision_plus_sound,original,E2,388.5,399.0,applause,0.8463,2,W098|W100
+vision_plus_sound,original,E3,729.0,733.5,applause,0.9147,1,W182
+vision_plus_sound,event_dedup,E1,96.0,105.0,applause,0.934,1,W027
+vision_plus_sound,event_dedup,E2,388.5,399.0,applause,0.8463,1,W098
+vision_plus_sound,event_dedup,E3,729.0,733.5,applause,0.9147,1,W182

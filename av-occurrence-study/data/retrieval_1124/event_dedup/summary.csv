@@ -1,0 +1,5 @@
+arm,variant,budget,selected,shortfall,window_seconds,events_in_video,unique_events_hit,repeats_per_event,extra_windows_on_hit_events,windows_without_detection
+vision_only,original,4,4,0,612-620|220-228|76-84|604-612,3,0,E1:0|E2:0|E3:0,0,4
+vision_only,event_dedup,4,4,0,612-620|220-228|76-84|604-612,3,0,E1:0|E2:0|E3:0,0,4
+vision_plus_sound,original,4,4,0,388-396|396-404|724-732|104-112,3,3,E1:1|E2:2|E3:1,1,0
+vision_plus_sound,event_dedup,4,4,0,388-396|724-732|104-112|612-620,3,3,E1:1|E2:1|E3:1,0,1

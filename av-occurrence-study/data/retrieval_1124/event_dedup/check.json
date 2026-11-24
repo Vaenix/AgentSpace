@@ -1,0 +1,29 @@
+{
+  "video_id": "video530",
+  "budget": 4,
+  "events_in_video": 3,
+  "event_source": "audio_leads.csv merged SoundAnalysis intervals (applause|clapping >= 0.5)",
+  "audio_votes_merge_to_events": true,
+  "stored_ranks_and_fusion_recompute": true,
+  "recomputed_original_matches_top4_json": {
+    "vision_only": true,
+    "vision_plus_sound": true
+  },
+  "edge_cases_passed": "5/5",
+  "input_sha256": {
+    "retrieval_1124/visual/grid_scores.csv": "1ee30218842b3514029fc39b69b35d5e9ae4a18a7d5d7110b9756199fc6b47a8",
+    "retrieval_1124/visual/top4.json": "36a31a4afca1145c6880b27f37a56e1005a0432f0913d36158725471f3b7803f",
+    "retrieval_1124/visual/rules.json": "1e515d1c3ad3782d4482b3f1f450ae5990f89f65aa10b1e16eee928258425e6e",
+    "retrieval_1124/visual/audio_votes.csv": "db7a45cd2272a385eb1afd4737c077f6069392cd57326bd4915f013918fe7f74",
+    "audio_leads.csv": "899accd84579bbb6769e19cc16c86eec12ab55ef245d8cda66c7040531fb97d4"
+  },
+  "output_sha256": {
+    "summary.csv": "e5dddec45fa5824331d782b29fb4a042830ce572be219e5838cf39efbe3b74c3",
+    "selections.csv": "2f167a89c9aae1569aaf8e1505963cebe79a083baaac41f2b22e36f9e8b3c891",
+    "event_coverage.csv": "db2ffe8d8e8733f31d7b21bc35ff9a27572e8dfc5f86e6bf958bd44edb384924",
+    "decisions.csv": "44f180d43347d32849540273d0946ff4d5f7f1a2a462137e68d0b154097de31b",
+    "edge_cases.csv": "3c355e3438a304e83f791d15aa4d456b1312633b627ca0a053bd0523f7c0c41c"
+  },
+  "human_recall_at_4": null,
+  "reference_status": "未跑"
+}
