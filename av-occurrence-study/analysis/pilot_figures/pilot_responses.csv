@@ -1,0 +1,109 @@
+video_id,qid,ordinal,condition,raw_answer,raw_event,raw_response,option_map,segment_map,action_id,action_symbol,action,strict_format,strict_status,strict_window,strict_interval_s,posthoc_status,posthoc_window,posthoc_interval_s
+P37_102,P37_102-7-smoke-1,1,original,A,E02,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E02""
+}
+```",A=α B=β,E01=W1 E02=W2,7df07479a8beabb9,α,take knife,ok,valid,2,"[94.69200000000001, 95.53]",valid,2,"[94.69200000000001, 95.53]"
+P37_102,P37_102-7-smoke-1,1,options_reversed,B,E02,"```json
+{
+  ""answer"": ""B"",
+  ""event"": ""E02""
+}
+```",A=β B=α,E01=W1 E02=W2,7df07479a8beabb9,α,take knife,ok,valid,2,"[94.69200000000001, 95.53]",valid,2,"[94.69200000000001, 95.53]"
+P37_102,P37_102-7-smoke-1,1,segment_labels_reversed,A,E01 94.692–95.53s,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E01 94.692–95.53s""
+}
+```",A=α B=β,E01=W2 E02=W1,7df07479a8beabb9,α,take knife,invalid_value,format_not_comparable,,,recovered,2,"[94.69200000000001, 95.53]"
+P37_102,P37_102-7-smoke-2,2,original,A,E02,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E02""
+}
+```",A=α B=β,E01=W1 E02=W2,7df07479a8beabb9,α,take knife,ok,valid,2,"[94.69200000000001, 95.53]",valid,2,"[94.69200000000001, 95.53]"
+P37_102,P37_102-7-smoke-2,2,options_reversed,B,E02,"```json
+{
+  ""answer"": ""B"",
+  ""event"": ""E02""
+}
+```",A=β B=α,E01=W1 E02=W2,7df07479a8beabb9,α,take knife,ok,valid,2,"[94.69200000000001, 95.53]",valid,2,"[94.69200000000001, 95.53]"
+P37_102,P37_102-7-smoke-2,2,segment_labels_reversed,A,E01 94.692–95.53s,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E01 94.692–95.53s""
+}
+```",A=α B=β,E01=W2 E02=W1,7df07479a8beabb9,α,take knife,invalid_value,format_not_comparable,,,recovered,2,"[94.69200000000001, 95.53]"
+P20_01,P20_01-5-smoke-1,1,original,,,"```json
+{
+  ""answer"": null,
+  ""event"": null
+}
+```",A=α B=β,E01=W1 E02=W2,,,,ok,abstained,,,abstained,,
+P20_01,P20_01-5-smoke-1,1,options_reversed,,,"```json
+{
+  ""answer"": null,
+  ""event"": null
+}
+```",A=β B=α,E01=W1 E02=W2,,,,ok,abstained,,,abstained,,
+P20_01,P20_01-5-smoke-1,1,segment_labels_reversed,,,"```json
+{
+  ""answer"": null,
+  ""event"": null
+}
+```",A=α B=β,E01=W2 E02=W1,,,,ok,abstained,,,abstained,,
+P20_01,P20_01-5-smoke-2,2,original,,,"```json
+{
+  ""answer"": null,
+  ""event"": null
+}
+```",A=α B=β,E01=W1 E02=W2,,,,ok,abstained,,,abstained,,
+P20_01,P20_01-5-smoke-2,2,options_reversed,,,"```json
+{
+  ""answer"": null,
+  ""event"": null
+}
+```",A=β B=α,E01=W1 E02=W2,,,,ok,abstained,,,abstained,,
+P20_01,P20_01-5-smoke-2,2,segment_labels_reversed,,,"```json
+{
+  ""answer"": null,
+  ""event"": null
+}
+```",A=α B=β,E01=W2 E02=W1,,,,ok,abstained,,,abstained,,
+P03_117,P03_117-2-smoke-1,1,original,A,E01 530.566–533.272s,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E01 530.566–533.272s""
+}
+```",A=α B=β,E01=W1 E02=W2,a23abf23546ebc75,α,spread butter onto knife,invalid_value,format_not_comparable,,,recovered,1,"[530.566, 533.272]"
+P03_117,P03_117-2-smoke-1,1,options_reversed,B,E02,"```json
+{
+  ""answer"": ""B"",
+  ""event"": ""E02""
+}
+```",A=β B=α,E01=W1 E02=W2,a23abf23546ebc75,α,spread butter onto knife,ok,valid,2,"[629.763, 636.539]",valid,2,"[629.763, 636.539]"
+P03_117,P03_117-2-smoke-1,1,segment_labels_reversed,A,E02 530.566–533.272s,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E02 530.566–533.272s""
+}
+```",A=α B=β,E01=W2 E02=W1,a23abf23546ebc75,α,spread butter onto knife,invalid_value,format_not_comparable,,,recovered,1,"[530.566, 533.272]"
+P03_117,P03_117-2-smoke-2,2,original,A,E01 530.566–533.272s,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E01 530.566–533.272s""
+}
+```",A=α B=β,E01=W1 E02=W2,a23abf23546ebc75,α,spread butter onto knife,invalid_value,format_not_comparable,,,recovered,1,"[530.566, 533.272]"
+P03_117,P03_117-2-smoke-2,2,options_reversed,B,E02,"```json
+{
+  ""answer"": ""B"",
+  ""event"": ""E02""
+}
+```",A=β B=α,E01=W1 E02=W2,a23abf23546ebc75,α,spread butter onto knife,ok,valid,2,"[629.763, 636.539]",valid,2,"[629.763, 636.539]"
+P03_117,P03_117-2-smoke-2,2,segment_labels_reversed,A,E02 530.566–533.272s,"```json
+{
+  ""answer"": ""A"",
+  ""event"": ""E02 530.566–533.272s""
+}
+```",A=α B=β,E01=W2 E02=W1,a23abf23546ebc75,α,spread butter onto knife,invalid_value,format_not_comparable,,,recovered,1,"[530.566, 533.272]"

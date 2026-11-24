@@ -1,0 +1,204 @@
+{
+  "source": "av-occurrence-study/run/replication_1124 (read-only)",
+  "input_sha256": {
+    "predictions.jsonl": "d5b80c141c236c65311fcc4b29d1de7411720ace46f37637b277fe61e83194e4",
+    "manifest/prompts.jsonl": "1ad4bb3f0d20c67feb261c6ac564f48f9f73259484781135b59f8dc953c2e727",
+    "manifest/input_hashes.json": "6f0d2415c760bab190938f5f77d60fda3050064bb2a49a917d0da79e2de249d5",
+    "manifest/selected.jsonl": "0d55975787a41241012bf670e24823237f06d9050475ba24dcea139ec9a1aad8",
+    "summary.json": "28c89c15a901948cf89183c9db0874637b584d93f0d546c958c81e3e65524860",
+    "comparisons.csv": "c0b658e1ae78e2b40b28838833bf87d96be372d2539d19b77baee020cdeb6539",
+    "format_sensitivity.json": "68525939640f1e11461e8146a9e1c462f3656f01014bbf22a0abc97739113589"
+  },
+  "matplotlib": "3.9.0",
+  "replies": {
+    "total": 18,
+    "strict_valid": 6,
+    "abstained": 6,
+    "strict_not_decodable": 6,
+    "posthoc_recovered": 6
+  },
+  "denominators": {
+    "strict_prespecified/options_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 2,
+      "not_comparable_abstention": 2,
+      "not_comparable_format": 2,
+      "action_stable_and_window_changed": 0
+    },
+    "strict_prespecified/segment_labels_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 0,
+      "not_comparable_abstention": 2,
+      "not_comparable_format": 4,
+      "action_stable_and_window_changed": 0
+    },
+    "posthoc_format_sensitivity/options_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 4,
+      "not_comparable_abstention": 2,
+      "not_comparable_format": 0,
+      "action_stable_and_window_changed": 2
+    },
+    "posthoc_format_sensitivity/segment_labels_reversed": {
+      "all_questions": 6,
+      "comparable_questions": 4,
+      "not_comparable_abstention": 2,
+      "not_comparable_format": 0,
+      "action_stable_and_window_changed": 0
+    }
+  },
+  "checks": [
+    {
+      "check": "18 distinct question-condition replies match the frozen prompt manifest",
+      "passed": true
+    },
+    {
+      "check": "strict re-parse reproduces answer_id, interval_s, physical_window and result_format of all 18 replies",
+      "passed": true
+    },
+    {
+      "check": "strict totals equal summary.json (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict totals equal summary.json (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict per-question comparisons equal comparisons.csv",
+      "passed": true
+    },
+    {
+      "check": "post-hoc recovered replies equal format_sensitivity.json recovered_outputs",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified totals equal format_sensitivity.json strict_metrics (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified P37_102 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified P20_01 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified P03_117 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified totals equal format_sensitivity.json strict_metrics (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified P37_102 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified P20_01 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "strict_prespecified P03_117 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity totals equal format_sensitivity.json metrics (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity P37_102 equals format_sensitivity.json metrics_by_video (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity P20_01 equals format_sensitivity.json metrics_by_video (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity P03_117 equals format_sensitivity.json metrics_by_video (options_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity totals equal format_sensitivity.json metrics (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity P37_102 equals format_sensitivity.json metrics_by_video (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity P20_01 equals format_sensitivity.json metrics_by_video (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "posthoc_format_sensitivity P03_117 equals format_sensitivity.json metrics_by_video (segment_labels_reversed)",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/options_reversed/P37_102",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/options_reversed/P20_01",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/options_reversed/P03_117",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/options_reversed/all",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/P37_102",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/P20_01",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/P03_117",
+      "passed": true
+    },
+    {
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/all",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/options_reversed/P37_102",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/options_reversed/P20_01",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/options_reversed/P03_117",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/options_reversed/all",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/segment_labels_reversed/P37_102",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/segment_labels_reversed/P20_01",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/segment_labels_reversed/P03_117",
+      "passed": true
+    },
+    {
+      "check": "denominator partition posthoc_format_sensitivity/segment_labels_reversed/all",
+      "passed": true
+    }
+  ]
+}
