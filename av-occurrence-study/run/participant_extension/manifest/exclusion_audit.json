@@ -1,0 +1,1116 @@
+{
+  "rule": "epic/screen.py candidates on the public train CSVs; drop every participant in any exclusion source; then repeatedly take, among participants not yet picked, the pair with the fewest picks of its sound class in this batch (from zero), ties by SHA-256(pair_id) ascending; at most 12 participants.",
+  "counts": {
+    "train_sound_participants": 32,
+    "train_action_participants": 32,
+    "candidate_pairs": 119,
+    "candidate_videos": 84,
+    "participants_with_candidates": 27,
+    "excluded_participants": 15,
+    "excluded_pairs": 92,
+    "eligible_participants": 12,
+    "eligible_pairs": 27,
+    "eligible_videos": 24,
+    "selected_participants": 12,
+    "participant_cap": 12
+  },
+  "excluded_participants": {
+    "P02": [
+      "validation_queue"
+    ],
+    "P03": [
+      "train_batch_1_replication_1124",
+      "train_shortlist_1124"
+    ],
+    "P04": [
+      "train_batch_2_confirmation_1124",
+      "train_shortlist_1124"
+    ],
+    "P05": [
+      "validation_queue"
+    ],
+    "P08": [
+      "validation_queue"
+    ],
+    "P10": [
+      "validation_queue"
+    ],
+    "P15": [
+      "train_batch_2_confirmation_1124",
+      "train_shortlist_1124"
+    ],
+    "P20": [
+      "train_batch_1_replication_1124",
+      "train_shortlist_1124"
+    ],
+    "P22": [
+      "validation_queue",
+      "smoke_predictions",
+      "smoke_reversed_options"
+    ],
+    "P23": [
+      "validation_queue"
+    ],
+    "P24": [
+      "validation_queue"
+    ],
+    "P27": [
+      "train_batch_2_confirmation_1124",
+      "train_shortlist_1124"
+    ],
+    "P29": [
+      "validation_queue"
+    ],
+    "P30": [
+      "validation_queue"
+    ],
+    "P37": [
+      "train_batch_1_replication_1124",
+      "train_shortlist_1124"
+    ]
+  },
+  "participants": [
+    {
+      "participant_id": "P01",
+      "candidate_pairs": 8,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P02",
+      "candidate_pairs": 15,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P03",
+      "candidate_pairs": 8,
+      "decision": "excluded",
+      "reasons": [
+        "train_batch_1_replication_1124",
+        "train_shortlist_1124"
+      ]
+    },
+    {
+      "participant_id": "P04",
+      "candidate_pairs": 13,
+      "decision": "excluded",
+      "reasons": [
+        "train_batch_2_confirmation_1124",
+        "train_shortlist_1124"
+      ]
+    },
+    {
+      "participant_id": "P05",
+      "candidate_pairs": 3,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P06",
+      "candidate_pairs": 5,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P07",
+      "candidate_pairs": 1,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P08",
+      "candidate_pairs": 6,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P09",
+      "candidate_pairs": 1,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P10",
+      "candidate_pairs": 6,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P11",
+      "candidate_pairs": 2,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P12",
+      "candidate_pairs": 2,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P13",
+      "candidate_pairs": 1,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P15",
+      "candidate_pairs": 1,
+      "decision": "excluded",
+      "reasons": [
+        "train_batch_2_confirmation_1124",
+        "train_shortlist_1124"
+      ]
+    },
+    {
+      "participant_id": "P16",
+      "candidate_pairs": 1,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P20",
+      "candidate_pairs": 1,
+      "decision": "excluded",
+      "reasons": [
+        "train_batch_1_replication_1124",
+        "train_shortlist_1124"
+      ]
+    },
+    {
+      "participant_id": "P21",
+      "candidate_pairs": 1,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P22",
+      "candidate_pairs": 18,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue",
+        "smoke_predictions",
+        "smoke_reversed_options"
+      ]
+    },
+    {
+      "participant_id": "P23",
+      "candidate_pairs": 4,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P24",
+      "candidate_pairs": 2,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P26",
+      "candidate_pairs": 2,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P27",
+      "candidate_pairs": 6,
+      "decision": "excluded",
+      "reasons": [
+        "train_batch_2_confirmation_1124",
+        "train_shortlist_1124"
+      ]
+    },
+    {
+      "participant_id": "P28",
+      "candidate_pairs": 1,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P29",
+      "candidate_pairs": 1,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P30",
+      "candidate_pairs": 6,
+      "decision": "excluded",
+      "reasons": [
+        "validation_queue"
+      ]
+    },
+    {
+      "participant_id": "P35",
+      "candidate_pairs": 2,
+      "decision": "selected",
+      "reasons": []
+    },
+    {
+      "participant_id": "P37",
+      "candidate_pairs": 2,
+      "decision": "excluded",
+      "reasons": [
+        "train_batch_1_replication_1124",
+        "train_shortlist_1124"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "P01_01-19",
+      "participant_id": "P01",
+      "sound_class": "pour",
+      "pair_id_sha256": "e18d7e38ea5f33e056e4a5c2a50bbbf28413e15065302ddcb41044c22d7460a1",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P01_05-4",
+      "participant_id": "P01",
+      "sound_class": "rustle",
+      "pair_id_sha256": "484317cd7d3136b51d64a1eb6ee8aa988e84347ce2952dd4e15f1bc265407559",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P01_09-19",
+      "participant_id": "P01",
+      "sound_class": "pour",
+      "pair_id_sha256": "e3338109a418b737321a8710ccda44bbca40a148a05d6a7bd144bf9d4784b3ab",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P01_09-7",
+      "participant_id": "P01",
+      "sound_class": "footstep",
+      "pair_id_sha256": "d4599e7b9deb64a3598ac95cd7f4ab050248d3d373674de141d5888a5a3eefb9",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P01_105-4",
+      "participant_id": "P01",
+      "sound_class": "rustle",
+      "pair_id_sha256": "5b840acae0eee7d772057b00861af12d41c26fe97be8b8c0402d4aa4d90fde54",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P01_109-5",
+      "participant_id": "P01",
+      "sound_class": "water",
+      "pair_id_sha256": "bf1c4abcd0100853aa87c787109710c661000850b7f400bb48257c05cfdeaf4e",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P01_17-7",
+      "participant_id": "P01",
+      "sound_class": "footstep",
+      "pair_id_sha256": "1ab9adfff480b3a74b3661a11c22a1ef5420090a779e4fb5f8e4510a7107e714",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P01_18-7",
+      "participant_id": "P01",
+      "sound_class": "footstep",
+      "pair_id_sha256": "9e8f83bcb0e9e695ad508271a9cfbe5e73a7dbc266f5c807b6468fb650042db5",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P02_03-19",
+      "participant_id": "P02",
+      "sound_class": "pour",
+      "pair_id_sha256": "a5249c8da67d5dc93831447678d315d6148dc662e7550e682519f49cefa5babe",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_06-4",
+      "participant_id": "P02",
+      "sound_class": "rustle",
+      "pair_id_sha256": "589a9866d518611303e6b343fe901e0a6a70b69a618ec1db882b25edd9cb2783",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_09-19",
+      "participant_id": "P02",
+      "sound_class": "pour",
+      "pair_id_sha256": "9b889be2b32b70d7a9c1e622c328baf52dda9b3073cf008627907cc8ca1c604a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_09-5",
+      "participant_id": "P02",
+      "sound_class": "water",
+      "pair_id_sha256": "d40249e9671f9f3fc771b284969e255e71b329b662ced1ad56b8e2c72ef9de95",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_09-7",
+      "participant_id": "P02",
+      "sound_class": "footstep",
+      "pair_id_sha256": "ee241600c1766ae78a2ddb62e209c9970a758a82c2f3ac4588d8558e1c3707e0",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_108-19",
+      "participant_id": "P02",
+      "sound_class": "pour",
+      "pair_id_sha256": "850d94a5e8f4d0d149565e94dc4b90970714d19dbd523318ec6a1ee05a686c6a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_108-5",
+      "participant_id": "P02",
+      "sound_class": "water",
+      "pair_id_sha256": "0324c39e23d5c428ea43ada630111a635c11fcba3058de1ef5a17a5fb9c9f567",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_109-5",
+      "participant_id": "P02",
+      "sound_class": "water",
+      "pair_id_sha256": "3f546ebbfff203cb819702bffd061a779a12b8ede78607245d2fe315120be59c",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_118-5",
+      "participant_id": "P02",
+      "sound_class": "water",
+      "pair_id_sha256": "f76c9af2013b5029eb845c741c964fb43ce089b623e0cf9c17ee00c0e5171852",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_120-4",
+      "participant_id": "P02",
+      "sound_class": "rustle",
+      "pair_id_sha256": "fe6547fb731e92ffa49f5db44d62531833382f7ab525d0bd4f282be1e1491573",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_122-5",
+      "participant_id": "P02",
+      "sound_class": "water",
+      "pair_id_sha256": "bc7b7490aaf7eac9fe3b53b072bcc132033269aac743e62506cfdb7716d8cf8c",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_129-7",
+      "participant_id": "P02",
+      "sound_class": "footstep",
+      "pair_id_sha256": "58de1cb4bb297cee843bffaeb716135b48316acab41d322d3b701b6081e47135",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_130-19",
+      "participant_id": "P02",
+      "sound_class": "pour",
+      "pair_id_sha256": "a720270c15b539c02ee36f956b937b7faa9afa57860f6a891bb93855a7a58139",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_130-4",
+      "participant_id": "P02",
+      "sound_class": "rustle",
+      "pair_id_sha256": "9041af8a6fae41ef358d5a8b28188e6cd3f0e172745d20799b3bb7e70de65190",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P02_131-5",
+      "participant_id": "P02",
+      "sound_class": "water",
+      "pair_id_sha256": "77984ae084491d9daacc525315808f026c71ef012e579b18b545f9dbfc914825",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_04-19",
+      "participant_id": "P03",
+      "sound_class": "pour",
+      "pair_id_sha256": "342717ff2b3ca010bf58bea96d8329a2c7a15cca106dca3d626d075bafa8559f",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_04-7",
+      "participant_id": "P03",
+      "sound_class": "footstep",
+      "pair_id_sha256": "c267951ef0b43e285c1099a6677910275a7f8f9e5e9231de3d31d0a40078a48d",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_101-7",
+      "participant_id": "P03",
+      "sound_class": "footstep",
+      "pair_id_sha256": "b18bc390f3a0ca55d1084c3ff4fb3e055743288a908fd65ea8dedc87e2b38a4a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_117-2",
+      "participant_id": "P03",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "08ee5aaba6a93f8e0a71e858ae0420b5838ba63e87397bb6141f7346552322b2",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_117-4",
+      "participant_id": "P03",
+      "sound_class": "rustle",
+      "pair_id_sha256": "1a98b3f5144cdb5ec9c65c69e710c248afe0744bca743231500c93afe726363f",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_117-7",
+      "participant_id": "P03",
+      "sound_class": "footstep",
+      "pair_id_sha256": "0dcdf65afe4e6e10bdd3e0bbe076a51c3599573829d28cc557156dbf1e96f6ad",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_120-2",
+      "participant_id": "P03",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "91213e19a63f5299f0e082d9fdd59c8c6b436aa5e4cb8742f9b69b0a934643a6",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P03_120-4",
+      "participant_id": "P03",
+      "sound_class": "rustle",
+      "pair_id_sha256": "fb51a3ca5c260f6161c202ca8d46b270aad3cd5204646e4bfb1bad64742630ac",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_01-2",
+      "participant_id": "P04",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "f1d61bb1aa8e5c42d91592b73678cd296f51c2e455136396d54af72bfa213f13",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_03-4",
+      "participant_id": "P04",
+      "sound_class": "rustle",
+      "pair_id_sha256": "44c66696d4d9b7b689b06bb617fa73f33f1ce082672e24b2f3451bb7be3555e4",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_05-5",
+      "participant_id": "P04",
+      "sound_class": "water",
+      "pair_id_sha256": "903c0ff892d33c9bd3fa9a616ab87f577f0d76d2e6800623f98ac997836f1183",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_104-5",
+      "participant_id": "P04",
+      "sound_class": "water",
+      "pair_id_sha256": "4cb1c701cf679181e4e2036de67fa7e4aaece9688bde0228678ce48258250de8",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_109-5",
+      "participant_id": "P04",
+      "sound_class": "water",
+      "pair_id_sha256": "6e560dcf05eb6dd1c0ab7d91562731e27667fa962e8a3dbac539207f41c90089",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_110-19",
+      "participant_id": "P04",
+      "sound_class": "pour",
+      "pair_id_sha256": "e0c4d9574784a458e533bfb8e949558d6afde6852c54b3cf70e35a93856b0816",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_110-4",
+      "participant_id": "P04",
+      "sound_class": "rustle",
+      "pair_id_sha256": "42febabe5cd3db731377b0352fb214efc55ab3a7e2ceae79df8d64e0824f5c83",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_113-29",
+      "participant_id": "P04",
+      "sound_class": "sizzling / boiling",
+      "pair_id_sha256": "f4b2ceada55777027caa9fcbb38ce22bf514ec6e6f32fd8a61b9d6e6208f8d82",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_113-7",
+      "participant_id": "P04",
+      "sound_class": "footstep",
+      "pair_id_sha256": "9821750d5cb74f86e4a2836c83d6b207022e0d59347ec4c94ae6bf78db90b993",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_119-4",
+      "participant_id": "P04",
+      "sound_class": "rustle",
+      "pair_id_sha256": "3cacf04f352ba86921cbb2f7f6065dd94c4c7843afbeeb7f67926085686db8c2",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_121-19",
+      "participant_id": "P04",
+      "sound_class": "pour",
+      "pair_id_sha256": "2bc8037fa95a137ded55b3719217dadc48a0e91af877eca79e360be61e5d0a1a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_121-4",
+      "participant_id": "P04",
+      "sound_class": "rustle",
+      "pair_id_sha256": "eb05091530cc1ae6f3ccf67cf6a0368f72962438b74a764199196d57128f731d",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P04_23-5",
+      "participant_id": "P04",
+      "sound_class": "water",
+      "pair_id_sha256": "a7c16bfd9cfee16bd308ece01126e92b99047606fc279e055f2c6c7fbb2dac5e",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P05_03-4",
+      "participant_id": "P05",
+      "sound_class": "rustle",
+      "pair_id_sha256": "126cae1c3a0aab1e16b163180d4e878a01ef624fbf6913bf8b54fc2c163f466b",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P05_03-5",
+      "participant_id": "P05",
+      "sound_class": "water",
+      "pair_id_sha256": "9a7549e30c96355be104c62d7ed95f283d3b6a79df9fbee5ddb1491b21ad6ec5",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P05_03-7",
+      "participant_id": "P05",
+      "sound_class": "footstep",
+      "pair_id_sha256": "b285b8fda1b91e90a656408881eb3ee558fce114de53a8a7f5d100109fef7665",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P06_03-5",
+      "participant_id": "P06",
+      "sound_class": "water",
+      "pair_id_sha256": "f797a91916251fab2b003ec100ce713eb6fa56068176f655def0204aff075b2d",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P06_07-7",
+      "participant_id": "P06",
+      "sound_class": "footstep",
+      "pair_id_sha256": "ab33387d8921739b0056d6517353fbb01c0716fdf136af03705e68dfff3a7657",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P06_101-7",
+      "participant_id": "P06",
+      "sound_class": "footstep",
+      "pair_id_sha256": "b8666a763e128d862538995f042fde6a969f05fb7e3ad218618dd7066cfdcd8f",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P06_102-5",
+      "participant_id": "P06",
+      "sound_class": "water",
+      "pair_id_sha256": "0d45ec404dba42e705aabaded2b003035bf332d3b72985386e03f3ca07cddaaa",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P06_108-19",
+      "participant_id": "P06",
+      "sound_class": "pour",
+      "pair_id_sha256": "b2c363b7adcfd810ac40fe37b2b9f69b5f794a6a7a2220590e3f56b0ba46c173",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P07_04-7",
+      "participant_id": "P07",
+      "sound_class": "footstep",
+      "pair_id_sha256": "829a14bda0df8fb97db2b87bd627ff8701c9d7d28c6112536c0f44aa8a11ccf9",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P08_05-15",
+      "participant_id": "P08",
+      "sound_class": "beep",
+      "pair_id_sha256": "8e840458e8ac06e4f4739089cd34c3c6f747fc411d0900f0593fa6dc35b97532",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P08_05-2",
+      "participant_id": "P08",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "c8b933f9852159ba79ccaab3b52b687cbf622be4de43436a1996c7625213859d",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P08_05-5",
+      "participant_id": "P08",
+      "sound_class": "water",
+      "pair_id_sha256": "188580c3b49ca69141964c6dd6a46e3c073c189de7aa16ec155ffaa82d4b90e4",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P08_21-19",
+      "participant_id": "P08",
+      "sound_class": "pour",
+      "pair_id_sha256": "643546dd83b679396a8b2fd911ee1020e30f2c0e55d1799de727f1a7c60fcc36",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P08_21-2",
+      "participant_id": "P08",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "3693d7e8bde176b5f085dde6b174738ac387b6f707bd46cadbfd3f00cb9cef2f",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P08_21-5",
+      "participant_id": "P08",
+      "sound_class": "water",
+      "pair_id_sha256": "742157df9c17af584cedddb8889ff52c0338fb37a9e84946fcb9a3db5d183f6c",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P09_103-5",
+      "participant_id": "P09",
+      "sound_class": "water",
+      "pair_id_sha256": "d0dda4ef3f7d05f16a43560a5651ed658fe60b7f2d6a3122d935c112f2df9f19",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P10_01-19",
+      "participant_id": "P10",
+      "sound_class": "pour",
+      "pair_id_sha256": "e348e3d9418526436c2db9400cc7641e5b5a40f8467777c86dc828a7eb8f40d1",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P10_01-5",
+      "participant_id": "P10",
+      "sound_class": "water",
+      "pair_id_sha256": "f21310c92a0e74cb79696c12fe19f9956f779ecb4a41c953f7d942011b980809",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P10_02-19",
+      "participant_id": "P10",
+      "sound_class": "pour",
+      "pair_id_sha256": "b988f772453b70d25a91da64d68f01d540b1af0ab5f7e2ba68897874c282090e",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P10_04-2",
+      "participant_id": "P10",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "e98e6c6e2f8538d8c99f86ec81f51c26f17196384ce6081a2137aca2a748cd42",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P10_04-4",
+      "participant_id": "P10",
+      "sound_class": "rustle",
+      "pair_id_sha256": "8f7743102eee6057ab27a8f30f066d4db5fd7ee9c767ff304f2ecd9e4ed13389",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P10_04-5",
+      "participant_id": "P10",
+      "sound_class": "water",
+      "pair_id_sha256": "0068f2095c4fbb72047df64a265dc3a3e8706d34eedbb116f5d8874f25e409c9",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P11_104-4",
+      "participant_id": "P11",
+      "sound_class": "rustle",
+      "pair_id_sha256": "694b32ad86c08fa1d73964c02e8e20b9293878e97b7ae262611462d280749a35",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P11_104-7",
+      "participant_id": "P11",
+      "sound_class": "footstep",
+      "pair_id_sha256": "08820fc4c979d9d1f1e25f6d3ffc8a9616cdb267b2e4d24893a69c7a92d03882",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P12_101-5",
+      "participant_id": "P12",
+      "sound_class": "water",
+      "pair_id_sha256": "67b5a55061e3cfd790b4a138630ebef489687b7dbe1329cd753968bf8386e1cf",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P12_104-5",
+      "participant_id": "P12",
+      "sound_class": "water",
+      "pair_id_sha256": "83a2bbdf69f59475e8d2cc113bfda86566a28c262d19ecf76831331de75ac9e5",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P13_08-2",
+      "participant_id": "P13",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "b593282d9f7cb17e52cd9e1ef4afcfe49b5cbfbff38e8f5d6325366b85598bfb",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P15_02-15",
+      "participant_id": "P15",
+      "sound_class": "beep",
+      "pair_id_sha256": "8c8cd6ca36bbd6e2e8de3f6e651d8a8751d360cf0537bb2806a88f08c5235e28",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P16_01-5",
+      "participant_id": "P16",
+      "sound_class": "water",
+      "pair_id_sha256": "70c433a40d4ea44612a44d310396606ca2e8839ad95102d07743f767b392228c",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P20_01-5",
+      "participant_id": "P20",
+      "sound_class": "water",
+      "pair_id_sha256": "07d93ff0fe9ec27158636f7d894833418cb1109d636f03d9409350f00d767a0e",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P21_01-7",
+      "participant_id": "P21",
+      "sound_class": "footstep",
+      "pair_id_sha256": "6bf8f20f02540d1266185599b42bf1a75bf7bad68dbc8dde30f4aed744798234",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P22_05-4",
+      "participant_id": "P22",
+      "sound_class": "rustle",
+      "pair_id_sha256": "fd1642413d404676a9e80bba79072f9379f94faf62616cb5d5694c8a3e0d145b",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_05-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "fcead4c0d4851e69617916f9df7073c77065ddfcff6b834893fd6167f9aa773f",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_07-4",
+      "participant_id": "P22",
+      "sound_class": "rustle",
+      "pair_id_sha256": "bf62fa4969e5ed08c871ac3bc137a0dbd80b8e91820c38ed07b1ad05df159f2f",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_08-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "5d07bc57887e8b4ec1498119417126ec2edef7098eea2827ba05c8d1da090302",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_10-2",
+      "participant_id": "P22",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "cedbcf10550a60473bbb4490029972ef245596565fbae800d511811c54de1624",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_10-4",
+      "participant_id": "P22",
+      "sound_class": "rustle",
+      "pair_id_sha256": "6074c64a9852a1b8cef438dbb0ca1225ad91145f89f6c07d05f47b85e5ad24c6",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_10-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "bd816561d38a15566f7f76b3ca176fd2b024f55a4191a149fe25687dc2783502",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_104-5",
+      "participant_id": "P22",
+      "sound_class": "water",
+      "pair_id_sha256": "05a2cd9c2d5052d30306b116ba36babee0b1a978138f56e7085fb833c108472c",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_104-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "39238ca8adf0897ee55f5c24d29006417d3c54f1e7fdccc9f7f2a3f4731d1389",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_109-4",
+      "participant_id": "P22",
+      "sound_class": "rustle",
+      "pair_id_sha256": "b4d70ae67dfc2e53b881b8fde99e19c17634dc0256b4425da3e91b1aa465392a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_109-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "ab19160734c8d887e3dc9dfc99378f98676096a24210dc1eb4d9f7bf9c68dc30",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_111-5",
+      "participant_id": "P22",
+      "sound_class": "water",
+      "pair_id_sha256": "4abc3e3766340dd9ecf830d0a514be066a7b92d4442d49653f182313bd5e3c5a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_113-2",
+      "participant_id": "P22",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "247e5d22dfb0e89059748276315b5ac7607ad5b652622c391a5b8e397f3224fa",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_113-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "e85160b92dfcd994255f0ff5b3de408edabc9ef5cbf1b02184943b8e5ec95f08",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_117-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "7b612a96c79dbaa31f70a9741864d92d479eb140544749e58a45b92c048727c8",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_14-5",
+      "participant_id": "P22",
+      "sound_class": "water",
+      "pair_id_sha256": "4cb6b2be6b3492317abd3bc092ce4ae3839bd5da6eab0dc2bf7c81ef840a7dff",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_16-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "bc06ef91d6132ac822e7ff83866d048dd8f1526a85052c6ead1144db8b0198e9",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P22_17-7",
+      "participant_id": "P22",
+      "sound_class": "footstep",
+      "pair_id_sha256": "49a947a471025f5d9bd27e49978596ee4d106abf38e307408712d58fca21382a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P23_02-15",
+      "participant_id": "P23",
+      "sound_class": "beep",
+      "pair_id_sha256": "034009a339171e5528570acec8f76255e35d3acae8126d3c97e7dfb9b7835df6",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P23_02-5",
+      "participant_id": "P23",
+      "sound_class": "water",
+      "pair_id_sha256": "aaba67f0f0f62fc40a965941f67444db02f658cc40dc371a3fac91aacdcb95c6",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P23_02-7",
+      "participant_id": "P23",
+      "sound_class": "footstep",
+      "pair_id_sha256": "0e86bab5364a8e6b44306c84c0ea4d3ec1a90f0c4c447c9ba843cef59b21d4ea",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P23_101-7",
+      "participant_id": "P23",
+      "sound_class": "footstep",
+      "pair_id_sha256": "4164c7afa3d31e0b69617043fef2bc6e7af7b7c356086bf5ed8b82541916bbcb",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P24_01-4",
+      "participant_id": "P24",
+      "sound_class": "rustle",
+      "pair_id_sha256": "9a24080b6b49f60f1e9af0306b33b4109a8a5aec4fe07cbaaeb1d8f9407fbd32",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P24_08-5",
+      "participant_id": "P24",
+      "sound_class": "water",
+      "pair_id_sha256": "8aecd304b4347aff459c14a29c1d857d291b41b88d54072eef5eaa3da0fcaeb6",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P26_119-5",
+      "participant_id": "P26",
+      "sound_class": "water",
+      "pair_id_sha256": "7d9525aec2583a525247571333447d155c33977dff175fb26cadd754e9454cc4",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P26_119-7",
+      "participant_id": "P26",
+      "sound_class": "footstep",
+      "pair_id_sha256": "cc2e5f1f59e141b3107b128fa1b26526c4c310a4936a09ae0cadc30cb75bcf37",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P27_101-4",
+      "participant_id": "P27",
+      "sound_class": "rustle",
+      "pair_id_sha256": "16c836adff5b8933d8c89d92ffbcae38d0058cfe78d565076b88643ca15f4643",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P27_103-2",
+      "participant_id": "P27",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "33bbd0ccdd6b10d6408c807a344c7af77b890165e50eeb51e41cd272db272fa3",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P27_104-19",
+      "participant_id": "P27",
+      "sound_class": "pour",
+      "pair_id_sha256": "29d103c9d8027610c913e5b9aafd7f19e9b382a2b80ea2ab44d4721db24ba8d4",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P27_104-4",
+      "participant_id": "P27",
+      "sound_class": "rustle",
+      "pair_id_sha256": "f8e571e817b92470f145b7e013102e7d0c58daa35d3f671625e0824ab95d3288",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P27_105-4",
+      "participant_id": "P27",
+      "sound_class": "rustle",
+      "pair_id_sha256": "f56231345cd3086136886bcff180fb12ec041e2143486bf5e63b8717b23ae3ef",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P27_105-7",
+      "participant_id": "P27",
+      "sound_class": "footstep",
+      "pair_id_sha256": "5f6b931eca708fcdced7db919163d620de8ebdcf266f1b18291d21e929c73ee9",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P28_104-7",
+      "participant_id": "P28",
+      "sound_class": "footstep",
+      "pair_id_sha256": "7baa64cbda118470273125ecf9353a317f4ba853695f71b58bfd0e94830a7c35",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P29_01-5",
+      "participant_id": "P29",
+      "sound_class": "water",
+      "pair_id_sha256": "31079ca93690dba09780b69f372830baa622205afd61449454b02cd7d891a06b",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P30_05-5",
+      "participant_id": "P30",
+      "sound_class": "water",
+      "pair_id_sha256": "62ada8553e8b16c5f8c969e59728d8ddd22dc36ef0c75e014ea3a5b903daf97b",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P30_10-15",
+      "participant_id": "P30",
+      "sound_class": "beep",
+      "pair_id_sha256": "e458a668269772614666eb12a2a7fc816c9bc922a598be1de5810f29774b2e1a",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P30_101-19",
+      "participant_id": "P30",
+      "sound_class": "pour",
+      "pair_id_sha256": "7299e6945c286a38db4cf9997ae90d87b6cfa400b5be295463273b44c657dbb8",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P30_107-7",
+      "participant_id": "P30",
+      "sound_class": "footstep",
+      "pair_id_sha256": "ae57916bfe7f3c297cddceb3776f0ac991326e38ade005cf2eacee70cfc96f86",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P30_111-19",
+      "participant_id": "P30",
+      "sound_class": "pour",
+      "pair_id_sha256": "fc5f0e98954baeaee8f7deaba33b6c8c980fdb7978ed2862a641dee707557823",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P30_111-7",
+      "participant_id": "P30",
+      "sound_class": "footstep",
+      "pair_id_sha256": "dcc65c6d3aab59af0e73fdd5547d05d934864cf9c3d90f0675d79518faa7bfd8",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P35_103-4",
+      "participant_id": "P35",
+      "sound_class": "rustle",
+      "pair_id_sha256": "a915e9d948526fdaf66623e11a551abd95f10019e7c91afba4495f6c51f01425",
+      "decision": "participant_already_selected"
+    },
+    {
+      "pair_id": "P35_105-5",
+      "participant_id": "P35",
+      "sound_class": "water",
+      "pair_id_sha256": "5d5254ab16dff7fc74bc3e4bdce783cdcb1087345ab0beccfa34cce638dc6844",
+      "decision": "selected"
+    },
+    {
+      "pair_id": "P37_102-2",
+      "participant_id": "P37",
+      "sound_class": "cut / chop",
+      "pair_id_sha256": "7c56192322cc18fb677096b2f6c364e695fe60d4c6e064901941bcb3ee71eed2",
+      "decision": "excluded_participant"
+    },
+    {
+      "pair_id": "P37_102-7",
+      "participant_id": "P37",
+      "sound_class": "footstep",
+      "pair_id_sha256": "0298cd577b666989a98fadbac62c793236ca2878ab763ad688a66b0a040c691b",
+      "decision": "excluded_participant"
+    }
+  ],
+  "checks": {
+    "one_pair_per_participant": true,
+    "overlap_with_excluded_participants": [],
+    "shortlist_reproduced_sha256": "15c1c09674bb20d2a92e5625a544cde7225655f1b8e3509b0896f51f71e7eab1",
+    "model_outputs_used_for_ranking": false,
+    "media_availability_used": false
+  }
+}

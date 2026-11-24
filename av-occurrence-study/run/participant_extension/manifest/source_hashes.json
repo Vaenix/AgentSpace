@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "sounds": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/EPIC_Sounds_train.csv",
+      "file": "EPIC_Sounds_train.csv",
+      "sha256": "225427ab288cc5c72c1680abb29f5ab8ccd3608c3f4cf409541d2c5cf720dd32"
+    },
+    "actions": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-100-annotations/master/EPIC_100_train.csv",
+      "file": "EPIC_100_train.csv",
+      "sha256": "a3a7ef2e397bd8af12bd0496b09d61b1f2c1f3f6e1726fa86af50a27f4855e87"
+    },
+    "videos": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-100-annotations/master/EPIC_100_video_info.csv",
+      "file": "EPIC_100_video_info.csv",
+      "sha256": "75fd040f6662cb407b4ca2eed4811ca94df280a1aba00b6bf8a5cd286deff382"
+    },
+    "epic_55_splits": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-download-scripts/master/data/epic_55_splits.csv",
+      "file": "epic_55_splits.csv",
+      "sha256": "5acf8b924a51819b7dda91cb56b867f6fc08d367dd0e3f6c99ecdb0f8a9c45e4"
+    },
+    "errata": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-download-scripts/master/data/errata.csv",
+      "file": "errata.csv",
+      "sha256": "5919d70ba14d352022afac3e08fb9076306cbeec772f78aeaa96e74a40aa0d65"
+    }
+  },
+  "rules": {
+    "epic/screen.py": "d3a953c5be5c410ecd875751decbf8a81ea7a172c24c7cef3e91fe5050101fc0",
+    "run/participant_extension/build_queue.py": "0a189880442e0cde3013781463168e63d7658fd988cc7d425c9c1743c21496bc"
+  },
+  "exclusion_sources": {
+    "validation_queue": {
+      "path": "epic/review_queue.jsonl",
+      "sha256": "35cbbebe4b9cc9285a7bfb80010d4a034aeaa4e636401e64b379a9df66f5500d",
+      "rows": 10
+    },
+    "train_batch_1_replication_1124": {
+      "path": "run/replication_1124/manifest/selected.jsonl",
+      "sha256": "0d55975787a41241012bf670e24823237f06d9050475ba24dcea139ec9a1aad8",
+      "rows": 3
+    },
+    "train_batch_2_confirmation_1124": {
+      "path": "run/participant_extension/inputs/confirmation_1124_selected.jsonl",
+      "sha256": "5d9a9158d5ba42b9c8c6eb9bcd04a32575cd321ca6734e6cf10ad089d2e915a5",
+      "rows": 3
+    },
+    "train_shortlist_1124": {
+      "path": "run/replication_1124/manifest/ranked_train_candidates.jsonl",
+      "sha256": "15c1c09674bb20d2a92e5625a544cde7225655f1b8e3509b0896f51f71e7eab1",
+      "rows": 6
+    },
+    "smoke_predictions": {
+      "path": "run/epic_smoke_predictions.jsonl",
+      "sha256": "e31bae613130eebd461e58537b62e0d6c92ffb04d687b3c571db97042950b432",
+      "rows": 6
+    },
+    "smoke_reversed_options": {
+      "path": "run/epic_smoke_reversed_options.jsonl",
+      "sha256": "c17ac6833b7b6e32d4b9c66f3998b1a18223c751eb3cfc790f072c1975cfac4d",
+      "rows": 4
+    }
+  }
+}
