@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run fixed-budget event-occurrence prompts with a local Qwen2.5-VL checkpoint."""
 import argparse
+from decimal import Decimal
 import json
 import math
 import re
@@ -12,6 +13,12 @@ from pathlib import Path
 
 MODEL_ID = "mlx-community/Qwen2.5-VL-7B-Instruct-4bit"
 CONDITIONS = ("visual", "flat", "paired", "blind")
+# strict: the event must be exactly one displayed evidence code (the original rule).
+# matched_seconds: also accept "<code> <start>–<end>s" when both printed bounds equal
+# the bounds this prompt displayed for that code.
+PARSE_RULES = ("strict", "matched_seconds")
+SECONDS = r"(\d+(?:\.\d+)?)"
+CODE_WITH_SECONDS = re.compile(rf"(\S+)\s+{SECONDS}\s*s?\s*[–-]\s*{SECONDS}\s*s?")
 QUESTION_KEYS = {"pair_id", "qid", "question", "options", "segments"}
 SEGMENT_KEYS = {"interval_s", "sound_description", "frames"}
 FRAME_KEYS = {"path", "time_s"}
@@ -95,6 +102,15 @@ def load_manifest(path):
     return questions
 
 
+def seconds_label(value):
+    """Seconds exactly as the prompt prints them."""
+    return f"{value:g}"
+
+
+def interval_label(interval):
+    return f"{seconds_label(interval[0])}–{seconds_label(interval[1])}s"
+
+
 def prompt_for(row, condition):
     """Return the prompt, images and opaque-output lookups for one condition."""
     option_ids = {chr(ord("A") + index): key for index, key in enumerate(row["options"])}
@@ -115,15 +131,15 @@ def prompt_for(row, condition):
         code = f"E{index:02}"
         interval = segment["interval_s"]
         segment_intervals[code] = interval
-        interval_label = f"{interval[0]:g}–{interval[1]:g}s"
+        label = interval_label(interval)
         frame_labels = []
         for frame in segment["frames"]:
             images.append(frame["path"])
             frame_labels.append(f"image {len(images)} at {frame['time_s']:g}s")
-        visual = f"{code} {interval_label} | " + ", ".join(frame_labels)
+        visual = f"{code} {label} | " + ", ".join(frame_labels)
         sound = segment["sound_description"].strip() or "[unavailable]"
         visual_lines.append(visual)
-        sound_line = f"{code} {interval_label} | sound: {sound}"
+        sound_line = f"{code} {label} | sound: {sound}"
         sound_lines.append(sound_line)
         paired_lines.extend((visual, sound_line))
 
@@ -137,24 +153,84 @@ def prompt_for(row, condition):
     return "\n\n".join(parts), images, option_ids, segment_intervals
 
 
-def decode(response, option_ids, segment_intervals):
+def parse_answer(answer, option_ids):
+    """Return (stable answer ID, field status); status is ok, null or invalid."""
+    if answer is None:
+        return None, "null"
+    if isinstance(answer, str) and answer in option_ids:
+        return option_ids[answer], "ok"
+    return None, "invalid"
+
+
+def parse_event(event, segment_intervals, rule):
+    """Return (physical interval, field status); status is ok, null, invalid or conflict.
+
+    Intervals always come from this prompt's own code mapping, so a reversed
+    code mapping restores the window that the prompt displayed for that code.
+    """
+    if event is None:
+        return None, "null"
+    if not isinstance(event, str):
+        return None, "invalid"
+    text = event if rule == "strict" else event.strip()
+    if text in segment_intervals:
+        return segment_intervals[text], "ok"
+    if rule == "strict":
+        return None, "invalid"
+    match = CODE_WITH_SECONDS.fullmatch(text)
+    if not match or match[1] not in segment_intervals:
+        return None, "invalid"
+    interval = segment_intervals[match[1]]
+    printed = tuple(Decimal(value) for value in match.group(2, 3))
+    displayed = tuple(Decimal(seconds_label(value)) for value in interval)
+    return (interval, "ok") if printed == displayed else (None, "conflict")
+
+
+def parse_reply(response, option_ids, segment_intervals, rule="strict"):
+    """Decode one model reply under a parse rule.
+
+    Returns answer_id, interval_s, result_format and the per-field statuses.
+    Under strict, result_format keeps its original values (ok, invalid_json,
+    invalid_keys, invalid_value; explicit nulls count as ok). Under
+    matched_seconds it also separates abstained, partially_abstained and
+    code_seconds_conflict.
+    """
+    if rule not in PARSE_RULES:
+        raise ValueError(f"unknown parse rule: {rule}")
+    parsed = {"answer_id": None, "interval_s": None, "answer_status": None, "event_status": None}
     text = response.strip()
     fenced = re.fullmatch(r"```(?:json)?\s*([\s\S]+?)\s*```", text, re.IGNORECASE)
     try:
         reply = json.loads(fenced[1] if fenced else text)
     except json.JSONDecodeError:
-        return None, None, "invalid_json"
+        return dict(parsed, result_format="invalid_json")
     if not isinstance(reply, dict) or set(reply) != {"answer", "event"}:
-        return None, None, "invalid_keys"
+        return dict(parsed, result_format="invalid_keys")
 
-    answer, event = reply["answer"], reply["event"]
-    answer_valid = answer is None or isinstance(answer, str) and answer in option_ids
-    event_valid = event is None or isinstance(event, str) and event in segment_intervals
-    return (
-        option_ids.get(answer) if isinstance(answer, str) else None,
-        segment_intervals.get(event) if isinstance(event, str) else None,
-        "ok" if answer_valid and event_valid else "invalid_value",
-    )
+    answer_id, answer_status = parse_answer(reply["answer"], option_ids)
+    interval, event_status = parse_event(reply["event"], segment_intervals, rule)
+    statuses = answer_status, event_status
+    if rule == "strict":
+        result_format = "invalid_value" if "invalid" in statuses else "ok"
+    elif "conflict" in statuses:
+        result_format = "code_seconds_conflict"
+    elif "invalid" in statuses:
+        result_format = "invalid_value"
+    elif statuses == ("null", "null"):
+        result_format = "abstained"
+    elif "null" in statuses:
+        result_format = "partially_abstained"
+    else:
+        result_format = "ok"
+    return {
+        "answer_id": answer_id, "interval_s": interval, "result_format": result_format,
+        "answer_status": answer_status, "event_status": event_status,
+    }
+
+
+def decode(response, option_ids, segment_intervals, rule="strict"):
+    parsed = parse_reply(response, option_ids, segment_intervals, rule)
+    return parsed["answer_id"], parsed["interval_s"], parsed["result_format"]
 
 
 def run(args, stream):
@@ -182,14 +258,17 @@ def run(args, stream):
                 max_tokens=args.max_tokens, temperature=0.0, verbose=False,
             )
             elapsed = round(time.perf_counter() - start, 3)
-            answer, interval, result_format = decode(generation.text, option_ids, intervals)
+            parsed = parse_reply(generation.text, option_ids, intervals, args.parse_rule)
             record = {
                 "condition": condition,
                 "pair_id": row["pair_id"],
                 "qid": row["qid"],
-                "answer_id": answer,
-                "interval_s": interval,
-                "result_format": result_format,
+                "answer_id": parsed["answer_id"],
+                "interval_s": parsed["interval_s"],
+                "result_format": parsed["result_format"],
+                "parse_rule": args.parse_rule,
+                "answer_status": parsed["answer_status"],
+                "event_status": parsed["event_status"],
                 "raw_response": generation.text,
                 "latency_s": elapsed,
                 "frame_count": len(images),
@@ -214,6 +293,11 @@ def main():
     parser.add_argument("--condition", choices=CONDITIONS, action="append", required=True)
     parser.add_argument("--output", type=Path, required=True, help="Write predictions to a new JSONL file")
     parser.add_argument("--max-tokens", type=int, default=64)
+    parser.add_argument(
+        "--parse-rule", choices=PARSE_RULES, default="strict",
+        help="strict accepts only a bare evidence code; matched_seconds also accepts the code followed by "
+             "the start–end seconds this prompt displayed for it (default: strict)",
+    )
     args = parser.parse_args()
     if args.max_tokens < 1:
         parser.error("--max-tokens must be positive")
