@@ -284,6 +284,18 @@
     {
       "check": "6 of 72 planned calls are technical missing and stay in the planned keys",
       "passed": true
+    },
+    {
+      "check": "frozen_inputs/provenance.json SHA-256 equals statistics.json frozen_input_sha256",
+      "passed": true
+    },
+    {
+      "check": "exactly one recording lacks a complete input and it owns every technical-missing call",
+      "passed": true
+    },
+    {
+      "check": "the technical-missing recording has two windows and exactly one frame not extracted",
+      "passed": true
     }
   ]
 }

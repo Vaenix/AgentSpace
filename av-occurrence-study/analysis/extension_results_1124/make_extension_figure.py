@@ -178,6 +178,32 @@ def totals(rows, stats, check):
     return out
 
 
+def frame_gap(stats, check):
+    """Describe the technical-missing recording from the frozen frame record (frozen_inputs/provenance.json)."""
+    path = EXTENSION / "frozen_inputs" / "provenance.json"
+    check("frozen_inputs/provenance.json SHA-256 equals statistics.json frozen_input_sha256",
+          sha256(path) == stats["frozen_input_sha256"]["frozen_inputs/provenance.json"])
+    unavailable = json.loads(path.read_text(encoding="utf-8"))["unavailable"]
+    missing = stats["rules"][RULE]["technical_missing"]
+    check("exactly one recording lacks a complete input and it owns every technical-missing call",
+          len(unavailable) == 1
+          and {key["qid"].rsplit("-smoke-", 1)[0] for key in missing["keys"]} == {unavailable[0]["pair_id"]})
+    windows = sorted(unavailable[0]["windows"], key=lambda w: w["window_s"][0])
+    frames = [(rank, index, frame) for rank, window in enumerate(windows, 1)
+              for index, frame in enumerate(window["frames"], 1)]
+    failed = [(rank, index) for rank, index, frame in frames if frame["status"] != "extracted"]
+    check("the technical-missing recording has two windows and exactly one frame not extracted",
+          len(windows) == 2 and len(failed) == 1)
+    (window, index), = failed
+    ordinal = {1: "first", 2: "second", 3: "third"}[index]
+    return dict(
+        pair_id=unavailable[0]["pair_id"], extracted=len(frames) - 1, planned_frames=len(frames),
+        window="late" if window == 2 else "early", frame=ordinal,
+        missing_calls=missing["missing_calls"], planned_calls=missing["planned_calls"],
+        conditions=len(missing["keys"]) // len(ORDINALS),
+    )
+
+
 # ---------------------------------------------------------------- text outputs
 
 def write_csv(path, rows):
@@ -192,9 +218,8 @@ def sources_text(total):
     return " and ".join(total["target_event_recordings"].split())
 
 
-def caption(total_rows, stats):
+def caption(total_rows, gap):
     opt, lab = total_rows
-    missing = stats["rules"][RULE]["technical_missing"]
     return f"""# Caption
 
 **Extension batch: per-recording comparison states under the prespecified primary parser (`{RULE}`).**
@@ -203,7 +228,10 @@ For each of the two questions (Q1: action after the first sound; Q2: after the s
 *Reversed action choices* (primary contrast) swaps which action each option letter denotes; *reversed evidence codes* (control) swaps which physical window each evidence code denotes.
 A comparison is comparable only when both replies give a valid action and a valid window.
 The target event is the same semantic action with a changed physical window (W1 and W2 are the two candidate windows in source-time order).
-Non-comparable cells are split into technical missing calls (no prompt input; {missing['missing_calls']} of {missing['planned_calls']} planned calls, all for P11_104-7, which had no extractable frame) and abstentions (answer, or answer and evidence, null on at least one side; the cell lists the original | intervention reply state).
+Non-comparable cells are split into technical missing and abstention.
+For {gap['pair_id']}, {gap['extracted']} of its {gap['planned_frames']} frames were extracted; only the {gap['frame']} frame of the {gap['window']} window was not, so all {gap['missing_calls']} of its calls ({len(ORDINALS)} questions × {gap['conditions']} prompt conditions) lacked a complete input and received no reply.
+These calls count among the {gap['planned_calls']} planned calls, and the {opt['technical_missing']} affected questions count among the {opt['planned_questions']} planned questions of each intervention, but not among its comparable questions.
+Abstention means the answer, or both the answer and the evidence, was null on at least one side; the cell lists the original | intervention reply state.
 Reversed action choices give {opt['comparable_questions']}/{opt['planned_questions']} comparable questions and {opt['target_events']}/{opt['comparable_questions']} target events (from {sources_text(opt)}); reversed evidence codes give {lab['comparable_questions']}/{lab['planned_questions']} and {lab['target_events']}/{lab['comparable_questions']} (from {sources_text(lab)}), so the events of the two interventions come from different recordings.
 The two questions of a recording share frames, options and candidate windows, so they are not independent.
 No human labels are used; the figure describes reply consistency, not correctness.
@@ -212,8 +240,7 @@ No human labels are used; the figure describes reply consistency, not correctnes
 
 # ---------------------------------------------------------------- figure
 
-def draw(rows, total_rows, queue, missing, out_dir):
-    missing_calls, planned_calls = missing["missing_calls"], missing["planned_calls"]
+def draw(rows, total_rows, queue, gap, out_dir):
     import matplotlib
     matplotlib.use("Agg")
     matplotlib.rcParams.update({
@@ -231,13 +258,13 @@ def draw(rows, total_rows, queue, missing, out_dir):
         "comparable_target_event": dict(fc="#d95f02", ec="#d95f02", ls="-", text="white"),
     }
     rank_x, rec_x, cell_x0 = 0.08, 0.36, 1.55
-    cell_w, gap, group_gap = 1.18, 0.05, 0.16
+    cell_w, cell_gap, group_gap = 1.18, 0.05, 0.16
     source_w = 0.95
-    cell_x = [cell_x0 + g * (2 * (cell_w + gap) + group_gap) + q * (cell_w + gap) for g in range(2) for q in range(2)]
+    cell_x = [cell_x0 + g * (2 * (cell_w + cell_gap) + group_gap) + q * (cell_w + cell_gap) for g in range(2) for q in range(2)]
     source_x = cell_x[-1] + cell_w + group_gap
     width = source_x + source_w + 0.05
     top_h, header_h, row_h = 0.24, 0.52, 0.30
-    footer_h, legend_h = 0.56, 0.74
+    footer_h, legend_h = 0.56, 0.87
     n = len(queue)
     height = top_h + header_h + n * row_h + footer_h + legend_h
     fig = plt.figure(figsize=(width, height))
@@ -283,7 +310,7 @@ def draw(rows, total_rows, queue, missing, out_dir):
                 x = cell_x[2 * g + q - 1]
                 ax.add_patch(Rectangle((x, y + 0.035), cell_w, row_h - 0.07, facecolor=s["fc"], edgecolor=s["ec"],
                                        lw=0.6, ls=s["ls"]))
-                first, second = cell_text(r)
+                first, second = cell_text(r, gap)
                 ax.text(x + cell_w / 2, mid - 0.055, first, ha="center", va="center", size=5.6, color=s["text"],
                         weight="bold" if r["category"] == "comparable_target_event" else "normal")
                 ax.text(x + cell_w / 2, mid + 0.06, second, ha="center", va="center", size=5.0, color=s["text"])
@@ -317,7 +344,7 @@ def draw(rows, total_rows, queue, missing, out_dir):
         ("comparable_target_event", "Target event", "same action, window changed"),
         ("comparable_no_event", "Comparable, no target event", "window kept or action changed"),
         ("not_comparable_abstention", "Not comparable: abstention", "original | intervention state"),
-        ("technical_missing", "Technical missing", "no input frame, kept in denominator"),
+        ("technical_missing", "Technical missing", "incomplete input; planned, not comparable"),
     ]
     lx = rank_x
     for category, title, note in legend:
@@ -329,9 +356,13 @@ def draw(rows, total_rows, queue, missing, out_dir):
     ax.text(rank_x, ly + 0.32, "Comparable = valid action and window on both sides. W1/W2 = candidate windows in "
             "source-time order. Abstention states: complete, answer null, both null (answer and evidence).",
             va="center", size=5.0, color=grey)
-    ax.text(rank_x, ly + 0.45, f"Technical missing: {missing_calls} of {planned_calls} planned calls (P11_104-7, all "
-            "three prompt conditions), kept in every denominator. Rows follow the frozen extension-queue rank.",
-            va="center", size=5.0, color=grey)
+    planned = total_rows[0]["planned_questions"]
+    ax.text(rank_x, ly + 0.45, f"Technical missing: {gap['pair_id']} yielded {gap['extracted']} of {gap['planned_frames']} "
+            f"frames ({gap['frame']} frame of the {gap['window']} window missing), so its {gap['missing_calls']} calls had no "
+            f"complete input. They count among the {gap['planned_calls']} planned calls and as "
+            f"{total_rows[0]['technical_missing']} of the {planned} planned", va="center", size=5.0, color=grey)
+    ax.text(rank_x, ly + 0.58, "questions per intervention, not among the comparable questions. "
+            "Rows follow the frozen extension-queue rank.", va="center", size=5.0, color=grey)
 
     fig.savefig(out_dir / f"{FIGURE}.pdf", metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(out_dir / f"{FIGURE}.svg", metadata={"Date": None})
@@ -339,10 +370,10 @@ def draw(rows, total_rows, queue, missing, out_dir):
     return matplotlib.__version__
 
 
-def cell_text(r):
+def cell_text(r, gap):
     category = r["category"]
     if category == "technical_missing":
-        return "technical missing", "no input: frame not extracted"
+        return "technical missing", f"incomplete input: {gap['extracted']}/{gap['planned_frames']} frames"
     if category == "not_comparable_abstention":
         return "abstention", f"{STATE_LABEL[r['original_status']]} | {STATE_LABEL[r['intervention_status']]}"
     same = r["original_action"] == r["intervention_action"]
@@ -360,10 +391,11 @@ def generate(out_dir, figures=True):
     stats, queue = load(check)
     rows = build_rows(stats, queue, check)
     total_rows = totals(rows, stats, check)
+    gap = frame_gap(stats, check)
     out_dir.mkdir(parents=True, exist_ok=True)
     write_csv(out_dir / "figure_data.csv", rows)
     write_csv(out_dir / "figure_totals.csv", total_rows)
-    (out_dir / "caption.md").write_text(caption(total_rows, stats), encoding="utf-8")
+    (out_dir / "caption.md").write_text(caption(total_rows, gap), encoding="utf-8")
     import matplotlib
     report = {
         "source": "av-occurrence-study/run/participant_extension/results_1124 (read-only)",
@@ -379,7 +411,7 @@ def generate(out_dir, figures=True):
     }
     (out_dir / "verification.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     if figures:
-        draw(rows, total_rows, queue, stats["rules"][RULE]["technical_missing"], out_dir)
+        draw(rows, total_rows, queue, gap, out_dir)
     return report
 
 

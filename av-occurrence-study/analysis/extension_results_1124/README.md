@@ -13,7 +13,9 @@
 | 目标事件 | 两侧完整，动作相同、物理窗改变（J） | 4 | 4 |
 | 可比、未出现目标事件 | 两侧完整，窗不变，或动作改变 | 10 | 10 |
 | 因弃答不可比 | 至少一侧弃答（双弃答或只弃答动作），格内写“原顺序 \| 干预”的状态 | 8 | 8 |
-| 技术缺失 | P11_104-7 取帧失败，无提示输入，保留在分母中 | 2 | 2 |
+| 技术缺失 | P11_104-7 缺完整输入，无回复 | 2 | 2 |
+
+P11_104-7 取到 6 帧中的 5 帧，仅晚窗第三帧缺失，因此整片 6 次调用（2 问 × 3 条件）都缺完整输入。这 6 次调用计入 72 个计划调用；每项干预中的 2 道缺失题计入 24 道计划题，不计入可比题。帧数和缺失位置由脚本从冻结的 `frozen_inputs/provenance.json` 读出。
 
 两项干预均为可比 14/24、J/C = 4/14。仅换选项的 4 个事件来自 P35_105-5 和 P21_01-7 的两问，仅换证据代号的来自 P06_102-5 和 P07_04-7 的两问，两组视频不重叠。主解析下不存在无效字段、格式错误或代号与秒数冲突；如输入中出现图例未覆盖的不可比状态，脚本会拒绝作图。图中不含模型推理和正确率标注。
 
@@ -30,9 +32,10 @@ python3 av-occurrence-study/analysis/extension_results_1124/make_extension_figur
 python3 -m unittest discover -s av-occurrence-study/analysis/extension_results_1124 -p 'test_*.py'
 ```
 
-写出前执行 69 项核对，任一项不符即退出：
+写出前执行 72 项核对，任一项不符即退出：
 
 - `replies.jsonl`、`attempts.jsonl` 的 SHA-256 与 `statistics.json` 记录一致；`queue.jsonl` 与冻结的 `manifest/fingerprint.json` 一致，`statistics.json` 的视频顺序等于队列顺序。
+- `frozen_inputs/provenance.json` 的 SHA-256 与 `statistics.json` 记录一致；其中唯一不可用的题对正是全部技术缺失键所属的 P11_104-7，两窗共 6 帧中恰有 1 帧未取出。
 - 66 条实收回复在 `statistics.json` 中的原文与 `replies.jsonl` 逐条相同；其余 6 个键均为技术缺失。
 - 由逐条回复的状态、动作 ID 和物理窗独立重算 48 个比较，逐题与 `statistics.json` 的状态对、可比性、四格和事件一致；每项干预的可比数、四格、J 和不可比状态对与汇总一致。
 
