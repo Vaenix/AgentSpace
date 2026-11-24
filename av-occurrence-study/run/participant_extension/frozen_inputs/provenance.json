@@ -1,0 +1,161 @@
+{
+  "plan": {
+    "commit": "f653ba6fceef7b16a733349041a33823834d0eca",
+    "planned_calls": "inputs/planned_calls.csv",
+    "planned_calls_sha256": "a69bf82c89961a310096750d2b78f47efb27e1d0042ad9d6ce1d0e15f6202139"
+  },
+  "queue": {
+    "queue_sha256": "363bc1dac211ae71ba6d6a5259401af35f130c24a2bc58b3e02af0f845e1d2fe",
+    "fingerprint": "faabf53d91a888e59844ff5b22565635aad30ddc040809328aa6fee82c5f7084"
+  },
+  "media_prep_windows_sha256": "04c732f807223e6a440054b00d50f46524ea5bf3676e19d512c8b726fee05dd5",
+  "counts": {
+    "planned_calls": 72,
+    "runnable": 66,
+    "technical_missing": 6,
+    "recordings": 12,
+    "runnable_recordings": 11,
+    "questions": 24,
+    "runnable_questions": 22,
+    "frames": 66
+  },
+  "unavailable": [
+    {
+      "pair_id": "P11_104-7",
+      "windows": [
+        {
+          "ordinal": 1,
+          "window_s": [
+            710.868,
+            724.33
+          ],
+          "status": "decoded",
+          "clip_sha256": "cbfe34b1ddf423880694d07870a208260ef9bd418e65d9c289cac3ae4fc2e867",
+          "frames_status": "extracted",
+          "frames": [
+            {
+              "file": "window-1-frame-1.png",
+              "role": "window_20pct",
+              "requested_original_s": 713.548,
+              "status": "extracted",
+              "decoded_original_s": 713.668,
+              "sha256": "49418883399c3c94b2870f46d11983e38e8591013c1d5639518a00a8fa85e6be"
+            },
+            {
+              "file": "window-1-frame-2.png",
+              "role": "window_50pct",
+              "requested_original_s": 717.568,
+              "status": "extracted",
+              "decoded_original_s": 717.668,
+              "sha256": "64d7f7e0be02206c701148b5b842529f9de5baaaf7532fc5148db59d4d639a53"
+            },
+            {
+              "file": "window-1-frame-3.png",
+              "role": "window_80pct",
+              "requested_original_s": 721.588,
+              "status": "extracted",
+              "decoded_original_s": 721.668,
+              "sha256": "678146d15b20e51749f1627fe11d522d017530f001158debf539a695994fd467"
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "window_s": [
+            743.157,
+            752.852
+          ],
+          "status": "decoded",
+          "clip_sha256": "711e1e7a19a86f7358207b21365529b2770ff93ee559f32a515ab658a52eba3d",
+          "frames_status": "failed",
+          "frames_failure_reason": "extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+          "frames": [
+            {
+              "file": "window-2-frame-1.png",
+              "role": "sound_midpoint",
+              "requested_original_s": 746.5045,
+              "status": "extracted",
+              "decoded_original_s": 746.557,
+              "sha256": "9db2a39ebe21ad6460247ca2fadd7488288f6fbdc627e95bfeb6754e6b08e5a2"
+            },
+            {
+              "file": "window-2-frame-2.png",
+              "role": "action_25pct",
+              "requested_original_s": 749.2675,
+              "status": "extracted",
+              "decoded_original_s": 749.357,
+              "sha256": "03afdf256c806c41d32506e49c7377e6d07c8db46658e1fe30e2f3d478ab8c86"
+            },
+            {
+              "file": "window-2-frame-3.png",
+              "role": "action_75pct",
+              "requested_original_s": 752.6825,
+              "status": "failed"
+            }
+          ]
+        }
+      ],
+      "reason": "window 2: extract_frame.py decoded no frame for action_75pct at clip 9.525500 s: the last video frame starts at 9.400 s while the video stream lasts 9.6 s, so the point passes the window check but has no frame at or after it; prepare_epic_smoke.py stops here and writes no question input",
+      "rechecked": "prepare_epic_smoke.py exited 1 without a question input; 5 frames written before the stop match media_prep/windows.jsonl",
+      "available_frames": 5
+    }
+  ],
+  "rules": {
+    "prompts": "replication_1124/replicate.py freeze (flat prompt; original, options_reversed, segment_labels_reversed), unchanged",
+    "frames": "prepare_epic_smoke.py with decoded video duration; no added, moved or replacement frames",
+    "missing": "a recording without both windows' six frames keeps its rank and its six call keys as technical_missing"
+  },
+  "checkpoint": {
+    "model": "mlx-community/Qwen2.5-VL-7B-Instruct-4bit",
+    "revision": "fdcc572e8b05ba9daeaf71be8c9e4267c826ff9b",
+    "expected_shard_sha256": {
+      "model-00001-of-00002.safetensors": "f80072ac0e82a2ace0740eab995f6f9ae2623adb55e6906e21c2f8edca537803",
+      "model-00002-of-00002.safetensors": "016bd9d3596e9b824f5a527875e5830414552c950eee794e98efb44c1cd8dc6a"
+    }
+  },
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 64,
+    "history": "none; each call independent"
+  },
+  "parser": {
+    "source": "run/infer_mlx.py",
+    "sha256": "4ebbd521d030f6cfdf9f4b4bead886bd53d076ffb6893cc542202680219fc027",
+    "pinned_commit": "f6919987b6fe3ecf9746f7d9a5d7ab1edb8db3c4",
+    "primary": "parse_reply(..., rule=\"matched_seconds\")",
+    "sensitivity": "decode(..., rule=\"strict\") (bare evidence code only)"
+  },
+  "source_sha256": {
+    "run/replication_1124/replicate.py": "feae42687a50112191ea457867e1944a6818e2fb26e1296fa492c5c253faddb6",
+    "run/infer_mlx.py": "4ebbd521d030f6cfdf9f4b4bead886bd53d076ffb6893cc542202680219fc027",
+    "run/prepare_epic_smoke.py": "e11ed41d5f8be19b7a8b1cad31988d14c5bd31b4eb23169b2d7233f25dd8381f",
+    "run/extract_frame.py": "3804f8d81a9c04653621be50bf10e64f047331983d0deb32548c5f0e0e275576",
+    "epic/clip_bounds.py": "eb85a4033237842fd38f59864ad1f2a26e63343cb4c73f8fa0ff1b2e8d9a2a81",
+    "run/participant_extension/freeze_inputs.py": "b7eeda251271ec2b901e2faa628e4ba9302b3dfe086776a956d3506476cc8e63"
+  },
+  "manifest_sha256": {
+    "selected.jsonl": "2ee5dc07a64fedb35f5c1984ccc090c494991ff175cba3fc2d58d0e70a472cde",
+    "media.jsonl": "becf4e2835931a8347bba8f664822fec314e41a032222bae09bbf472d33d363b",
+    "prompts.jsonl": "6dd56b0eadaaf1f792d2c639a3a35226b2f6b900b5aa65e052d6c4baea158d8c",
+    "input_hashes.json": "7c6e048df5ceac1f4b716d050fb9f914e44b347224fce2123524c07c82b64e47",
+    "calls.jsonl": "d8efdc41e7d8c835c09e4c320829d83679d0fef825577b8c6305532a4d4c9ace"
+  },
+  "frame_manifest_sha256": {
+    "frames/P01_05-4/smoke-input.jsonl": "d7bddc50858d5c1d1521d1937dbfe4d635c89f16378d6f285e49effc4ef1f8f5",
+    "frames/P06_102-5/smoke-input.jsonl": "67007452869a736e721827dcfb24c9b52f3acec857e208fd014593c28b050b6e",
+    "frames/P07_04-7/smoke-input.jsonl": "1ed9f8f1a7cc10bffc815c693063d1e4b92552806179c1afccfbc18afec623a3",
+    "frames/P09_103-5/smoke-input.jsonl": "4284d9c0b3894a3e1c8788c5a9d047ffca5d43aa41c570a8557096a742cb555d",
+    "frames/P12_101-5/smoke-input.jsonl": "061895356d7b22714813cb8ae47c6d453a00a8d809fb3278d6a37e76635a20df",
+    "frames/P13_08-2/smoke-input.jsonl": "14f73bd38051f8d2aadc54f12c743659f579007f21d551af9b267cb0fe21a73a",
+    "frames/P16_01-5/smoke-input.jsonl": "712853a3086b644662c966742890590cb0acc79bfba6ba79d0c9f188daed970f",
+    "frames/P21_01-7/smoke-input.jsonl": "2a2564e5b60bbb8e6ed8e015bb49f2e302aa9e4993a6a6c04e28f58398409472",
+    "frames/P26_119-5/smoke-input.jsonl": "ea0437aff972f970e0dd5d499186b2eada7ff4a4b71d7ff1c20e9149ff3ea5b9",
+    "frames/P28_104-7/smoke-input.jsonl": "464c20273d5ff35ad6ca042ba62899f224ca5c38703a6d9601f87004a27d2713",
+    "frames/P35_105-5/smoke-input.jsonl": "b06d07b48efe4d05653d50e6f1d843cc10b9df73e820ffb44a39bd44d4e25d39"
+  },
+  "tools": {
+    "python": "3.12.0",
+    "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "predictions": "none; inputs frozen before any extension reply is generated"
+}
