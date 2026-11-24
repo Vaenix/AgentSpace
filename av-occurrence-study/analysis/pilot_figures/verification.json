@@ -18,14 +18,14 @@
     "posthoc_recovered": 6
   },
   "denominators": {
-    "strict_preregistered/options_reversed": {
+    "strict_prespecified/options_reversed": {
       "all_questions": 6,
       "comparable_questions": 2,
       "not_comparable_abstention": 2,
       "not_comparable_format": 2,
       "action_stable_and_window_changed": 0
     },
-    "strict_preregistered/segment_labels_reversed": {
+    "strict_prespecified/segment_labels_reversed": {
       "all_questions": 6,
       "comparable_questions": 0,
       "not_comparable_abstention": 2,
@@ -73,35 +73,35 @@
       "passed": true
     },
     {
-      "check": "strict_preregistered totals equal format_sensitivity.json strict_metrics (options_reversed)",
+      "check": "strict_prespecified totals equal format_sensitivity.json strict_metrics (options_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered P37_102 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
+      "check": "strict_prespecified P37_102 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered P20_01 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
+      "check": "strict_prespecified P20_01 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered P03_117 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
+      "check": "strict_prespecified P03_117 equals format_sensitivity.json strict_metrics_by_video (options_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered totals equal format_sensitivity.json strict_metrics (segment_labels_reversed)",
+      "check": "strict_prespecified totals equal format_sensitivity.json strict_metrics (segment_labels_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered P37_102 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
+      "check": "strict_prespecified P37_102 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered P20_01 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
+      "check": "strict_prespecified P20_01 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
       "passed": true
     },
     {
-      "check": "strict_preregistered P03_117 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
+      "check": "strict_prespecified P03_117 equals format_sensitivity.json strict_metrics_by_video (segment_labels_reversed)",
       "passed": true
     },
     {
@@ -137,35 +137,35 @@
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/options_reversed/P37_102",
+      "check": "denominator partition strict_prespecified/options_reversed/P37_102",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/options_reversed/P20_01",
+      "check": "denominator partition strict_prespecified/options_reversed/P20_01",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/options_reversed/P03_117",
+      "check": "denominator partition strict_prespecified/options_reversed/P03_117",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/options_reversed/all",
+      "check": "denominator partition strict_prespecified/options_reversed/all",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/segment_labels_reversed/P37_102",
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/P37_102",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/segment_labels_reversed/P20_01",
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/P20_01",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/segment_labels_reversed/P03_117",
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/P03_117",
       "passed": true
     },
     {
-      "check": "denominator partition strict_preregistered/segment_labels_reversed/all",
+      "check": "denominator partition strict_prespecified/segment_labels_reversed/all",
       "passed": true
     },
     {

@@ -1,25 +1,25 @@
 analysis,video_id,qid,ordinal,intervention,comparable,not_comparable_reason,original_action,test_action,original_window,test_window,original_interval_s,test_interval_s,action_stable,physical_window_changed,action_stable_and_window_changed
-strict_preregistered,P37_102,P37_102-7-smoke-1,1,options_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
-strict_preregistered,P37_102,P37_102-7-smoke-1,1,segment_labels_reversed,False,format,take knife,take knife,,,,,,,
+strict_prespecified,P37_102,P37_102-7-smoke-1,1,options_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
+strict_prespecified,P37_102,P37_102-7-smoke-1,1,segment_labels_reversed,False,format,take knife,take knife,,,,,,,
 posthoc_format_sensitivity,P37_102,P37_102-7-smoke-1,1,options_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
 posthoc_format_sensitivity,P37_102,P37_102-7-smoke-1,1,segment_labels_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
-strict_preregistered,P37_102,P37_102-7-smoke-2,2,options_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
-strict_preregistered,P37_102,P37_102-7-smoke-2,2,segment_labels_reversed,False,format,take knife,take knife,,,,,,,
+strict_prespecified,P37_102,P37_102-7-smoke-2,2,options_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
+strict_prespecified,P37_102,P37_102-7-smoke-2,2,segment_labels_reversed,False,format,take knife,take knife,,,,,,,
 posthoc_format_sensitivity,P37_102,P37_102-7-smoke-2,2,options_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
 posthoc_format_sensitivity,P37_102,P37_102-7-smoke-2,2,segment_labels_reversed,True,,take knife,take knife,2,2,"[94.69200000000001, 95.53]","[94.69200000000001, 95.53]",True,False,False
-strict_preregistered,P20_01,P20_01-5-smoke-1,1,options_reversed,False,abstention,,,,,,,,,
-strict_preregistered,P20_01,P20_01-5-smoke-1,1,segment_labels_reversed,False,abstention,,,,,,,,,
+strict_prespecified,P20_01,P20_01-5-smoke-1,1,options_reversed,False,abstention,,,,,,,,,
+strict_prespecified,P20_01,P20_01-5-smoke-1,1,segment_labels_reversed,False,abstention,,,,,,,,,
 posthoc_format_sensitivity,P20_01,P20_01-5-smoke-1,1,options_reversed,False,abstention,,,,,,,,,
 posthoc_format_sensitivity,P20_01,P20_01-5-smoke-1,1,segment_labels_reversed,False,abstention,,,,,,,,,
-strict_preregistered,P20_01,P20_01-5-smoke-2,2,options_reversed,False,abstention,,,,,,,,,
-strict_preregistered,P20_01,P20_01-5-smoke-2,2,segment_labels_reversed,False,abstention,,,,,,,,,
+strict_prespecified,P20_01,P20_01-5-smoke-2,2,options_reversed,False,abstention,,,,,,,,,
+strict_prespecified,P20_01,P20_01-5-smoke-2,2,segment_labels_reversed,False,abstention,,,,,,,,,
 posthoc_format_sensitivity,P20_01,P20_01-5-smoke-2,2,options_reversed,False,abstention,,,,,,,,,
 posthoc_format_sensitivity,P20_01,P20_01-5-smoke-2,2,segment_labels_reversed,False,abstention,,,,,,,,,
-strict_preregistered,P03_117,P03_117-2-smoke-1,1,options_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
-strict_preregistered,P03_117,P03_117-2-smoke-1,1,segment_labels_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
+strict_prespecified,P03_117,P03_117-2-smoke-1,1,options_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
+strict_prespecified,P03_117,P03_117-2-smoke-1,1,segment_labels_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
 posthoc_format_sensitivity,P03_117,P03_117-2-smoke-1,1,options_reversed,True,,spread butter onto knife,spread butter onto knife,1,2,"[530.566, 533.272]","[629.763, 636.539]",True,True,True
 posthoc_format_sensitivity,P03_117,P03_117-2-smoke-1,1,segment_labels_reversed,True,,spread butter onto knife,spread butter onto knife,1,1,"[530.566, 533.272]","[530.566, 533.272]",True,False,False
-strict_preregistered,P03_117,P03_117-2-smoke-2,2,options_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
-strict_preregistered,P03_117,P03_117-2-smoke-2,2,segment_labels_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
+strict_prespecified,P03_117,P03_117-2-smoke-2,2,options_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
+strict_prespecified,P03_117,P03_117-2-smoke-2,2,segment_labels_reversed,False,format,spread butter onto knife,spread butter onto knife,,,,,,,
 posthoc_format_sensitivity,P03_117,P03_117-2-smoke-2,2,options_reversed,True,,spread butter onto knife,spread butter onto knife,1,2,"[530.566, 533.272]","[629.763, 636.539]",True,True,True
 posthoc_format_sensitivity,P03_117,P03_117-2-smoke-2,2,segment_labels_reversed,True,,spread butter onto knife,spread butter onto knife,1,1,"[530.566, 533.272]","[530.566, 533.272]",True,False,False

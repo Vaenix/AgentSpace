@@ -2,7 +2,7 @@
 
 Counts are numbers of questions. A question is comparable only if both the original reply and the intervention reply yield an option and a physical time window under the stated rule. No gold answers are used, so no count is a measure of correctness.
 
-## Pre-registered strict parsing (primary)
+## Prespecified strict parsing (primary)
 
 | Intervention | Scope | All questions | Comparable | Not comparable: abstention | Not comparable: format | Action stable | Window changed | Action stable and window changed / comparable |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |

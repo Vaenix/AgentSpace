@@ -23,7 +23,7 @@ SOURCE = HERE.parent.parent / "run" / "replication_1124"
 CONDITIONS = ("original", "options_reversed", "segment_labels_reversed")
 INTERVENTIONS = CONDITIONS[1:]
 VIDEOS = ("P37_102", "P20_01", "P03_117")
-ANALYSES = ("strict_preregistered", "posthoc_format_sensitivity")
+ANALYSES = ("strict_prespecified", "posthoc_format_sensitivity")
 COUNT_KEYS = ("all_questions", "comparable_questions", "action_stable",
               "physical_window_changed", "action_stable_and_window_changed")
 FENCED = re.compile(r"```(?:json)?\s*([\s\S]+?)\s*```", re.I)
@@ -36,7 +36,7 @@ LABEL = {
     "original": "Original",
     "options_reversed": "Options reversed",
     "segment_labels_reversed": "Segment labels reversed",
-    "strict_preregistered": "Pre-registered strict parsing",
+    "strict_prespecified": "Prespecified strict parsing",
     "posthoc_format_sensitivity": "Post-hoc format sensitivity",
 }
 
@@ -60,7 +60,7 @@ def interval_text(interval):
 # ---------------------------------------------------------------- parsing rules
 
 def strict_parse(raw, option_codes, segment_codes):
-    """Pre-registered rule: answer must be an option letter and event a bare segment code (or null)."""
+    """Prespecified rule: answer must be an option letter and event a bare segment code (or null)."""
     text = raw.strip()
     fenced = FENCED.fullmatch(text)
     try:
@@ -329,7 +329,7 @@ def latex_table(counts, responses, meta):
            r"\begin{table*}[t]", r"\centering", r"\small",
            r"\caption{Behavioural consistency counts for replication\_1124 (3 videos, 6 frozen questions). "
            r"Entries are numbers of questions; the last column is action-stable-and-window-changed over comparable "
-           r"questions. The pre-registered strict analysis is primary; the post-hoc format sensitivity analysis is "
+           r"questions. The prespecified strict analysis is primary; the post-hoc format sensitivity analysis is "
            r"supplementary. The two questions of each video share one clip and are not independent.}",
            r"\label{tab:pilot-counts}",
            r"\begin{tabular}{llrrrrl}", r"\toprule",
@@ -384,7 +384,7 @@ def captions(counts, meta, responses):
 Each row is one frozen question (Q1: action after the first sound occurrence; Q2: after the second).
 Each condition cell shows the verbatim reply (option letter · segment code), the action it denotes (α or β, fixed per video) and the physical time window it cites (W1 or W2, source-video seconds in each video header).
 *Options reversed* swaps which action the letters A/B denote; *segment labels reversed* swaps which window the codes E01/E02 denote; frames, their physical order and timestamps are unchanged.
-A filled box marks a window decoded by the pre-registered strict rule; a hatched box marks a window recovered only by the post-hoc rule (segment code plus printed start and end seconds that exactly match the frozen mapping); dashed boxes mark abstention (answer and event both null).
+A filled box marks a window decoded by the prespecified strict rule; a hatched box marks a window recovered only by the post-hoc rule (segment code plus printed start and end seconds that exactly match the frozen mapping); dashed boxes mark abstention (answer and event both null).
 The right-hand columns compare each intervention with the original under both rules.
 P20_01 abstained in all six replies.
 In P03_117 the action stayed the same while the cited window moved from {interval_text(p03[0])} to {interval_text(p03[1])} under option reversal; under segment-label reversal the code changed from E01 to E02 but the cited window stayed at {interval_text(p03[0])}.
@@ -394,7 +394,7 @@ Model outputs are behavioural consistency records; no gold answers are used.
 ## Table (table_pilot_counts)
 
 **Behavioural consistency counts (number of questions that were action-stable with a changed physical window, over comparable questions).**
-Pre-registered strict parsing (primary) — {strict_line("option reversal", s_opt)}; {strict_line("segment-label reversal", s_lab)}.
+Prespecified strict parsing (primary) — {strict_line("option reversal", s_opt)}; {strict_line("segment-label reversal", s_lab)}.
 Post-hoc format sensitivity (supplementary; rule defined after the replies were seen) — {strict_line("option reversal", p_opt)}; {strict_line("segment-label reversal", p_lab)}.
 Non-comparable questions stay in every denominator, split by cause.
 Both questions of a video share one clip and option set, so per-video counts are dependent; the sample supports no estimate of correctness or of generalisation across videos.
@@ -518,7 +518,7 @@ def draw_figure(responses, comparisons, meta, out_dir):
     ly = y + 0.14
     lx = 0.09
     ax.add_patch(Rectangle((lx, ly - 0.07), 0.26, 0.14, facecolor=colors["α"], edgecolor=colors["α"], lw=0.7))
-    ax.text(lx + 0.32, ly, "window cited, strict rule (pre-registered)", va="center", size=5.4)
+    ax.text(lx + 0.32, ly, "window cited, strict rule (prespecified)", va="center", size=5.4)
     lx += 2.0
     ax.add_patch(Rectangle((lx, ly - 0.07), 0.26, 0.14, facecolor="white", edgecolor=colors["α"], lw=0.7, hatch="//////"))
     ax.text(lx + 0.32, ly, "window recovered by post-hoc rule only", va="center", size=5.4)
