@@ -1,0 +1,313 @@
+{
+  "batch": "confirmation_1124",
+  "status": "未跑",
+  "inputs": {
+    "frozen_input_commit": "86c00449b09e2540c0d2c8f52b197055142da3e8",
+    "text_input_sha256": {
+      "协议.md": "9abcb58db038502c9cd8ff4a44fc93ca679b0b6be1e27973567143c7498d3481",
+      "manifest/input_hashes.json": "3370e09439df11f1ebbfe5b74aabf2b27508ee1720e02c7a94f1d7bd6237c9b0",
+      "manifest/selected.jsonl": "5d9a9158d5ba42b9c8c6eb9bcd04a32575cd321ca6734e6cf10ad089d2e915a5",
+      "manifest/prompts.jsonl": "93880eb78667206d8397fe64d156635d6b8196a1329006b5beb3e633f9fd28e8"
+    },
+    "predictions_sha256": "3e465d57ad01f4a09ed31beb0c85711c79872cb3dfaa78c1b3431a712a2d6aa9",
+    "predictions_match_statistics_json": true,
+    "technical_failures_sha256": null,
+    "protocol_parser_commit": "f6919987b6fe3ecf9746f7d9a5d7ab1edb8db3c4",
+    "parser_source_commit": "87ee601846c9062ec7fc98a206b633f83b0b7d28",
+    "parser_source_sha256": "4ebbd521d030f6cfdf9f4b4bead886bd53d076ffb6893cc542202680219fc027",
+    "primary_rule": "matched_seconds",
+    "sensitivity_rule": "strict",
+    "reused_code_sha256": {
+      "eval/score.py": "fc8224d5a596d1405693b69d49c4dfccfef93f8cf4cc913b6d0998ea625fd71c",
+      "eval/freeze_reviews.py": "b21af2fd60d454138da127877e6c37693492369c100b5762f3e584c3fd33e37b",
+      "run/confirmation_1124/summarize.py": "6ba6b5957c5e29ef013a72b92ded90a5b7bdb273cb8ede8690b084d569882676"
+    }
+  },
+  "key_precheck": {
+    "videos": 3,
+    "pairs": 3,
+    "questions": 6,
+    "prompt_keys": 18,
+    "prediction_keys": 18,
+    "keys_without_prediction": 0,
+    "conditions": [
+      "original",
+      "options_reversed",
+      "segment_labels_reversed"
+    ],
+    "checked": [
+      "pair_id, video_id, ordinal and condition order of every prompt row",
+      "option IDs equal blake2s-8 of the selected EPIC action IDs and texts equal the source hints",
+      "options_reversed swaps only A/B; segment_labels_reversed swaps only E01/E02",
+      "physical windows equal the selected source sound intervals",
+      "prediction keys are unique and frozen prompt keys"
+    ],
+    "technical_failures": 0,
+    "strict_rows_verified_against_inference": 18,
+    "reply_statuses_all_keys": {
+      "matched_seconds": {
+        "technical_missing": 0,
+        "format_error": 0,
+        "code_seconds_conflict": 0,
+        "invalid_field": 0,
+        "both_abstained": 0,
+        "answer_abstained": 0,
+        "event_abstained": 0,
+        "complete": 18
+      },
+      "strict": {
+        "technical_missing": 0,
+        "format_error": 0,
+        "code_seconds_conflict": 0,
+        "invalid_field": 6,
+        "both_abstained": 0,
+        "answer_abstained": 0,
+        "event_abstained": 0,
+        "complete": 12
+      }
+    }
+  },
+  "gold": null,
+  "mapping_sha256": null,
+  "denominators": {
+    "planned_pairs": 3,
+    "planned_questions": 6,
+    "pairs": {
+      "no_gold": 3,
+      "excluded": 0,
+      "undecided": 0,
+      "mapping_pending": 0,
+      "answer_not_in_original_options": 0,
+      "aligned": 0
+    },
+    "questions": {
+      "no_gold": 6,
+      "excluded": 0,
+      "undecided": 0,
+      "mapping_pending": 0,
+      "answer_not_in_original_options": 0,
+      "aligned": 0
+    }
+  },
+  "answer_not_in_original_options": [],
+  "pairs": [
+    {
+      "pair_id": "P27_101-4",
+      "video_id": "P27_101",
+      "status": "no_gold",
+      "adjudication": null
+    },
+    {
+      "pair_id": "P04_121-19",
+      "video_id": "P04_121",
+      "status": "no_gold",
+      "adjudication": null
+    },
+    {
+      "pair_id": "P15_02-15",
+      "video_id": "P15_02",
+      "status": "no_gold",
+      "adjudication": null
+    }
+  ],
+  "scoring": {
+    "scorer": "eval/score.py score_group and compare_groups",
+    "iou_threshold": 0.5,
+    "rules": {
+      "matched_seconds": {
+        "status": "未跑",
+        "conditions": {
+          "original": {
+            "expected_questions": 0,
+            "submitted_questions": 0,
+            "status": "未跑",
+            "metrics": null,
+            "pairs": [],
+            "reply_statuses": {
+              "planned_questions": 0,
+              "statuses": {
+                "technical_missing": 0,
+                "format_error": 0,
+                "code_seconds_conflict": 0,
+                "invalid_field": 0,
+                "both_abstained": 0,
+                "answer_abstained": 0,
+                "event_abstained": 0,
+                "complete": 0
+              },
+              "missing_prediction": 0,
+              "unusable_reply": 0,
+              "abstained": 0,
+              "scored_predictions": 0
+            }
+          },
+          "options_reversed": {
+            "expected_questions": 0,
+            "submitted_questions": 0,
+            "status": "未跑",
+            "metrics": null,
+            "pairs": [],
+            "reply_statuses": {
+              "planned_questions": 0,
+              "statuses": {
+                "technical_missing": 0,
+                "format_error": 0,
+                "code_seconds_conflict": 0,
+                "invalid_field": 0,
+                "both_abstained": 0,
+                "answer_abstained": 0,
+                "event_abstained": 0,
+                "complete": 0
+              },
+              "missing_prediction": 0,
+              "unusable_reply": 0,
+              "abstained": 0,
+              "scored_predictions": 0
+            }
+          },
+          "segment_labels_reversed": {
+            "expected_questions": 0,
+            "submitted_questions": 0,
+            "status": "未跑",
+            "metrics": null,
+            "pairs": [],
+            "reply_statuses": {
+              "planned_questions": 0,
+              "statuses": {
+                "technical_missing": 0,
+                "format_error": 0,
+                "code_seconds_conflict": 0,
+                "invalid_field": 0,
+                "both_abstained": 0,
+                "answer_abstained": 0,
+                "event_abstained": 0,
+                "complete": 0
+              },
+              "missing_prediction": 0,
+              "unusable_reply": 0,
+              "abstained": 0,
+              "scored_predictions": 0
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "left_condition": "original",
+            "right_condition": "options_reversed",
+            "status": "待完成",
+            "joint_pair_comparison": null
+          },
+          {
+            "left_condition": "original",
+            "right_condition": "segment_labels_reversed",
+            "status": "待完成",
+            "joint_pair_comparison": null
+          },
+          {
+            "left_condition": "options_reversed",
+            "right_condition": "segment_labels_reversed",
+            "status": "待完成",
+            "joint_pair_comparison": null
+          }
+        ]
+      },
+      "strict": {
+        "status": "未跑",
+        "conditions": {
+          "original": {
+            "expected_questions": 0,
+            "submitted_questions": 0,
+            "status": "未跑",
+            "metrics": null,
+            "pairs": [],
+            "reply_statuses": {
+              "planned_questions": 0,
+              "statuses": {
+                "technical_missing": 0,
+                "format_error": 0,
+                "code_seconds_conflict": 0,
+                "invalid_field": 0,
+                "both_abstained": 0,
+                "answer_abstained": 0,
+                "event_abstained": 0,
+                "complete": 0
+              },
+              "missing_prediction": 0,
+              "unusable_reply": 0,
+              "abstained": 0,
+              "scored_predictions": 0
+            }
+          },
+          "options_reversed": {
+            "expected_questions": 0,
+            "submitted_questions": 0,
+            "status": "未跑",
+            "metrics": null,
+            "pairs": [],
+            "reply_statuses": {
+              "planned_questions": 0,
+              "statuses": {
+                "technical_missing": 0,
+                "format_error": 0,
+                "code_seconds_conflict": 0,
+                "invalid_field": 0,
+                "both_abstained": 0,
+                "answer_abstained": 0,
+                "event_abstained": 0,
+                "complete": 0
+              },
+              "missing_prediction": 0,
+              "unusable_reply": 0,
+              "abstained": 0,
+              "scored_predictions": 0
+            }
+          },
+          "segment_labels_reversed": {
+            "expected_questions": 0,
+            "submitted_questions": 0,
+            "status": "未跑",
+            "metrics": null,
+            "pairs": [],
+            "reply_statuses": {
+              "planned_questions": 0,
+              "statuses": {
+                "technical_missing": 0,
+                "format_error": 0,
+                "code_seconds_conflict": 0,
+                "invalid_field": 0,
+                "both_abstained": 0,
+                "answer_abstained": 0,
+                "event_abstained": 0,
+                "complete": 0
+              },
+              "missing_prediction": 0,
+              "unusable_reply": 0,
+              "abstained": 0,
+              "scored_predictions": 0
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "left_condition": "original",
+            "right_condition": "options_reversed",
+            "status": "待完成",
+            "joint_pair_comparison": null
+          },
+          {
+            "left_condition": "original",
+            "right_condition": "segment_labels_reversed",
+            "status": "待完成",
+            "joint_pair_comparison": null
+          },
+          {
+            "left_condition": "options_reversed",
+            "right_condition": "segment_labels_reversed",
+            "status": "待完成",
+            "joint_pair_comparison": null
+          }
+        ]
+      }
+    }
+  }
+}
