@@ -1,0 +1,22 @@
+{
+  "files": {
+    "queue.jsonl": "363bc1dac211ae71ba6d6a5259401af35f130c24a2bc58b3e02af0f845e1d2fe",
+    "exclusion_audit.json": "4eaf93d0d4b0852817c0427c420c86860c1f4a860026aa2b516169d58c59e69c",
+    "source_hashes.json": "2c84295a41863615522db230c25a7261c47fd01e43a1286323ddbebf9e3ecb6f"
+  },
+  "combined": "faabf53d91a888e59844ff5b22565635aad30ddc040809328aa6fee82c5f7084",
+  "order": [
+    "P11_104-7",
+    "P06_102-5",
+    "P01_05-4",
+    "P13_08-2",
+    "P35_105-5",
+    "P21_01-7",
+    "P12_101-5",
+    "P28_104-7",
+    "P16_01-5",
+    "P07_04-7",
+    "P26_119-5",
+    "P09_103-5"
+  ]
+}
