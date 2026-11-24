@@ -1,0 +1,31 @@
+{
+  "queue_sha256": "363bc1dac211ae71ba6d6a5259401af35f130c24a2bc58b3e02af0f845e1d2fe",
+  "queue_fingerprint": "faabf53d91a888e59844ff5b22565635aad30ddc040809328aa6fee82c5f7084",
+  "windows_planned": 24,
+  "windows_attempted": 24,
+  "windows_decoded": 24,
+  "windows_failed": {},
+  "pairs_planned": 12,
+  "pairs_complete": 12,
+  "windows_with_frames": 23,
+  "pairs_with_frames": 11,
+  "frames_extracted": 71,
+  "frames_failed": 1,
+  "windows_truncating_action": 7,
+  "windows_planned_substitution": 3,
+  "windows_substituted": 3,
+  "program_sha256": {
+    "epic/recover_review_media.py": "c1be411246bcdd371d85a45169cc828e5488e7da0fc26b97ad0dbc96a9cac389",
+    "epic/clip_bounds.py": "eb85a4033237842fd38f59864ad1f2a26e63343cb4c73f8fa0ff1b2e8d9a2a81",
+    "run/prepare_epic_smoke.py": "e11ed41d5f8be19b7a8b1cad31988d14c5bd31b4eb23169b2d7233f25dd8381f",
+    "run/extract_frame.py": "3804f8d81a9c04653621be50bf10e64f047331983d0deb32548c5f0e0e275576",
+    "run/participant_extension/prepare_media.py": "ea9168dfb0107a3942e8bc73c5d5f9a90e57f35452b8a9f5b7fb2dda4ab80ce8"
+  },
+  "tools": {
+    "python": "3.12.0",
+    "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 8.1.2 Copyright (c) 2007-2026 the FFmpeg developers",
+    "platform": "macOS-27.2.1-arm64-arm-64bit"
+  },
+  "predictions": "none; this step only prepares media and frames"
+}
