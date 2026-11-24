@@ -1,0 +1,301 @@
+{
+  "source": "av-occurrence-study/run/participant_extension/results_1124 (read-only)",
+  "rule": "matched_seconds",
+  "input_sha256": {
+    "run/participant_extension/results_1124/statistics.json": "f3dc8e9b5a49c7da4abdcdbad6b090f5c36bfd7271da9aa32ba8de9cb510bdd6",
+    "run/participant_extension/results_1124/replies.jsonl": "b87936a0fd0d2b0d5d1f75f93f2d31dd81ad7fbc942fe2491d12ed21adc86aaa",
+    "run/participant_extension/results_1124/attempts.jsonl": "0bd2342c5ae8b04f41e46193b61c010d3c6b286eb3a4a730a23836235bff422b",
+    "run/participant_extension/manifest/queue.jsonl": "363bc1dac211ae71ba6d6a5259401af35f130c24a2bc58b3e02af0f845e1d2fe"
+  },
+  "matplotlib": "3.9.0",
+  "checks": [
+    {
+      "check": "replies.jsonl SHA-256 equals statistics.json replies_sha256",
+      "passed": true
+    },
+    {
+      "check": "attempts.jsonl SHA-256 equals statistics.json attempts_sha256",
+      "passed": true
+    },
+    {
+      "check": "statistics.json names matched_seconds as the primary rule",
+      "passed": true
+    },
+    {
+      "check": "queue.jsonl SHA-256 equals the frozen manifest/fingerprint.json entry",
+      "passed": true
+    },
+    {
+      "check": "queue extension_rank is 1..12 without gaps",
+      "passed": true
+    },
+    {
+      "check": "statistics.json recordings follow the frozen queue order",
+      "passed": true
+    },
+    {
+      "check": "statistics.json holds 72 distinct primary-parser reply keys",
+      "passed": true
+    },
+    {
+      "check": "every received primary-parser reply carries the verbatim replies.jsonl text",
+      "passed": true
+    },
+    {
+      "check": "every key absent from replies.jsonl is technical missing in statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P11_104-7-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P11_104-7-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P11_104-7-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P11_104-7-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P06_102-5-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P06_102-5-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P06_102-5-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P06_102-5-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P01_05-4-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P01_05-4-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P01_05-4-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P01_05-4-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P13_08-2-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P13_08-2-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P13_08-2-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P13_08-2-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P35_105-5-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P35_105-5-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P35_105-5-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P35_105-5-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P21_01-7-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P21_01-7-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P21_01-7-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P21_01-7-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P12_101-5-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P12_101-5-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P12_101-5-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P12_101-5-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P28_104-7-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P28_104-7-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P28_104-7-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P28_104-7-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P16_01-5-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P16_01-5-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P16_01-5-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P16_01-5-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P07_04-7-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P07_04-7-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P07_04-7-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P07_04-7-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P26_119-5-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P26_119-5-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P26_119-5-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P26_119-5-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P09_103-5-smoke-1 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P09_103-5-smoke-2 options_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P09_103-5-smoke-1 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "P09_103-5-smoke-2 segment_labels_reversed: recomputed comparison equals statistics.json",
+      "passed": true
+    },
+    {
+      "check": "options_reversed: 24 planned questions partition into the four figure categories",
+      "passed": true
+    },
+    {
+      "check": "options_reversed: comparable count and four cells equal statistics.json",
+      "passed": true
+    },
+    {
+      "check": "options_reversed: target events equal statistics.json joint_events",
+      "passed": true
+    },
+    {
+      "check": "options_reversed: non-comparable ordered state pairs equal statistics.json",
+      "passed": true
+    },
+    {
+      "check": "options_reversed: technical-missing comparisons are exactly the two questions of P11_104-7",
+      "passed": true
+    },
+    {
+      "check": "segment_labels_reversed: 24 planned questions partition into the four figure categories",
+      "passed": true
+    },
+    {
+      "check": "segment_labels_reversed: comparable count and four cells equal statistics.json",
+      "passed": true
+    },
+    {
+      "check": "segment_labels_reversed: target events equal statistics.json joint_events",
+      "passed": true
+    },
+    {
+      "check": "segment_labels_reversed: non-comparable ordered state pairs equal statistics.json",
+      "passed": true
+    },
+    {
+      "check": "segment_labels_reversed: technical-missing comparisons are exactly the two questions of P11_104-7",
+      "passed": true
+    },
+    {
+      "check": "the two interventions' target events come from disjoint recordings",
+      "passed": true
+    },
+    {
+      "check": "6 of 72 planned calls are technical missing and stay in the planned keys",
+      "passed": true
+    },
+    {
+      "check": "frozen_inputs/provenance.json SHA-256 equals statistics.json frozen_input_sha256",
+      "passed": true
+    },
+    {
+      "check": "exactly one recording lacks a complete input and it owns every technical-missing call",
+      "passed": true
+    },
+    {
+      "check": "the technical-missing recording has two windows and exactly one frame not extracted",
+      "passed": true
+    }
+  ]
+}
