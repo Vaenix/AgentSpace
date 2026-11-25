@@ -41,7 +41,11 @@ def reply_notes(rows, ledger, max_tokens):
     budget = [{"qid": key[0], "condition": key[1], "status": next(
         r["status"] for r in rows if (r["qid"], r["condition"]) == key)}
               for key, stored in ledger.items() if stored.get("generated_tokens", 0) >= max_tokens]
-    return {"format_error_replies": format_errors, "token_budget_hits": sorted(budget, key=lambda r: (r["qid"], r["condition"]))}
+    fields = Counter(f"answer {row['answer_status']} / event {row['event_status']}"
+                     for row in rows if row["status"] not in ("technical_missing", "format_error"))
+    return {"format_error_replies": format_errors,
+            "token_budget_hits": sorted(budget, key=lambda r: (r["qid"], r["condition"])),
+            "json_field_statuses": dict(sorted(fields.items()))}
 
 
 def model_side(questions, video_of):

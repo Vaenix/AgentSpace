@@ -133,6 +133,12 @@ class PairedReplayTest(unittest.TestCase):
         self.assertEqual(counts["statuses"]["technical_missing"], 3)
         self.assertEqual(counts["abstained"], 0)
 
+    def test_archived_statistics_replay_byte_identical(self):
+        here = Path(__file__).resolve().parent
+        report = summarize_cross_model.replay(here / "replies.jsonl", here / "attempts.jsonl")
+        text = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
+        self.assertEqual(text, (here / "statistics.json").read_text(encoding="utf-8"))
+
     def test_reference_ledger_is_pinned(self):
         self.assertEqual(frozen.file_sha256(REFERENCE["replies.jsonl"]), lock.REFERENCE_SHA256["replies.jsonl"])
         self.assertEqual(lock.load_lock()["model"]["revision"], "be92141c8d0ceb98596a923c308ac2bbb4a7c466")
