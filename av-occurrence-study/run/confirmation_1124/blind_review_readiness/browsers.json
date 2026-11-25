@@ -1,0 +1,219 @@
+{
+ "checked_at": "2026-11-25T03:30:55Z",
+ "play_seconds": 30.0,
+ "engines": {
+  "webkit": {
+   "version": "26.0",
+   "P27_101-4": {
+    "can": {
+     "hevc": "probably",
+     "avc": "probably",
+     "aac": "probably"
+    },
+    "metadata": "ok",
+    "metadata_wall_s": 8.644,
+    "duration_s": 1360.2,
+    "width": 1920,
+    "height": 1080,
+    "audio_tracks": 0,
+    "error": null,
+    "segments": [
+     {
+      "start_s": -0.0,
+      "play": "ok",
+      "media_advanced_s": 2.720564292,
+      "wall_s": 30,
+      "realtime_ratio": 0.0906854764,
+      "waiting_events": 2,
+      "buffered": [
+       [
+        0,
+        8.6
+       ]
+      ],
+      "decoded_frames": 145,
+      "error": null
+     },
+     {
+      "start_s": 753.585,
+      "seek": "ok",
+      "seek_wall_s": 14.258,
+      "play": "ok",
+      "media_advanced_s": 9.41807345899997,
+      "wall_s": 30,
+      "realtime_ratio": 0.31393578196666566,
+      "waiting_events": 1,
+      "buffered": [
+       [
+        755.969952459,
+        763.96
+       ]
+      ],
+      "decoded_frames": 654,
+      "error": null
+     }
+    ]
+   },
+   "P04_121-19": {
+    "can": {
+     "hevc": "probably",
+     "avc": "probably",
+     "aac": "probably"
+    },
+    "metadata": "ok",
+    "metadata_wall_s": 9.24,
+    "duration_s": 1693.22,
+    "width": 1920,
+    "height": 1080,
+    "audio_tracks": 0,
+    "error": null,
+    "segments": [
+     {
+      "start_s": -0.0,
+      "play": "ok",
+      "media_advanced_s": 2.901388833,
+      "wall_s": 30,
+      "realtime_ratio": 0.0967129611,
+      "waiting_events": 2,
+      "buffered": [
+       [
+        0,
+        8.584
+       ]
+      ],
+      "decoded_frames": 152,
+      "error": null
+     },
+     {
+      "start_s": 1558.977,
+      "seek": "ok",
+      "seek_wall_s": 28.267,
+      "play": "ok",
+      "media_advanced_s": 8.083656710000014,
+      "wall_s": 30,
+      "realtime_ratio": 0.26945522366666713,
+      "waiting_events": 1,
+      "buffered": [
+       [
+        1558.708389167,
+        1572.94
+       ]
+      ],
+      "decoded_frames": 621,
+      "error": null
+     }
+    ]
+   },
+   "P15_02-15": {
+    "can": {
+     "hevc": "probably",
+     "avc": "probably",
+     "aac": "probably"
+    },
+    "metadata": "ok",
+    "metadata_wall_s": 5.489,
+    "duration_s": 695.1945,
+    "width": 1920,
+    "height": 1080,
+    "audio_tracks": 0,
+    "error": null,
+    "segments": [
+     {
+      "start_s": -0.0,
+      "play": "ok",
+      "media_advanced_s": 2.671357125,
+      "wall_s": 30,
+      "realtime_ratio": 0.0890452375,
+      "waiting_events": 2,
+      "buffered": [
+       [
+        0,
+        6.8068
+       ]
+      ],
+      "decoded_frames": 168,
+      "error": null
+     },
+     {
+      "start_s": 382.704,
+      "seek": "ok",
+      "seek_wall_s": 12.225,
+      "play": "ok",
+      "media_advanced_s": 6.269110625999986,
+      "wall_s": 30,
+      "realtime_ratio": 0.20897035419999951,
+      "waiting_events": 1,
+      "buffered": [
+       [
+        383.173094125,
+        391.457733333
+       ]
+      ],
+      "decoded_frames": 575,
+      "error": null
+     }
+    ]
+   }
+  },
+  "chromium": {
+   "version": "140.0.7339.16",
+   "P27_101-4": {
+    "can": {
+     "hevc": "",
+     "avc": "",
+     "aac": ""
+    },
+    "metadata": "error",
+    "metadata_wall_s": 5.785,
+    "duration_s": null,
+    "width": 0,
+    "height": 0,
+    "audio_tracks": null,
+    "error": {
+     "code": 4,
+     "message": ""
+    },
+    "segments": []
+   },
+   "P04_121-19": {
+    "can": {
+     "hevc": "",
+     "avc": "",
+     "aac": ""
+    },
+    "metadata": "error",
+    "metadata_wall_s": 6.094300000011921,
+    "duration_s": null,
+    "width": 0,
+    "height": 0,
+    "audio_tracks": null,
+    "error": {
+     "code": 4,
+     "message": ""
+    },
+    "segments": []
+   },
+   "P15_02-15": {
+    "can": {
+     "hevc": "",
+     "avc": "",
+     "aac": ""
+    },
+    "metadata": "error",
+    "metadata_wall_s": 6.9748999999761585,
+    "duration_s": null,
+    "width": 0,
+    "height": 0,
+    "audio_tracks": null,
+    "error": {
+     "code": 4,
+     "message": ""
+    },
+    "segments": []
+   }
+  },
+  "firefox": {
+   "launch_error": "BrowserType.launch: Timeout 120000ms exceeded."
+  }
+ }
+}

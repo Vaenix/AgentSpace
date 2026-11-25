@@ -1,0 +1,684 @@
+{
+ "checked_at": "2026-11-25T03:59:40Z",
+ "queue": "manifest/selected.jsonl",
+ "queue_sha256": "5d9a9158d5ba42b9c8c6eb9bcd04a32575cd321ca6734e6cf10ad089d2e915a5",
+ "margin_s": 10.0,
+ "full_prefix_decoded": true,
+ "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+ "pairs": [
+  {
+   "pair_id": "P27_101-4",
+   "video_id": "P27_101",
+   "media_url": "https://data.bris.ac.uk/datasets/2g1n6qdydwa9u22shpxqzp0t8m/P27/videos/P27_101.MP4",
+   "http": {
+    "ok": true,
+    "status": 200,
+    "content_type": "video/mp4",
+    "content_length": 4120358548,
+    "accept_ranges": "bytes",
+    "last_modified": "Tue, 28 Apr 2020 01:09:38 GMT",
+    "etag": "\"5ea78252-f597ae94\"",
+    "seconds": 1.971
+   },
+   "mp4_boxes": [
+    {
+     "type": "ftyp",
+     "offset": 0,
+     "size": 28
+    },
+    {
+     "type": "free",
+     "offset": 28,
+     "size": 8
+    },
+    {
+     "type": "mdat",
+     "offset": 36,
+     "size": 4119200705
+    },
+    {
+     "type": "moov",
+     "offset": 4119200741,
+     "size": 1157807
+    }
+   ],
+   "mp4_boxes_cover_file": true,
+   "index_position": "end",
+   "index_tracks": [
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1360200,
+       "media_time": 0
+      }
+     ],
+     "handler": "vide",
+     "sync_samples": 1361,
+     "first_sync_samples": [
+      1,
+      51,
+      101
+     ]
+    },
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1360214,
+       "media_time": 0
+      }
+     ],
+     "handler": "soun"
+    },
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1360213,
+       "media_time": 0
+      }
+     ],
+     "handler": "meta"
+    },
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1360200,
+       "media_time": 0
+      }
+     ],
+     "handler": "tmcd"
+    }
+   ],
+   "duration_s": 1360.213333,
+   "streams": [
+    {
+     "index": 0,
+     "codec_type": "video",
+     "codec_name": "hevc",
+     "codec_tag_string": "hvc1",
+     "profile": "Main",
+     "width": 1920,
+     "height": 1080,
+     "avg_frame_rate": "50/1",
+     "start_time": "0.000000",
+     "duration": "1360.200000"
+    },
+    {
+     "index": 1,
+     "codec_type": "audio",
+     "codec_name": "aac",
+     "codec_tag_string": "mp4a",
+     "profile": "LC",
+     "avg_frame_rate": "0/0",
+     "sample_rate": "48000",
+     "channels": 2,
+     "start_time": "0.000000",
+     "duration": "1360.213333"
+    }
+   ],
+   "review_span_s": [
+    0.0,
+    770.78
+   ],
+   "continuity": {
+    "video": {
+     "packets": 38540,
+     "first_pts_s": 0.0,
+     "last_pts_s": 770.78,
+     "gaps_over_2ms": [],
+     "byte_end": 2334431891
+    },
+    "audio": {
+     "packets": 36131,
+     "first_pts_s": 0.0,
+     "last_pts_s": 770.773333,
+     "gaps_over_2ms": [],
+     "byte_end": 2334369438
+    }
+   },
+   "bytes_to_review_end": 2334431891,
+   "mean_bitrate_mbit_s": 24.23,
+   "windows": [
+    {
+     "ordinal": 1,
+     "sound_s": [
+      134.772,
+      135.516
+     ],
+     "action_s": [
+      138.07,
+      138.93
+     ],
+     "window_s": [
+      131.772,
+      141.93
+     ],
+     "bytes": [
+      390203991,
+      434548115
+     ],
+     "video": {
+      "exit": 0,
+      "frames": 508,
+      "out_time_s": 10.16,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "audio": {
+      "exit": 0,
+      "frames": null,
+      "out_time_s": 10.158,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "sound_interval_level": {
+      "mean_db": -37.6,
+      "max_db": -24.5
+     }
+    },
+    {
+     "ordinal": 2,
+     "sound_s": [
+      758.585,
+      759.345
+     ],
+     "action_s": [
+      760.16,
+      760.78
+     ],
+     "window_s": [
+      755.585,
+      763.78
+     ],
+     "bytes": [
+      2279341784,
+      2317715025
+     ],
+     "video": {
+      "exit": 0,
+      "frames": 410,
+      "out_time_s": 8.22,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "audio": {
+      "exit": 0,
+      "frames": null,
+      "out_time_s": 8.195,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "sound_interval_level": {
+      "mean_db": -23.8,
+      "max_db": -5.9
+     }
+    }
+   ],
+   "full_prefix": {
+    "span_s": [
+     0.0,
+     770.78
+    ],
+    "fetched_bytes_this_run": 1937380261,
+    "fetch_wall_seconds": 272.3,
+    "decode_wall_seconds": 104.9,
+    "index_video_packets": 38540,
+    "video": {
+     "exit": 0,
+     "frames": 38539,
+     "out_time_s": 770.78,
+     "decoder_messages": 0,
+     "first_messages": []
+    },
+    "audio": {
+     "exit": 0,
+     "frames": null,
+     "out_time_s": 770.78,
+     "decoder_messages": 0,
+     "first_messages": []
+    }
+   },
+   "throughput_mb_s_per_connection": 0.776
+  },
+  {
+   "pair_id": "P04_121-19",
+   "video_id": "P04_121",
+   "media_url": "https://data.bris.ac.uk/datasets/2g1n6qdydwa9u22shpxqzp0t8m/P04/videos/P04_121.MP4",
+   "http": {
+    "ok": true,
+    "status": 200,
+    "content_type": "video/mp4",
+    "content_length": 5129829336,
+    "accept_ranges": "bytes",
+    "last_modified": "Mon, 27 Apr 2020 21:10:27 GMT",
+    "etag": "\"5ea74a43-131c2fbd8\"",
+    "seconds": 1.687
+   },
+   "mp4_boxes": [
+    {
+     "type": "ftyp",
+     "offset": 0,
+     "size": 28
+    },
+    {
+     "type": "mdat",
+     "offset": 28,
+     "size": 5127746869
+    },
+    {
+     "type": "moov",
+     "offset": 5127746897,
+     "size": 2082439
+    }
+   ],
+   "mp4_boxes_cover_file": true,
+   "index_position": "end",
+   "index_tracks": [
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1693220,
+       "media_time": 0
+      }
+     ],
+     "handler": "vide",
+     "sync_samples": 1694,
+     "first_sync_samples": [
+      1,
+      51,
+      101
+     ]
+    },
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1693227,
+       "media_time": 0
+      }
+     ],
+     "handler": "soun"
+    },
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1693227,
+       "media_time": 0
+      }
+     ],
+     "handler": "meta"
+    },
+    {
+     "edit_list": [
+      {
+       "segment_duration": 1693220,
+       "media_time": 0
+      }
+     ],
+     "handler": "tmcd"
+    }
+   ],
+   "duration_s": 1693.227,
+   "streams": [
+    {
+     "index": 0,
+     "codec_type": "video",
+     "codec_name": "hevc",
+     "codec_tag_string": "hvc1",
+     "profile": "Main",
+     "width": 1920,
+     "height": 1080,
+     "avg_frame_rate": "50/1",
+     "start_time": "0.000000",
+     "duration": "1693.220000"
+    },
+    {
+     "index": 1,
+     "codec_type": "audio",
+     "codec_name": "aac",
+     "codec_tag_string": "mp4a",
+     "profile": "LC",
+     "avg_frame_rate": "0/0",
+     "sample_rate": "48000",
+     "channels": 2,
+     "start_time": "0.000000",
+     "duration": "1693.226667"
+    }
+   ],
+   "review_span_s": [
+    0.0,
+    1577.99
+   ],
+   "continuity": {
+    "video": {
+     "packets": 78900,
+     "first_pts_s": 0.0,
+     "last_pts_s": 1577.98,
+     "gaps_over_2ms": [],
+     "byte_end": 4778598734
+    },
+    "audio": {
+     "packets": 73969,
+     "first_pts_s": 0.0,
+     "last_pts_s": 1577.984,
+     "gaps_over_2ms": [],
+     "byte_end": 4778599230
+    }
+   },
+   "bytes_to_review_end": 4778599230,
+   "mean_bitrate_mbit_s": 24.24,
+   "windows": [
+    {
+     "ordinal": 1,
+     "sound_s": [
+      491.484,
+      492.308
+     ],
+     "action_s": [
+      494.04,
+      496.15
+     ],
+     "window_s": [
+      488.484,
+      499.15
+     ],
+     "bytes": [
+      1470275871,
+      1516243780
+     ],
+     "video": {
+      "exit": 0,
+      "frames": 534,
+      "out_time_s": 10.7,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "audio": {
+      "exit": 0,
+      "frames": null,
+      "out_time_s": 10.666,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "sound_interval_level": {
+      "mean_db": -36.2,
+      "max_db": -16.7
+     }
+    },
+    {
+     "ordinal": 2,
+     "sound_s": [
+      1563.977,
+      1564.977
+     ],
+     "action_s": [
+      1565.01,
+      1567.99
+     ],
+     "window_s": [
+      1560.977,
+      1570.99
+     ],
+     "bytes": [
+      4718085157,
+      4762171333
+     ],
+     "video": {
+      "exit": 0,
+      "frames": 501,
+      "out_time_s": 10.02,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "audio": {
+      "exit": 0,
+      "frames": null,
+      "out_time_s": 10.013,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "sound_interval_level": {
+      "mean_db": -41.4,
+      "max_db": -19.2
+     }
+    }
+   ],
+   "full_prefix": {
+    "span_s": [
+     0.0,
+     1577.99
+    ],
+    "fetched_bytes_this_run": 4684851786,
+    "fetch_wall_seconds": 506.6,
+    "decode_wall_seconds": 215.3,
+    "index_video_packets": 78900,
+    "video": {
+     "exit": 0,
+     "frames": 78900,
+     "out_time_s": 1578.0,
+     "decoder_messages": 0,
+     "first_messages": []
+    },
+    "audio": {
+     "exit": 0,
+     "frames": null,
+     "out_time_s": 1577.99,
+     "decoder_messages": 0,
+     "first_messages": []
+    }
+   },
+   "throughput_mb_s_per_connection": 0.785
+  },
+  {
+   "pair_id": "P15_02-15",
+   "video_id": "P15_02",
+   "media_url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/train/P15/P15_02.MP4",
+   "http": {
+    "ok": true,
+    "status": 200,
+    "content_type": "video/mp4",
+    "content_length": 2620857417,
+    "accept_ranges": "bytes",
+    "last_modified": "Wed, 05 Jul 2017 14:19:22 GMT",
+    "etag": "\"595cf56a-9c371c49\"",
+    "seconds": 1.693
+   },
+   "mp4_boxes": [
+    {
+     "type": "ftyp",
+     "offset": 0,
+     "size": 20
+    },
+    {
+     "type": "mdat",
+     "offset": 20,
+     "size": 2619651941
+    },
+    {
+     "type": "moov",
+     "offset": 2619651961,
+     "size": 1205456
+    }
+   ],
+   "mp4_boxes_cover_file": true,
+   "index_position": "end",
+   "index_tracks": [
+    {
+     "edit_list": [
+      {
+       "segment_duration": 41711670,
+       "media_time": 0
+      }
+     ],
+     "handler": "vide",
+     "sync_samples": 695,
+     "first_sync_samples": [
+      1,
+      61,
+      121
+     ]
+    },
+    {
+     "handler": "soun"
+    },
+    {
+     "handler": "tmcd"
+    },
+    {
+     "handler": "meta"
+    },
+    {
+     "handler": "meta"
+    }
+   ],
+   "duration_s": 695.210667,
+   "streams": [
+    {
+     "index": 0,
+     "codec_type": "video",
+     "codec_name": "h264",
+     "codec_tag_string": "avc1",
+     "profile": "High",
+     "width": 1920,
+     "height": 1080,
+     "avg_frame_rate": "60000/1001",
+     "start_time": "0.000000",
+     "duration": "695.194500"
+    },
+    {
+     "index": 1,
+     "codec_type": "audio",
+     "codec_name": "aac",
+     "codec_tag_string": "mp4a",
+     "profile": "LC",
+     "avg_frame_rate": "0/0",
+     "sample_rate": "48000",
+     "channels": 2,
+     "start_time": "0.000000",
+     "duration": "695.210667"
+    }
+   ],
+   "review_span_s": [
+    0.0,
+    427.92
+   ],
+   "continuity": {
+    "video": {
+     "packets": 25650,
+     "first_pts_s": 0.0,
+     "last_pts_s": 427.910817,
+     "gaps_over_2ms": [],
+     "byte_end": 1612486222
+    },
+    "audio": {
+     "packets": 20059,
+     "first_pts_s": 0.0,
+     "last_pts_s": 427.904,
+     "gaps_over_2ms": [],
+     "byte_end": 1612456336
+    }
+   },
+   "bytes_to_review_end": 1612486222,
+   "mean_bitrate_mbit_s": 30.16,
+   "windows": [
+    {
+     "ordinal": 1,
+     "sound_s": [
+      221.548,
+      228.111
+     ],
+     "action_s": [
+      228.81,
+      231.05
+     ],
+     "window_s": [
+      218.548,
+      234.05
+     ],
+     "bytes": [
+      812603235,
+      887941340
+     ],
+     "video": {
+      "exit": 0,
+      "frames": 930,
+      "out_time_s": 15.515,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "audio": {
+      "exit": 0,
+      "frames": null,
+      "out_time_s": 15.502,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "sound_interval_level": {
+      "mean_db": -39.8,
+      "max_db": -21.7
+     }
+    },
+    {
+     "ordinal": 2,
+     "sound_s": [
+      387.704,
+      388.484
+     ],
+     "action_s": [
+      392.17,
+      417.92
+     ],
+     "window_s": [
+      384.704,
+      420.92
+     ],
+     "bytes": [
+      1438608222,
+      1591912672
+     ],
+     "video": {
+      "exit": 0,
+      "frames": 2171,
+      "out_time_s": 36.236,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "audio": {
+      "exit": 0,
+      "frames": null,
+      "out_time_s": 36.216,
+      "decoder_messages": 0,
+      "first_messages": []
+     },
+     "sound_interval_level": {
+      "mean_db": -36.4,
+      "max_db": -22.7
+     }
+    }
+   ],
+   "full_prefix": {
+    "span_s": [
+     0.0,
+     427.92
+    ],
+    "fetched_bytes_this_run": 1381029908,
+    "fetch_wall_seconds": 146.2,
+    "decode_wall_seconds": 41.0,
+    "index_video_packets": 25650,
+    "video": {
+     "exit": 0,
+     "frames": 25650,
+     "out_time_s": 427.928,
+     "decoder_messages": 0,
+     "first_messages": []
+    },
+    "audio": {
+     "exit": 0,
+     "frames": null,
+     "out_time_s": 427.92,
+     "decoder_messages": 0,
+     "first_messages": []
+    }
+   },
+   "throughput_mb_s_per_connection": 0.826
+  }
+ ]
+}
