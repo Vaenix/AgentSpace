@@ -1,0 +1,65 @@
+{
+  "model": {
+    "repository": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "revision": "be92141c8d0ceb98596a923c308ac2bbb4a7c466",
+    "license": "apache-2.0",
+    "architecture": "smolvlm (Idefics3 layout in mlx-vlm)",
+    "file_sha256": {
+      "added_tokens.json": "74135b8664b56088c0006f1c8e848d79a8eba003411f72ebf1dc2ee96227be3a",
+      "chat_template.json": "9bc4f36b8d064f824368648472a4a09268c4bbf9bf930f04fae47f1f596dae92",
+      "config.json": "ec1f7e45deeafba7601f8dd0b6ca9ba75985dffc2f053e82341d12d06e2d9d46",
+      "generation_config.json": "34835060c9f0f74d1acb456cc72ca32746d3843d9eb5f578f9cbffac1d2eb840",
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "model-00001-of-00002.safetensors": "7c88a90e78f567460b2369a0369cc4dafbfda5607c9cb090b30fa4437b0282f2",
+      "model-00002-of-00002.safetensors": "cf3d0958a8240f71054a6812038f2a6bfbe2e5124573a3b363f6b120c9a52657",
+      "model.safetensors.index.json": "d7c4b7a36f51bc15755cb11938c76f66be56e7c0d2bf3606335a8f77f90a551d",
+      "preprocessor_config.json": "70d935393e28a5b77b8f46cbd3e3cb74a336e4814bd43983858215bd0be388e7",
+      "processor_config.json": "55fb18f99dcce2694a011d46addf50a8114e6458d1847f6da9a0af22c6695a95",
+      "special_tokens_map.json": "2dfea2a426162316ff1567c82bc6d36d9690cd9f90455f075c77daca78b45c60",
+      "tokenizer.json": "5ece781dc8d2b2f3e2f289ca0ae50b17cfc27dd27bfe7971bb8241e0b964331a",
+      "tokenizer_config.json": "a1c7ec9bed1508f87a202f39b1f4e909145513ae81645bec7fbee8a5671d9edf",
+      "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+    },
+    "file_sha256_source": "Shard values are the Git LFS oids the Hub API lists for this revision; the other files were hashed locally and their Git blob ids match the Hub tree of this revision."
+  },
+  "precision": {
+    "stored_weights": "float32 (model.safetensors.index.json total_size 8987139520 bytes)",
+    "inference_dtype": "bfloat16",
+    "cast": "Load the published float32 weights unquantized, then cast every floating parameter to bfloat16 with mlx.nn.Module.set_dtype before the first call. Image tensors follow the patch-embedding dtype inside mlx-vlm. No quantization.",
+    "reason": "bfloat16 is the precision used by the model card's own inference examples and the text_config torch_dtype."
+  },
+  "chat_template": {
+    "source": "chat_template.json of the pinned revision, unmodified",
+    "sha256_of_template_string": "af80b984f1e7c2dff1bb2dc3ecbf83fe385ab1cf84118b810e4bf64e73b414b8",
+    "message": "one user message whose content is six {\"type\": \"image\"} items in the frozen frame order followed by one {\"type\": \"text\"} item holding the frozen prompt text; add_generation_prompt=true; no system message; no conversation history"
+  },
+  "image_processing": {
+    "processor": "SmolVLMImageProcessor from preprocessor_config.json of the pinned revision, loaded by mlx-vlm 0.8.0 (use_fast=false)",
+    "override": {"do_image_splitting": false},
+    "unchanged": "every other preprocessor_config.json value: do_convert_rgb, do_resize with resample 1, do_rescale 1/255, do_normalize mean 0.5 std 0.5, do_pad, max_image_size longest_edge 384",
+    "effect": "each 448 x 448 frozen frame becomes one 384 x 384 tile of 81 image tokens; six images give 486 image tokens",
+    "reason": "With the stored default do_image_splitting=true each 448 x 448 frame is upscaled to 1536 and split into 16 tiles plus a global tile (1377 tokens per image). Measured before freezing on six synthetic 448 x 448 images with the 66 frozen prompt texts, the prompts would be 8769-8791 tokens, above max_position_embeddings 8192 of the text model. Without splitting they are 777-799 tokens. The checkpoint's own video_sampling setting also feeds frames at longest_edge 384 without splitting."
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "sampling": "greedy argmax (mlx-vlm temperature 0); top_p, top_k, min_p, repetition penalty left unset",
+    "max_tokens": 64,
+    "stop": "tokenizer eos <end_of_utterance> (id 49279, equal to generation_config.json eos_token_id) or the 64-token budget",
+    "context": "fresh context per call; calls run one at a time in calls.jsonl run_order"
+  },
+  "runtime": {
+    "python": "3.12.0",
+    "packages": {
+      "mlx": "0.32.4",
+      "mlx-metal": "0.32.4",
+      "mlx-vlm": "0.8.0",
+      "transformers": "5.23.0",
+      "tokenizers": "0.23.3",
+      "pillow": "13.0.0",
+      "numpy": "2.5.5",
+      "jinja2": "3.1.6"
+    },
+    "device": "Apple M3 Pro, Metal GPU; the same Python environment as the #11 run",
+    "network": "offline after the checkpoint download (HF_HUB_OFFLINE=1)"
+  }
+}
