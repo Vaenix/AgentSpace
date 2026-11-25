@@ -1,0 +1,137 @@
+{
+  "protocol_commit": "2fac79828c805a77c42b76af49c7ae4491c3bdbf",
+  "decoding": "temperature 0, max 40 tokens",
+  "feature_placement": [
+    {
+      "image": 1,
+      "colour": "red",
+      "max_abs_diff_to_same_image_alone": 0.03125,
+      "min_max_abs_diff_to_other_images": 13.30078125
+    },
+    {
+      "image": 2,
+      "colour": "green",
+      "max_abs_diff_to_same_image_alone": 0.0625,
+      "min_max_abs_diff_to_other_images": 12.625
+    },
+    {
+      "image": 3,
+      "colour": "blue",
+      "max_abs_diff_to_same_image_alone": 0.015625,
+      "min_max_abs_diff_to_other_images": 13.625
+    },
+    {
+      "image": 4,
+      "colour": "yellow",
+      "max_abs_diff_to_same_image_alone": 0.03125,
+      "min_max_abs_diff_to_other_images": 12.625
+    },
+    {
+      "image": 5,
+      "colour": "black",
+      "max_abs_diff_to_same_image_alone": 0.015625,
+      "min_max_abs_diff_to_other_images": 13.546875
+    },
+    {
+      "image": 6,
+      "colour": "white",
+      "max_abs_diff_to_same_image_alone": 0.015625,
+      "min_max_abs_diff_to_other_images": 13.546875
+    }
+  ],
+  "answers": [
+    {
+      "kind": "single",
+      "images": [
+        "red"
+      ],
+      "question": "What is the colour of this image? Answer with one word.",
+      "reply": " red"
+    },
+    {
+      "kind": "single",
+      "images": [
+        "green"
+      ],
+      "question": "What is the colour of this image? Answer with one word.",
+      "reply": " green"
+    },
+    {
+      "kind": "single",
+      "images": [
+        "blue"
+      ],
+      "question": "What is the colour of this image? Answer with one word.",
+      "reply": " blue"
+    },
+    {
+      "kind": "single",
+      "images": [
+        "yellow"
+      ],
+      "question": "What is the colour of this image? Answer with one word.",
+      "reply": " yellow"
+    },
+    {
+      "kind": "single",
+      "images": [
+        "black"
+      ],
+      "question": "What is the colour of this image? Answer with one word.",
+      "reply": " black"
+    },
+    {
+      "kind": "single",
+      "images": [
+        "white"
+      ],
+      "question": "What is the colour of this image? Answer with one word.",
+      "reply": " white"
+    },
+    {
+      "kind": "two",
+      "images": [
+        "red",
+        "blue"
+      ],
+      "question": "What colour is the first image, and what colour is the second image?",
+      "reply": " The first image is red, and the second image is blue."
+    },
+    {
+      "kind": "three",
+      "images": [
+        "yellow",
+        "black",
+        "green"
+      ],
+      "question": "Name the colour of image 1, image 2 and image 3.",
+      "reply": " Image 1: Yellow\nImage 2: Green\nImage 3: Black"
+    },
+    {
+      "kind": "six",
+      "images": [
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "black",
+        "white"
+      ],
+      "question": "What colour is the third image? Answer with one word.",
+      "reply": " yellow"
+    },
+    {
+      "kind": "six",
+      "images": [
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "black",
+        "white"
+      ],
+      "question": "What colour is the fifth image? Answer with one word.",
+      "reply": " yellow"
+    }
+  ]
+}
